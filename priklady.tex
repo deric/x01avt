@@ -2,7 +2,9 @@
 \usepackage[left=2cm,right=2cm,top=1cm,bottom=2cm]{geometry}
 \bibliographystyle{plain}
 \usepackage[czech]{babel}
-\usepackage[cp1250]{inputenc}
+\usepackage[T1]{fontenc} % pouzije EC fonty 
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{amssymb} 
 \usepackage{amsmath}
@@ -36,34 +38,34 @@
 }
 
 \newtheorem{definice}{Definice}[section]
-\newtheorem{veta}{Vìta}[section]
+\newtheorem{veta}{VÄ›ta}[section]
 
 \begin{document}
 
 
-\section*{Úvod}
-Právì se díváte na moje øešení pøíkladù z X01AVT z roku 2007/2008. Zajisté obsahují spousty chyb a nedokáe je pochopit nikdo vèetnì autora, ale aspoò mùou poslouit jako menší návod k tomu, jak poèítat pøíklady u zkoušky. \textbf{Dùraznì} doporuèuji ty pøíklady si vypoèítat sám a teprve potom, co vyjde nìjakı vısledek jinak, ne jak má podle dr. Gollové vyjít, se podívat sem. Kdy si budete ty pøíklady jen tupì proèítat, tak se nauèíte $\lim \rightarrow 0$. Pokud máte pocit, e tu nìco chybí, èi snad pøebıvá, máte naprosto volnou ruku k úpravám, za pøedpokladu, e své úpravy zveøejníte, a to vèetnì zdrojového kódu v .tex a obrázkù. Odkazy na pouitou literaturu jsou na konci. Obrázky nakresleny pomocí maker \Xy-pic.
+\section*{Ãšvod}
+PrÃ¡vÄ› se dÃ­vÃ¡te na moje Å™eÅ¡enÃ­ pÅ™Ã­kladÅ¯ z X01AVT z roku 2007/2008. ZajistÃ© obsahujÃ­ spousty chyb a nedokÃ¡Å¾e je pochopit nikdo vÄetnÄ› autora, ale aspoÅˆ mÅ¯Å¾ou poslouÅ¾it jako menÅ¡Ã­ nÃ¡vod k tomu, jak poÄÃ­tat pÅ™Ã­klady u zkouÅ¡ky. \textbf{DÅ¯raznÄ›} doporuÄuji ty pÅ™Ã­klady si vypoÄÃ­tat sÃ¡m a teprve potom, co vyjde nÄ›jakÃ½ vÃ½sledek jinak, neÅ¾ jak mÃ¡ podle dr. GollovÃ© vyjÃ­t, se podÃ­vat sem. KdyÅ¾ si budete ty pÅ™Ã­klady jen tupÄ› proÄÃ­tat, tak se nauÄÃ­te $\lim \rightarrow 0$. Pokud mÃ¡te pocit, Å¾e tu nÄ›co chybÃ­, Äi snad pÅ™ebÃ½vÃ¡, mÃ¡te naprosto volnou ruku k ÃºpravÃ¡m, za pÅ™edpokladu, Å¾e svÃ© Ãºpravy zveÅ™ejnÃ­te, a to vÄetnÄ› zdrojovÃ©ho kÃ³du v .tex a obrÃ¡zkÅ¯. Odkazy na pouÅ¾itou literaturu jsou na konci. ObrÃ¡zky nakresleny pomocÃ­ maker \Xy-pic.
 
-Tímto bych také chtìl podìkovat dr. Alenì Gollové za její peèlivou kontrolu mıch vıpoètù a mnoství cennıch pøipomínek a oprav.
+TÃ­mto bych takÃ© chtÄ›l podÄ›kovat dr. AlenÄ› GollovÃ© za jejÃ­ peÄlivou kontrolu mÃ½ch vÃ½poÄtÅ¯ a mnoÅ¾stvÃ­ cennÃ½ch pÅ™ipomÃ­nek a oprav.
 
-Hodnì štìstí u zkoušek a co nejménì trápení s algebrou,
+HodnÄ› Å¡tÄ›stÃ­ u zkouÅ¡ek a co nejmÃ©nÄ› trÃ¡penÃ­ s algebrou,
 \begin{flushright}
-Štìpán Rezek
+Å tÄ›pÃ¡n Rezek
 \end{flushright}
 
 \tableofcontents
 
 \clearpage
 
-\section{Koneèné grupy a poèítání v $\mathbb{Z}_n$}
+\section{KoneÄnÃ© grupy a poÄÃ­tÃ¡nÃ­ v $\mathbb{Z}_n$}
 
 %---------------------------------------Priklad 1--------------------------------
-\subsection{Pøíklad 1}
-V $\mathbb{Z}_{267}$ najdìte všechna $x$, pro která platí $114x = 15$.
+\subsection{PÅ™Ã­klad 1}
+V $\mathbb{Z}_{267}$ najdÄ›te vÅ¡echna $x$, pro kterÃ¡ platÃ­ $114x = 15$.
 
 \line(1,0){400}
 
-Poèítá se pomocí rozšíøeného eukleidova algoritmu.
+PoÄÃ­tÃ¡ se pomocÃ­ rozÅ¡Ã­Å™enÃ©ho eukleidova algoritmu.
 
 
 \begin{align*}
@@ -72,27 +74,27 @@ Poèítá se pomocí rozšíøeného eukleidova algoritmu.
 114 & = 2\cdot 39 + 36 						& 36 	&= 114-2\cdot 39 = 114 + 4\cdot 114 - 267 \cdot 2 \\
 39  & = 1\cdot 36 + \underline{3}	& 3 	&= 39 - 36 = 3\cdot 267 - 7 \cdot 114 \\
 \end{align*}
-Na levé stranì vyšla trojka, co znamená, e nejmenší spoleènı dìlitel $114$ a $267$ (\emph{gcd}) je $3$. Na pravé stranì (Bezoutova nerovnost) pak mám tu trojku vyjádøenou pomocí násobkù $114$ a $267$.
+Na levÃ© stranÄ› vyÅ¡la trojka, coÅ¾ znamenÃ¡, Å¾e nejmenÅ¡Ã­ spoleÄnÃ½ dÄ›litel $114$ a $267$ (\emph{gcd}) je $3$. Na pravÃ© stranÄ› (Bezoutova nerovnost) pak mÃ¡m tu trojku vyjÃ¡dÅ™enou pomocÃ­ nÃ¡sobkÅ¯ $114$ a $267$.
 
-Jeliko $c = gcd(114,267)$ dìlí $d = 15$, pak rovnice má tolik øešení, kolik je $c$. V tomto pøípadì tedy $3$. Dále musím vyjádøit $d$ pomocí násobkù $114$ a $267$. Vydìlím tedy $d/c$ a získám èíslo $5$, kterım vynásobím Bezoutovu nerovnost. Tedy
+JelikoÅ¾ $c = gcd(114,267)$ dÄ›lÃ­ $d = 15$, pak rovnice mÃ¡ tolik Å™eÅ¡enÃ­, kolik je $c$. V tomto pÅ™Ã­padÄ› tedy $3$. DÃ¡le musÃ­m vyjÃ¡dÅ™it $d$ pomocÃ­ nÃ¡sobkÅ¯ $114$ a $267$. VydÄ›lÃ­m tedy $d/c$ a zÃ­skÃ¡m ÄÃ­slo $5$, kterÃ½m vynÃ¡sobÃ­m Bezoutovu nerovnost. Tedy
 
 $$15 = 5\cdot 3 = 5\cdot (3\cdot 267 - 7 \cdot 114) = 15\cdot 267 - 35\cdot 114$$
 
-Tím jsem získal partikulární øešení rovnice: $(x_p, y_p) = (-35, 15)$ (protoe $267$ je u $y$ a $114$ u $x$).
-Nyní hledám nesoudìlné øešení homogenní rovnice. To najdu tak, e vezmu zadanou rovnici a na levou stranu napíšu $0$. Pak ji vyøeším a dostanu nìjaké koeficienty u $x$ a $y$:
+TÃ­m jsem zÃ­skal partikulÃ¡rnÃ­ Å™eÅ¡enÃ­ rovnice: $(x_p, y_p) = (-35, 15)$ (protoÅ¾e $267$ je u $y$ a $114$ u $x$).
+NynÃ­ hledÃ¡m nesoudÄ›lnÃ© Å™eÅ¡enÃ­ homogennÃ­ rovnice. To najdu tak, Å¾e vezmu zadanou rovnici a na levou stranu napÃ­Å¡u $0$. Pak ji vyÅ™eÅ¡Ã­m a dostanu nÄ›jakÃ© koeficienty u $x$ a $y$:
 
 \begin{align*}
 114x + 267y &= 0 & \cdot 3^{-1} \\
 38x + 89y & = 0 
 \end{align*} 
   
-Z této rovnice snadno vyètu, e aby se pravá strana rovnala nule, na levé stranì musí $x = 89$ a $y = -38$. Z toho tedy $(x_0, y_0) = (89, -38)$.
-Celkové øešení v $\mathbb{Z}$ je tedy
+Z tÃ©to rovnice snadno vyÄtu, Å¾e aby se pravÃ¡ strana rovnala nule, na levÃ© stranÄ› musÃ­ $x = 89$ a $y = -38$. Z toho tedy $(x_0, y_0) = (89, -38)$.
+CelkovÃ© Å™eÅ¡enÃ­ v $\mathbb{Z}$ je tedy
 
 $$ (x, y) = (x_p, y_p) + k\cdot (x_0, y_0), k \in \mathbb{Z} $$
-V tomto pøípadì
+V tomto pÅ™Ã­padÄ›
 $$ (x, y) = (-35, 15) + k\cdot (89, -38),k \in \mathbb{Z} $$
-A pro $\mathbb{Z}_{267}$ má $x$ tøi øešení:
+A pro $\mathbb{Z}_{267}$ mÃ¡ $x$ tÅ™i Å™eÅ¡enÃ­:
 
 \begin{align*}
 x_1 &= -35 + 1\cdot 89 = \underline{54} \\
@@ -101,17 +103,17 @@ x_3 &= -35 + 3\cdot 89 = \underline{232}
 \end{align*} 
 
 %---------------------------------------Priklad 2-------------------------------- 
-\subsection{Pøíklad 2}
-Spoètìte $18^{-1}$ a $19^{-1}$ v $\mathbb{Z}_{26}$, pokud existují.
+\subsection{PÅ™Ã­klad 2}
+SpoÄtÄ›te $18^{-1}$ a $19^{-1}$ v $\mathbb{Z}_{26}$, pokud existujÃ­.
 
 \line(1,0){400}
 
-Aby k nìjakému prvku existoval inverz, musí bıt nejvìtší spoleènı dìlitel toho prvku a základu soustavy 1. Jinımi slovy, prvek $a$ v $\mathbb{Z}_m$ má inverzi právì tehdy, kdy platí
+Aby k nÄ›jakÃ©mu prvku existoval inverz, musÃ­ bÃ½t nejvÄ›tÅ¡Ã­ spoleÄnÃ½ dÄ›litel toho prvku a zÃ¡kladu soustavy 1. JinÃ½mi slovy, prvek $a$ v $\mathbb{Z}_m$ mÃ¡ inverzi prÃ¡vÄ› tehdy, kdyÅ¾ platÃ­
 \begin{equation}
 	 \gcd(a,m) = 1.
 \end{equation}
 
-Jeliko $\gcd(18,26) = 2$, $18$ nemá v $\mathbb{Z}_{26}$ inverzi. $19$ inverzi má, spoèítat se dá pomocí eukleidova algoritmu:
+JelikoÅ¾ $\gcd(18,26) = 2$, $18$ nemÃ¡ v $\mathbb{Z}_{26}$ inverzi. $19$ inverzi mÃ¡, spoÄÃ­tat se dÃ¡ pomocÃ­ eukleidova algoritmu:
 
 \begin{align*}
 19x + 26y = 15 \mbox{ v } \mathbb{Z}&  	& 		&  \\
@@ -121,27 +123,27 @@ Jeliko $\gcd(18,26) = 2$, $18$ nemá v $\mathbb{Z}_{26}$ inverzi. $19$ inverzi m
 5  & = 2\cdot 2 + 1						& 1 	&= 5 - 2\cdot 2 = \underline{11}\cdot 19 + (-8) \cdot 26 \\
 \end{align*}
 
-Jeliko $1 = 11\cdot 19$ v $\mathbb{Z}_{26}$, $19^{-1} = 11$ v $\mathbb{Z}_{26}$.
+JelikoÅ¾ $1 = 11\cdot 19$ v $\mathbb{Z}_{26}$, $19^{-1} = 11$ v $\mathbb{Z}_{26}$.
 
 %---------------------------------------Priklad 3-------------------------------- 
-\subsection{Pøíklad 3}
-Spoètìte zbytky po dìlení èísel $49^{107}$ a $6^{22}$ èíslem $40$.
+\subsection{PÅ™Ã­klad 3}
+SpoÄtÄ›te zbytky po dÄ›lenÃ­ ÄÃ­sel $49^{107}$ a $6^{22}$ ÄÃ­slem $40$.
 
 \line(1,0){400}
 
-Tady se dá s úspìhem pouít Euler-Fermatova vìta\footnote{Velebil to ve skriptech nazıvá jen Eulerova vìta, na wikipedii se to nazıvá zase jen Malá Fermatova vìta - malá Fermatova vìta je vyslovena jen pro poèítání modulo prvoèíslo, Euler ji zobecnil pro libovolné $n$}:
-Je-li $\gcd(a,m) = 1$, potom platí
+Tady se dÃ¡ s ÃºspÄ›hem pouÅ¾Ã­t Euler-Fermatova vÄ›ta\footnote{Velebil to ve skriptech nazÃ½vÃ¡ jen Eulerova vÄ›ta, na wikipedii se to nazÃ½vÃ¡ zase jen MalÃ¡ Fermatova vÄ›ta - malÃ¡ Fermatova vÄ›ta je vyslovena jen pro poÄÃ­tÃ¡nÃ­ modulo prvoÄÃ­slo, Euler ji zobecnil pro libovolnÃ© $n$}:
+Je-li $\gcd(a,m) = 1$, potom platÃ­
 \begin{equation}
 a^{\varphi(m)} = 1 \mbox{ v } \mathbb{Z}_m
 \label{euler-fermat}
 \end{equation}
-Dál si musím uvìdomit, e $49^{107}$ se dá napsat jako 
+DÃ¡l si musÃ­m uvÄ›domit, Å¾e $49^{107}$ se dÃ¡ napsat jako 
 $$ \underbrace{49\cdot 49 \cdots}_{107 \times} = (49 \mbox{ mod } 40)^{107} = 9^{107} \mbox{ v } \mathbb{Z}_{40}.$$
-Dál umím vypoèítat $\varphi(40) = \varphi(2^3\cdot5) = (8-4)\cdot 4 = 16$. Teï tedy mùu pouít E-F (Euler-Fermat):
+DÃ¡l umÃ­m vypoÄÃ­tat $\varphi(40) = \varphi(2^3\cdot5) = (8-4)\cdot 4 = 16$. TeÄ tedy mÅ¯Å¾u pouÅ¾Ã­t E-F (Euler-Fermat):
 
 $$9^{107} = 9^{6\cdot 16 + 11} \stackrel{E-F}{\rightarrow} 9^{11} = 9\cdot(9^2)^5 = 9\cdot{81^5} = 9\cdot 1^5 = \underline{9}$$
 
-Podobnì ovšem nemùu postupovat v tomhle pøípadì, jeliko základ 6 je soudìlnı s tím, kolik modulo se poèítá (tj. 40), neboli $\gcd(6,40) \neq 1$. Proto mi nezbıvá nic jiného, ne pouít rovnou opakované ètverce, $22 = 1\cdot16 + 0\cdot8 + 1\cdot4 + 1\cdot2 + 0\cdot1$:
+PodobnÄ› ovÅ¡em nemÅ¯Å¾u postupovat v tomhle pÅ™Ã­padÄ›, jelikoÅ¾ zÃ¡klad 6 je soudÄ›lnÃ½ s tÃ­m, kolik modulo se poÄÃ­tÃ¡ (tj. 40), neboli $\gcd(6,40) \neq 1$. Proto mi nezbÃ½vÃ¡ nic jinÃ©ho, neÅ¾ pouÅ¾Ã­t rovnou opakovanÃ© Ätverce, $22 = 1\cdot16 + 0\cdot8 + 1\cdot4 + 1\cdot2 + 0\cdot1$:
 
 \begin{center}  % put inside center environment
   \begin{tabular}{c|c|c|c|c|c|c|c|c}
@@ -150,7 +152,7 @@ Podobnì ovšem nemùu postupovat v tomhle pøípadì, jeliko základ 6 je soudìlnı s
 	\end{tabular}
 \end{center}
 
-Jinımi slovy, rozepsal jsem si $22$ do binární podoby, mezi kadou èíslici jsem vepsal $S$ a tam, kde je jednièka, jsem napsal $X$. Teï to napíšu pod sebe (nejlevìjší $X$ je nahoøe, nejpravìjší dole) a dostanu: 
+JinÃ½mi slovy, rozepsal jsem si $22$ do binÃ¡rnÃ­ podoby, mezi kaÅ¾dou ÄÃ­slici jsem vepsal $S$ a tam, kde je jedniÄka, jsem napsal $X$. TeÄ to napÃ­Å¡u pod sebe (nejlevÄ›jÅ¡Ã­ $X$ je nahoÅ™e, nejpravÄ›jÅ¡Ã­ dole) a dostanu: 
 \begin{center}
 	\begin{tabular}{c|l}
 		X & $6^1 = 6$ \\
@@ -165,21 +167,21 @@ Jinımi slovy, rozepsal jsem si $22$ do binární podoby, mezi kadou èíslici jsem 
 
 
 %---------------------------------------Priklad 4-------------------------------- 
-\subsection{\label{priklad1-4}Pøíklad 4}
-Najdìte pøirozené èíslo $x$ takové, e platí:
+\subsection{\label{priklad1-4}PÅ™Ã­klad 4}
+NajdÄ›te pÅ™irozenÃ© ÄÃ­slo $x$ takovÃ©, Å¾e platÃ­:
 
 $$x\equiv 2\imod{8}, x\equiv 5\imod{11}, x\equiv 7\imod{15}$$
 
 \line(1,0){400}
 
-Tady pøichází na øadu Èínská vìta o zbytcích. Pokud si to nahoøe napíšu jako $x\equiv a_1\imod{m_1}$, pak postup je následující:
+Tady pÅ™ichÃ¡zÃ­ na Å™adu ÄŒÃ­nskÃ¡ vÄ›ta o zbytcÃ­ch. Pokud si to nahoÅ™e napÃ­Å¡u jako $x\equiv a_1\imod{m_1}$, pak postup je nÃ¡sledujÃ­cÃ­:
 \begin{enumerate}
-	\item Najdu èíslo $M$, $M = m_1\cdot m_2 \cdots m_k$.
-	\item Pro kadé $m_i$ si najdu èíslo $\displaystyle q_i = s\cdot \prod_{j \neq i}m_j$, kde  $s = \left( \displaystyle \prod_{j \neq i}m_j \right)^{-1}$ v $\mathbb{Z}_{m_i}$
-	\item Celkovı vısledek bude $a_1 \cdot q_1 + a_2 \cdot q_2 \cdots a_k \cdot q_k$ v $\mathbb{Z}_M$ 
+	\item Najdu ÄÃ­slo $M$, $M = m_1\cdot m_2 \cdots m_k$.
+	\item Pro kaÅ¾dÃ© $m_i$ si najdu ÄÃ­slo $\displaystyle q_i = s\cdot \prod_{j \neq i}m_j$, kde  $s = \left( \displaystyle \prod_{j \neq i}m_j \right)^{-1}$ v $\mathbb{Z}_{m_i}$
+	\item CelkovÃ½ vÃ½sledek bude $a_1 \cdot q_1 + a_2 \cdot q_2 \cdots a_k \cdot q_k$ v $\mathbb{Z}_M$ 
 \end{enumerate}
 
-V tomhle pøípadì tedy $M = 8\cdot 11\cdot 15 = 1320$ a 
+V tomhle pÅ™Ã­padÄ› tedy $M = 8\cdot 11\cdot 15 = 1320$ a 
 
 \begin{align*}
 q_1 & = s_1\cdot 11 \cdot 15 = s_1 \cdot 168 = s_1 \cdot 5		& \left[ 5\right]^{-1}_8 = 5\\
@@ -190,17 +192,17 @@ q_3 & = 8 \cdot 11 \cdot s_3 = s_3 \cdot 88 = s_3 \cdot 13		& \left[ 13\right]^{
 		& = 8 \cdot 11 \cdot 7 = 616 & \\
 \end{align*}
 
-Mimochodem, je lepší si psát místo tøeba $q_1$, $q_2$ atd. spíš $q_8$, $q_{11}$ atd., protoe èlovìk pak pøesnì ví, v kterém $\mathbb{Z}$ poèítá ty inverzy.
+Mimochodem, je lepÅ¡Ã­ si psÃ¡t mÃ­sto tÅ™eba $q_1$, $q_2$ atd. spÃ­Å¡ $q_8$, $q_{11}$ atd., protoÅ¾e ÄlovÄ›k pak pÅ™esnÄ› vÃ­, v kterÃ©m $\mathbb{Z}$ poÄÃ­tÃ¡ ty inverzy.
 
-Po vynásobení to dá $2\cdot 825 - 5\cdot 120 + 7\cdot 616 = 5362 = 82$ v $\mathbb{Z}_{1320}$, co se dá napsat jako $$\underline{x = 82 + 1320k, k \in \mathbb{Z}}$$
+Po vynÃ¡sobenÃ­ to dÃ¡ $2\cdot 825 - 5\cdot 120 + 7\cdot 616 = 5362 = 82$ v $\mathbb{Z}_{1320}$, coÅ¾ se dÃ¡ napsat jako $$\underline{x = 82 + 1320k, k \in \mathbb{Z}}$$
 
 %---------------------------------------Priklad 5-------------------------------- 
-\subsection{\label{priklad1-5}Pøíklad 5}
-Urèete øád prvku $11$ v aditivní grupì $(\mathbb{Z}_{26},+)$ a øád prvku $11$ v multiplikativní grupì $(\mathbb{Z}_{26}^{*},\cdot)$ všech invertibilních prvkù v $\mathbb{Z}_{26}$.
+\subsection{\label{priklad1-5}PÅ™Ã­klad 5}
+UrÄete Å™Ã¡d prvku $11$ v aditivnÃ­ grupÄ› $(\mathbb{Z}_{26},+)$ a Å™Ã¡d prvku $11$ v multiplikativnÃ­ grupÄ› $(\mathbb{Z}_{26}^{*},\cdot)$ vÅ¡ech invertibilnÃ­ch prvkÅ¯ v $\mathbb{Z}_{26}$.
 
 \line(1,0){400}
 
-V obou pøípadech hledám prvek, kterı dokáe vygenerovat všechny ostatní, a to tak, e na nìj aplikuju operaci $\oplus$ tolikrát, kolik je prvkù v grupì. Pokud mi po $n$ opakováních té operace dá neutrální prvek vzhledem k operaci $\oplus$, tak $n$ je jeho øád. Aditivní grupa je taková, kde se ty prvky sèítají, a poèet prvkù je tedy $26$. Multiplikativní grupa je taková, kdy prvky umocòuji, a prvkù takové mnoiny (invertibilních) je $\varphi(26) = \varphi(2 \cdot 13) = 12$ (protoe eulerova funkce mi dává poèet prvkù nesoudìlnıch s danım èíslem, a prvek $a$ je invertibilní, pokud má $gcd(a, m) = 1$ v $\mathbb{Z}_m$) Zkusím tedy na $11$ (zadaná) aplikovat operaci $\cdot$ (v $\mathbb{Z}_{26}$):
+V obou pÅ™Ã­padech hledÃ¡m prvek, kterÃ½ dokÃ¡Å¾e vygenerovat vÅ¡echny ostatnÃ­, a to tak, Å¾e na nÄ›j aplikuju operaci $\oplus$ tolikrÃ¡t, kolik je prvkÅ¯ v grupÄ›. Pokud mi po $n$ opakovÃ¡nÃ­ch tÃ© operace dÃ¡ neutrÃ¡lnÃ­ prvek vzhledem k operaci $\oplus$, tak $n$ je jeho Å™Ã¡d. AditivnÃ­ grupa je takovÃ¡, kde se ty prvky sÄÃ­tajÃ­, a poÄet prvkÅ¯ je tedy $26$. MultiplikativnÃ­ grupa je takovÃ¡, kdy prvky umocÅˆuji, a prvkÅ¯ takovÃ© mnoÅ¾iny (invertibilnÃ­ch) je $\varphi(26) = \varphi(2 \cdot 13) = 12$ (protoÅ¾e eulerova funkce mi dÃ¡vÃ¡ poÄet prvkÅ¯ nesoudÄ›lnÃ½ch s danÃ½m ÄÃ­slem, a prvek $a$ je invertibilnÃ­, pokud mÃ¡ $gcd(a, m) = 1$ v $\mathbb{Z}_m$) ZkusÃ­m tedy na $11$ (zadanÃ¡) aplikovat operaci $\cdot$ (v $\mathbb{Z}_{26}$):
 
 \begin{align*}
 11^1 & = 11\\
@@ -217,21 +219,21 @@ V obou pøípadech hledám prvek, kterı dokáe vygenerovat všechny ostatní, a to ta
 11^{12} & = 19\cdot 11 = 209 = 1\\
 \end{align*}
 
-Vidím, e mi vygenerovala $12$ prvkù, její øád je tedy $\underline{r(a) = 12}$. Vzhledem k tomu, e její øád je roven poètu prvkù mnoiny, je i její \underline{generátor}.
+VidÃ­m, Å¾e mi vygenerovala $12$ prvkÅ¯, jejÃ­ Å™Ã¡d je tedy $\underline{r(a) = 12}$. Vzhledem k tomu, Å¾e jejÃ­ Å™Ã¡d je roven poÄtu prvkÅ¯ mnoÅ¾iny, je i jejÃ­ \underline{generÃ¡tor}.
 
-Vıpoèet se dá vıraznì zjednodušit, kdy si uvìdomím, e øád prvku musí bıt dìlitelem poètu prvkù grupy, v tomto pøípadì tedy staèí ovìøit jen øády 1, 2, 3, 4, 6 (a 12 u ani nemusím, protoe to jsou to zbylé).
+VÃ½poÄet se dÃ¡ vÃ½raznÄ› zjednoduÅ¡it, kdyÅ¾ si uvÄ›domÃ­m, Å¾e Å™Ã¡d prvku musÃ­ bÃ½t dÄ›litelem poÄtu prvkÅ¯ grupy, v tomto pÅ™Ã­padÄ› tedy staÄÃ­ ovÄ›Å™it jen Å™Ã¡dy 1, 2, 3, 4, 6 (a 12 uÅ¾ ani nemusÃ­m, protoÅ¾e to jsou to zbylÃ©).
  
-Co se tıèe aditivní grupy, vıpoèet by vypadal podobnì, jen by tam bylo $11\cdot 1, 11\cdot 2, \cdots, 11\cdot 26$, kde $11\cdot 26 = 0$. Take $11$ je i její generátor, protoe dokázala vygenerovat 26 prvkù; $\underline{r(a) = 26}$. Stejnì tak i tady staèí vyzkoušet øády 1,2 a 13.
+Co se tÃ½Äe aditivnÃ­ grupy, vÃ½poÄet by vypadal podobnÄ›, jen by tam bylo $11\cdot 1, 11\cdot 2, \cdots, 11\cdot 26$, kde $11\cdot 26 = 0$. TakÅ¾e $11$ je i jejÃ­ generÃ¡tor, protoÅ¾e dokÃ¡zala vygenerovat 26 prvkÅ¯; $\underline{r(a) = 26}$. StejnÄ› tak i tady staÄÃ­ vyzkouÅ¡et Å™Ã¡dy 1,2 a 13.
 
 %---------------------------------------Priklad 6-------------------------------- 
-\subsection{\label{priklad1-6}Pøíklad 6}
-Najdìte všechny generátory grupy $(\mathbb{Z}_{13}^{*},\cdot)$. Kolik rùznıch generátorù má tato grupa?
+\subsection{\label{priklad1-6}PÅ™Ã­klad 6}
+NajdÄ›te vÅ¡echny generÃ¡tory grupy $(\mathbb{Z}_{13}^{*},\cdot)$. Kolik rÅ¯znÃ½ch generÃ¡torÅ¯ mÃ¡ tato grupa?
 
 \line(1,0){400}
 
-Cyklická grupa má $\varphi(r)$ generátorù øádu $r$ (kde $r$ je soudìlné s velikostí grupy), take generátorù øádu $|M|$ je $\varphi(|M|)$, co je $\varphi(\varphi(13)) = \varphi(12) = \underline{4}$ (ta hvìzdièka nad $\mathbb{Z}$ znamená, e je to grupa invertibilních prvkù). Abych našel prvky zadaného øádu, tak musím najít generátor grupy. To se bohuel dá dìlat pouze postupnım zkoušením, pøièem pravdìpodobnost, e se trefím, je $\frac{\mbox{poèet generátorù grupy}}{\mbox{poèet prvkù grupy}} = \frac{4}{12} = 1/3$.
+CyklickÃ¡ grupa mÃ¡ $\varphi(r)$ generÃ¡torÅ¯ Å™Ã¡du $r$ (kde $r$ je soudÄ›lnÃ© s velikostÃ­ grupy), takÅ¾e generÃ¡torÅ¯ Å™Ã¡du $|M|$ je $\varphi(|M|)$, coÅ¾ je $\varphi(\varphi(13)) = \varphi(12) = \underline{4}$ (ta hvÄ›zdiÄka nad $\mathbb{Z}$ znamenÃ¡, Å¾e je to grupa invertibilnÃ­ch prvkÅ¯). Abych naÅ¡el prvky zadanÃ©ho Å™Ã¡du, tak musÃ­m najÃ­t generÃ¡tor grupy. To se bohuÅ¾el dÃ¡ dÄ›lat pouze postupnÃ½m zkouÅ¡enÃ­m, pÅ™iÄemÅ¾ pravdÄ›podobnost, Å¾e se trefÃ­m, je $\frac{\mbox{poÄet generÃ¡torÅ¯ grupy}}{\mbox{poÄet prvkÅ¯ grupy}} = \frac{4}{12} = 1/3$.
 
-Take zaènu postupnì zkoušet všechny prvky grupy. Jednièka generátor evidentnì nebude, protoe $1^{\mbox{cokoliv}} = 1$. Její øád je tedy $1$. Zkusím dvojku (v $\mathbb{Z}_{13}$):
+TakÅ¾e zaÄnu postupnÄ› zkouÅ¡et vÅ¡echny prvky grupy. JedniÄka generÃ¡tor evidentnÄ› nebude, protoÅ¾e $1^{\mbox{cokoliv}} = 1$. JejÃ­ Å™Ã¡d je tedy $1$. ZkusÃ­m dvojku (v $\mathbb{Z}_{13}$):
 
 \begin{align*}
 2^1 & = 2\\
@@ -248,94 +250,94 @@ Take zaènu postupnì zkoušet všechny prvky grupy. Jednièka generátor evidentnì n
 2^{12} & = 1
 \end{align*}
 
-Stejnì jako minule se to dá vıraznì zjednodušit, kdy budu zkoušet jen øády soudìlné s poètem prvkù grupy.
+StejnÄ› jako minule se to dÃ¡ vÃ½raznÄ› zjednoduÅ¡it, kdyÅ¾ budu zkouÅ¡et jen Å™Ã¡dy soudÄ›lnÃ© s poÄtem prvkÅ¯ grupy.
 
-Dostal jsem celou mnoinu èísel, jejich $\gcd(a,13) = 1$. $2$ je tedy generátor. Mimo dvojky ještì ovšem musí existovat další generátory, protoe jsem si nahoøe spoèítal, e jsou celkem ètyøi. Ty další mùu najít buï zase systémem BruteForce\texttrademark, co je ponìkud zdlouhavé, nebo pomocí vzorce
+Dostal jsem celou mnoÅ¾inu ÄÃ­sel, jejichÅ¾ $\gcd(a,13) = 1$. $2$ je tedy generÃ¡tor. Mimo dvojky jeÅ¡tÄ› ovÅ¡em musÃ­ existovat dalÅ¡Ã­ generÃ¡tory, protoÅ¾e jsem si nahoÅ™e spoÄÃ­tal, Å¾e jsou celkem ÄtyÅ™i. Ty dalÅ¡Ã­ mÅ¯Å¾u najÃ­t buÄ zase systÃ©mem BruteForce\texttrademark, coÅ¾ je ponÄ›kud zdlouhavÃ©, nebo pomocÃ­ vzorce
 
 \begin{equation}
 	r(a^k) = \frac{r(a)}{\gcd(r(a), k)}
 	\label{rady-prvku}
 \end{equation}
 
-V tomto pøípadì, mám prvek $2^1$, $r(2^1) = 12$, a hledám další prvky, jejich øád je taky $12$. Jinımi slovy, øeším rovnici pro $k$:
+V tomto pÅ™Ã­padÄ›, mÃ¡m prvek $2^1$, $r(2^1) = 12$, a hledÃ¡m dalÅ¡Ã­ prvky, jejichÅ¾ Å™Ã¡d je taky $12$. JinÃ½mi slovy, Å™eÅ¡Ã­m rovnici pro $k$:
 
 $$r(2^1) = \frac{12}{\gcd(12, k)} = 12$$
 
-Z toho vyplıvá, e $k$ budou všechna èísla nesoudìlná s $12$. Tedy $k \in \{1, 5, 7, 11\}$ a ty generátory jsou $\{2^1, 2^5, 2^7, 2^{11}\} = $ (podle tabulky, co jsem si vytvoøil nahoøe) $\underline{\{2, 6, 11, 7\}}$.  
+Z toho vyplÃ½vÃ¡, Å¾e $k$ budou vÅ¡echna ÄÃ­sla nesoudÄ›lnÃ¡ s $12$. Tedy $k \in \{1, 5, 7, 11\}$ a ty generÃ¡tory jsou $\{2^1, 2^5, 2^7, 2^{11}\} = $ (podle tabulky, co jsem si vytvoÅ™il nahoÅ™e) $\underline{\{2, 6, 11, 7\}}$.  
 
 %---------------------------------------Priklad 7-------------------------------- 
-\subsection{Pøíklad 7}
-Najdìte všechny generátory grupy $(\mathbb{Z}_{13},+)$. Kolik rùznıch generátorù má tato cyklická grupa?
+\subsection{PÅ™Ã­klad 7}
+NajdÄ›te vÅ¡echny generÃ¡tory grupy $(\mathbb{Z}_{13},+)$. Kolik rÅ¯znÃ½ch generÃ¡torÅ¯ mÃ¡ tato cyklickÃ¡ grupa?
 
 \line(1,0){400}
 
-Pøíklad v zásadì stejnı jako \ref{priklad1-5}. Pro kadou cyklickou grupu platí, e cyklická grupa øádu $n$ má právì $\varphi(n)$ rùznıch generátorù, zde tedy cyklická grupa øádu $13$ má $\underline{12}$ rùznıch generátorù (a jsou to \underline{všechny její prvky kromì nuly}).
+PÅ™Ã­klad v zÃ¡sadÄ› stejnÃ½ jako \ref{priklad1-5}. Pro kaÅ¾dou cyklickou grupu platÃ­, Å¾e cyklickÃ¡ grupa Å™Ã¡du $n$ mÃ¡ prÃ¡vÄ› $\varphi(n)$ rÅ¯znÃ½ch generÃ¡torÅ¯, zde tedy cyklickÃ¡ grupa Å™Ã¡du $13$ mÃ¡ $\underline{12}$ rÅ¯znÃ½ch generÃ¡torÅ¯ (a jsou to \underline{vÅ¡echny jejÃ­ prvky kromÄ› nuly}).
 
 %---------------------------------------Priklad 8-------------------------------- 
-\subsection{\label{priklad1-8}Pøíklad 8}
-Vypište všechny podgrupy multiplikativní grupy $(\mathbb{Z}_{13}^{*},\cdot)$. Nejdøíve si uvìdomte, kolik prvkù tyto podgrupy mohou mít.
+\subsection{\label{priklad1-8}PÅ™Ã­klad 8}
+VypiÅ¡te vÅ¡echny podgrupy multiplikativnÃ­ grupy $(\mathbb{Z}_{13}^{*},\cdot)$. NejdÅ™Ã­ve si uvÄ›domte, kolik prvkÅ¯ tyto podgrupy mohou mÃ­t.
 
 \line(1,0){400}
 
-Øád pogrupy $d$ musí dìlit øád grupy, tedy $d | \varphi(13) = 12$. Øády podgrup tedy mohou bıt ${1,2,3,4,6,12}$ (pogrupa øádu $r$ je generována prvky øádu $r$). Podgrupa øádu $12$ je tedy celá grupa, pogrupa øádu $1$ bude generována prvkem $1$. U tìch ostatních musím najít generátory daného øádu, v pøíkladu \ref{priklad1-6} u jsem našel generátor øádu $12$, co je dvojka. Z toho u se dají dost jednoduše najít generátory poadovaného øádu: pouitím vzorce \ref{rady-prvku} dopoèítám ostatní:
+Å˜Ã¡d pogrupy $d$ musÃ­ dÄ›lit Å™Ã¡d grupy, tedy $d | \varphi(13) = 12$. Å˜Ã¡dy podgrup tedy mohou bÃ½t ${1,2,3,4,6,12}$ (pogrupa Å™Ã¡du $r$ je generovÃ¡na prvky Å™Ã¡du $r$). Podgrupa Å™Ã¡du $12$ je tedy celÃ¡ grupa, pogrupa Å™Ã¡du $1$ bude generovÃ¡na prvkem $1$. U tÄ›ch ostatnÃ­ch musÃ­m najÃ­t generÃ¡tory danÃ©ho Å™Ã¡du, v pÅ™Ã­kladu \ref{priklad1-6} uÅ¾ jsem naÅ¡el generÃ¡tor Å™Ã¡du $12$, coÅ¾ je dvojka. Z toho uÅ¾ se dajÃ­ dost jednoduÅ¡e najÃ­t generÃ¡tory poÅ¾adovanÃ©ho Å™Ã¡du: pouÅ¾itÃ­m vzorce \ref{rady-prvku} dopoÄÃ­tÃ¡m ostatnÃ­:
 
 \begin{itemize}
-	\item \textbf{Øád 2:} $\frac{12}{\gcd(12, k)} = 2$: $k \in \{6\}, a = 2^6 = 64 = 12 \Rightarrow M_2 = \{1,12\}$
-	\item \textbf{Øád 3:} $\frac{12}{\gcd(12, k)} = 3$: $k \in \{4,8\}, a = 2^4 \wedge 2^8, 2^4 = 16 = 3 \Rightarrow M_3 = \{1, 3, 9\}$
-	\item \textbf{Øád 4:} $\frac{12}{\gcd(12, k)} = 4$: $k \in \{3,9\}, a = 2^3 \wedge 2^9, 2^3 = 8 \Rightarrow M_4 = \{1, 5, 8, 12\}$
-	\item \textbf{Øád 6:} $\frac{12}{\gcd(12, k)} = 6$: $k \in \{2,10\}, a = 2^2 \wedge 2^{10}, 2^2 = 4 \Rightarrow M_6 = \{1, 3, 4, 9, 10, 12\}$
+	\item \textbf{Å˜Ã¡d 2:} $\frac{12}{\gcd(12, k)} = 2$: $k \in \{6\}, a = 2^6 = 64 = 12 \Rightarrow M_2 = \{1,12\}$
+	\item \textbf{Å˜Ã¡d 3:} $\frac{12}{\gcd(12, k)} = 3$: $k \in \{4,8\}, a = 2^4 \wedge 2^8, 2^4 = 16 = 3 \Rightarrow M_3 = \{1, 3, 9\}$
+	\item \textbf{Å˜Ã¡d 4:} $\frac{12}{\gcd(12, k)} = 4$: $k \in \{3,9\}, a = 2^3 \wedge 2^9, 2^3 = 8 \Rightarrow M_4 = \{1, 5, 8, 12\}$
+	\item \textbf{Å˜Ã¡d 6:} $\frac{12}{\gcd(12, k)} = 6$: $k \in \{2,10\}, a = 2^2 \wedge 2^{10}, 2^2 = 4 \Rightarrow M_6 = \{1, 3, 4, 9, 10, 12\}$
 \end{itemize}  
 
 
 %---------------------------------------Priklad 9-------------------------------- 
-\subsection{\label{priklad1-9}Pøíklad 9}
-Vypište všechny podgrupy aditivní grupy $(\mathbb{Z}_{12},+)$. Nejdøíve si uvìdomte, kolik prvkù tyto podgrupy mohou mít.
+\subsection{\label{priklad1-9}PÅ™Ã­klad 9}
+VypiÅ¡te vÅ¡echny podgrupy aditivnÃ­ grupy $(\mathbb{Z}_{12},+)$. NejdÅ™Ã­ve si uvÄ›domte, kolik prvkÅ¯ tyto podgrupy mohou mÃ­t.
 
 \line(1,0){400}
 
-Pøíklad podobnı (dokonce izomorfní :-) ) s \ref{priklad1-8}.
-Øád pogrupy $d$ musí dìlit øád grupy, tedy $d | 12$ (protoe prvkù v grupì je $12$). Øády podgrup tedy mohou bıt ${1,2,3,4,6,12}$ (pogrupa øádu $r$ je generována prvky øádu $r$). Podgrupa øádu $12$ je tedy celá grupa generovaná prvkem $1$ (a grupa $(\mathbb{Z}_{12},+)$ tudí je i cyklická, protoe má generátor). Podgrupa øádu $1$ je zase generována prvkem $0$ (to jsou tzv. \textit{triviální podgrupy}, tedy celá grupa a podgrupa generovaná jednotkovım prvkem). U tìch ostatních musím najít generátory daného øádu. Znám však generátor øádu $12$, co je jednièka. Z toho u se dají dost jednoduše najít generátory poadovaného øádu: pouitím vzorce \ref{rady-prvku} dopoèítám ostatní:
+PÅ™Ã­klad podobnÃ½ (dokonce izomorfnÃ­ :-) ) s \ref{priklad1-8}.
+Å˜Ã¡d pogrupy $d$ musÃ­ dÄ›lit Å™Ã¡d grupy, tedy $d | 12$ (protoÅ¾e prvkÅ¯ v grupÄ› je $12$). Å˜Ã¡dy podgrup tedy mohou bÃ½t ${1,2,3,4,6,12}$ (pogrupa Å™Ã¡du $r$ je generovÃ¡na prvky Å™Ã¡du $r$). Podgrupa Å™Ã¡du $12$ je tedy celÃ¡ grupa generovanÃ¡ prvkem $1$ (a grupa $(\mathbb{Z}_{12},+)$ tudÃ­Å¾ je i cyklickÃ¡, protoÅ¾e mÃ¡ generÃ¡tor). Podgrupa Å™Ã¡du $1$ je zase generovÃ¡na prvkem $0$ (to jsou tzv. \textit{triviÃ¡lnÃ­ podgrupy}, tedy celÃ¡ grupa a podgrupa generovanÃ¡ jednotkovÃ½m prvkem). U tÄ›ch ostatnÃ­ch musÃ­m najÃ­t generÃ¡tory danÃ©ho Å™Ã¡du. ZnÃ¡m vÅ¡ak generÃ¡tor Å™Ã¡du $12$, coÅ¾ je jedniÄka. Z toho uÅ¾ se dajÃ­ dost jednoduÅ¡e najÃ­t generÃ¡tory poÅ¾adovanÃ©ho Å™Ã¡du: pouÅ¾itÃ­m vzorce \ref{rady-prvku} dopoÄÃ­tÃ¡m ostatnÃ­:
 
 \begin{itemize}
-	\item \textbf{Øád 2:} $\frac{12}{\gcd(12, k)} = 2$: $k \in \{6\}, a = 1 \cdot 6 \Rightarrow M_2 = \{0,6\}$
-	\item \textbf{Øád 3:} $\frac{12}{\gcd(12, k)} = 3$: $k \in \{4,8\}, a = 1\cdot 4 \wedge 1 \cdot 8 \Rightarrow M_3 = \{0, 4, 8\}$
-	\item \textbf{Øád 4:} $\frac{12}{\gcd(12, k)} = 4$: $k \in \{3,9\}, a = 1\cdot 3 \wedge 1\cdot 9 \Rightarrow M_4 = \{0, 3, 6, 9\}$
-	\item \textbf{Øád 6:} $\frac{12}{\gcd(12, k)} = 6$: $k \in \{2,10\}, a = 1\cdot 2 \wedge 1 \cdot 10 \Rightarrow M_6 = \{0, 2, 4, 6, 8, 10\}$
+	\item \textbf{Å˜Ã¡d 2:} $\frac{12}{\gcd(12, k)} = 2$: $k \in \{6\}, a = 1 \cdot 6 \Rightarrow M_2 = \{0,6\}$
+	\item \textbf{Å˜Ã¡d 3:} $\frac{12}{\gcd(12, k)} = 3$: $k \in \{4,8\}, a = 1\cdot 4 \wedge 1 \cdot 8 \Rightarrow M_3 = \{0, 4, 8\}$
+	\item \textbf{Å˜Ã¡d 4:} $\frac{12}{\gcd(12, k)} = 4$: $k \in \{3,9\}, a = 1\cdot 3 \wedge 1\cdot 9 \Rightarrow M_4 = \{0, 3, 6, 9\}$
+	\item \textbf{Å˜Ã¡d 6:} $\frac{12}{\gcd(12, k)} = 6$: $k \in \{2,10\}, a = 1\cdot 2 \wedge 1 \cdot 10 \Rightarrow M_6 = \{0, 2, 4, 6, 8, 10\}$
 \end{itemize}  
 
-Zadání pokraèuje:
-"Grupy $(\mathbb{Z}_{13}^{*},\cdot)$ a $(\mathbb{Z}_{12},+)$ jsou izomorfní. Najdìte nìjakı izomorfismus mezi nimi."
+ZadÃ¡nÃ­ pokraÄuje:
+"Grupy $(\mathbb{Z}_{13}^{*},\cdot)$ a $(\mathbb{Z}_{12},+)$ jsou izomorfnÃ­. NajdÄ›te nÄ›jakÃ½ izomorfismus mezi nimi."
 
 \line(1,0){400}
 
-Co to je vlastnì ten \textit{izomorfismus}? Izomorfismus je \textit{bijektivní homomorfismus}. Super. Take další otázka: Co to je homomorfismus?
+Co to je vlastnÄ› ten \textit{izomorfismus}? Izomorfismus je \textit{bijektivnÃ­ homomorfismus}. Super. TakÅ¾e dalÅ¡Ã­ otÃ¡zka: Co to je homomorfismus?
 
 \begin{definice}
 \label{def-homomorfismus}
-Homomorfismus je zobrazení $\phi: A \rightarrow B$ mezi dvìma algebraickımi strukturami stejného typu takové, e pro kadou definovanou operaci $f$ a pro všechna $x_i$ v $A$ platí
+Homomorfismus je zobrazenÃ­ $\phi: A \rightarrow B$ mezi dvÄ›ma algebraickÃ½mi strukturami stejnÃ©ho typu takovÃ©, Å¾e pro kaÅ¾dou definovanou operaci $f$ a pro vÅ¡echna $x_i$ v $A$ platÃ­
 $$\phi(f_A(x_1, \ldots, x_n)) = f_B(\phi(x_1), \ldots, \phi(x_n))$$
 \end{definice}
 
-Pøeloeno do èeštiny, je homomorfismus jakési mapování (zobrazení) mezi dvìma algebraickımi strukturami, které zachovává strukturu. Napøíklad mnoina pøirozenıch èísel s operací sèítání. Funkce, která zachovává sèítání musí splòovat: $f(a + b) = f(a) + f(b)$. Take tøeba $f(x) = 3x$ je jeden takovı homomorfismus, jeliko $f(a + b) = 3(a + b) = 3a + 3b = f(a) + f(b)$. 
-Další pøíklad mùe bıt pro grupoid reálnıch èísel s operací sèítání a grupoid kladnıch reálnıch èísel s operací násobení. Funkce, která bude zachovávat operace musí tedy splòovat $f(a + b) = f(a) \cdot f(b)$, jeliko sèítání je operace v prvním grupoidu a násobení ve druhém. Tuto vlastnost splòuje napø. $f(x) = e^x$: 2 + 3 = 5 se zobrazí na $e^2 \cdot e^3 = e^5$.
+PÅ™eloÅ¾eno do ÄeÅ¡tiny, je homomorfismus jakÃ©si mapovÃ¡nÃ­ (zobrazenÃ­) mezi dvÄ›ma algebraickÃ½mi strukturami, kterÃ© zachovÃ¡vÃ¡ strukturu. NapÅ™Ã­klad mnoÅ¾ina pÅ™irozenÃ½ch ÄÃ­sel s operacÃ­ sÄÃ­tÃ¡nÃ­. Funkce, kterÃ¡ zachovÃ¡vÃ¡ sÄÃ­tÃ¡nÃ­ musÃ­ splÅˆovat: $f(a + b) = f(a) + f(b)$. TakÅ¾e tÅ™eba $f(x) = 3x$ je jeden takovÃ½ homomorfismus, jelikoÅ¾ $f(a + b) = 3(a + b) = 3a + 3b = f(a) + f(b)$. 
+DalÅ¡Ã­ pÅ™Ã­klad mÅ¯Å¾e bÃ½t pro grupoid reÃ¡lnÃ½ch ÄÃ­sel s operacÃ­ sÄÃ­tÃ¡nÃ­ a grupoid kladnÃ½ch reÃ¡lnÃ½ch ÄÃ­sel s operacÃ­ nÃ¡sobenÃ­. Funkce, kterÃ¡ bude zachovÃ¡vat operace musÃ­ tedy splÅˆovat $f(a + b) = f(a) \cdot f(b)$, jelikoÅ¾ sÄÃ­tÃ¡nÃ­ je operace v prvnÃ­m grupoidu a nÃ¡sobenÃ­ ve druhÃ©m. Tuto vlastnost splÅˆuje napÅ™. $f(x) = e^x$: 2 + 3 = 5 se zobrazÃ­ na $e^2 \cdot e^3 = e^5$.
 
-U homomorfismù platí, e jestlie existuje neutrální prvek, musí bıt zachován. Take pro první pøíklad, $f(0) = 0$, a $0$ je netrální prvek vùèi sèítání. V druhém pøípadì, $f(0) = 1$, jeliko $0$ je neutrální vùèi sèítání a $1$ vùèi násobení.
+U homomorfismÅ¯ platÃ­, Å¾e jestliÅ¾e existuje neutrÃ¡lnÃ­ prvek, musÃ­ bÃ½t zachovÃ¡n. TakÅ¾e pro prvnÃ­ pÅ™Ã­klad, $f(0) = 0$, a $0$ je netrÃ¡lnÃ­ prvek vÅ¯Äi sÄÃ­tÃ¡nÃ­. V druhÃ©m pÅ™Ã­padÄ›, $f(0) = 1$, jelikoÅ¾ $0$ je neutrÃ¡lnÃ­ vÅ¯Äi sÄÃ­tÃ¡nÃ­ a $1$ vÅ¯Äi nÃ¡sobenÃ­.
 
-Další pøíklad, z Velebilovıch skript \cite{velebil}, je pro pro grupoid $(\mathbb{Z}, \cdot)$ a $(\mathbb{Z}_4, \odot_4)$ (násobení modulo 4). Zobrazení 
+DalÅ¡Ã­ pÅ™Ã­klad, z VelebilovÃ½ch skript \cite{velebil}, je pro pro grupoid $(\mathbb{Z}, \cdot)$ a $(\mathbb{Z}_4, \odot_4)$ (nÃ¡sobenÃ­ modulo 4). ZobrazenÃ­ 
 
 $$[-]_4 : \mathbb{Z} \rightarrow \mathbb{Z}4,$$
-kde $[-]_4$ pøiøazuje kadému èíslu ($[-]$) ze $\mathbb{Z}$ zbytek po dìlení $4$, je homomorfismus. Pokud si toti zkusím dosadit pár èísel, pak pro $[x \cdot y]_4 = [x]_4 \odot_4 [y]_4$ dostanu
+kde $[-]_4$ pÅ™iÅ™azuje kaÅ¾dÃ©mu ÄÃ­slu ($[-]$) ze $\mathbb{Z}$ zbytek po dÄ›lenÃ­ $4$, je homomorfismus. Pokud si totiÅ¾ zkusÃ­m dosadit pÃ¡r ÄÃ­sel, pak pro $[x \cdot y]_4 = [x]_4 \odot_4 [y]_4$ dostanu
 
 \begin{align*}
 [0 \cdot 1]_4 & = [0]_4 \odot_4 [1]_4 & \Rightarrow 1 = 1 \\
 \underbrace{[50 \cdot 20]_4}_{0} & = \underbrace{\underbrace{[50]_4}_{2} \odot_4 \underbrace{[20]_4}_{2}}_{0} & \Rightarrow  0  = 0
 \end{align*}
 
-(Postup: snaím se najít zobrazení $z$, které splòuje $z(u \oplus_1 v) = z(u) \oplus_2 z(v)$)
+(Postup: snaÅ¾Ã­m se najÃ­t zobrazenÃ­ $z$, kterÃ© splÅˆuje $z(u \oplus_1 v) = z(u) \oplus_2 z(v)$)
 
-Kdy se vrátím k izomorfismu, tak to je tzv. \textit{oboustrannı} homomorfismus. Tudí, je to podmnoina homomorfismù. Definice (jen pro pologrupy, monoidy a grupy!) tedy bude podobná jako u homomorfismu, jen musí existovat k zobrazení $A \rightarrow B$ i inverzní zobrazení $B \rightarrow A$.
+KdyÅ¾ se vrÃ¡tÃ­m k izomorfismu, tak to je tzv. \textit{oboustrannÃ½} homomorfismus. TudÃ­Å¾, je to podmnoÅ¾ina homomorfismÅ¯. Definice (jen pro pologrupy, monoidy a grupy!) tedy bude podobnÃ¡ jako u homomorfismu, jen musÃ­ existovat k zobrazenÃ­ $A \rightarrow B$ i inverznÃ­ zobrazenÃ­ $B \rightarrow A$.
 
-Jako pøíklad izomorfismu se dá (úplnì mimo od matematiky) oznaèit hraní kartami. Dejme tomu, e mám $52$ hracích karet, jejich $4$ barvy (nebo jak se tomu nadává) jsou $\{\heartsuit, \diamondsuit, \spadesuit, \clubsuit\}$. Kdybych si ty $4$ barvy oznaèil místo toho jako $\{\alpha, \beta, \gamma, \epsilon \}$, tak mùu hrát úplnì stejnì, jen si musím zapamatovat, e 
+Jako pÅ™Ã­klad izomorfismu se dÃ¡ (ÃºplnÄ› mimo od matematiky) oznaÄit hranÃ­ kartami. Dejme tomu, Å¾e mÃ¡m $52$ hracÃ­ch karet, jejichÅ¾ $4$ barvy (nebo jak se tomu nadÃ¡vÃ¡) jsou $\{\heartsuit, \diamondsuit, \spadesuit, \clubsuit\}$. Kdybych si ty $4$ barvy oznaÄil mÃ­sto toho jako $\{\alpha, \beta, \gamma, \epsilon \}$, tak mÅ¯Å¾u hrÃ¡t ÃºplnÄ› stejnÄ›, jen si musÃ­m zapamatovat, Å¾e 
 \begin{align*}
 k(\alpha) &= \heartsuit \\
 k(\beta) &= \diamondsuit \\
@@ -343,33 +345,33 @@ k(\gamma) &= \spadesuit \\
 k(\epsilon) &= \clubsuit
 \end{align*}
 
-Zobrazení $k$ je tedy izomorfismus (neboli struktury se a na oznaèení prvkù sobì rovnají).
+ZobrazenÃ­ $k$ je tedy izomorfismus (neboli struktury se aÅ¾ na oznaÄenÃ­ prvkÅ¯ sobÄ› rovnajÃ­).
 
-Další pøíklad izomorfismu jsou tøeba logaritmy. Jak do nás hustili u v EO1 a naposledy PARech, násobení se dá pomocí logaritmu pøevést na sèítání. Take mám dvì grupy. Jedna pro násobení (kladnıch èísel): $G_1 = (\mathbb{R}^+, \cdot , 1, ^{-1})$\footnote{Tohle oznaèení zmamená, e grupa je definovaná na mnoinì $\mathbb{R}^+$, s operací násobení, neutrální prvek je $1$ a inverzi k prvku $x$ vytvoøím aplikací $x^{-1}$} a druhá pro sèítání: $G_2 = (\mathbb{R},+, 0,-)$. Homomorfismus je zobrazení $\exp : \mathbb{R} \rightarrow \mathbb{R}^+$, zadáno pøedpisem $x \mapsto e^x$ (protoe splòuje definici homomorfismu, tedy pro $\forall(x, y): \exp(x + y) = e^{x+y} = e^x\cdot e^y = (\exp x) \cdot (\exp y)$). A je zároveò i izomorfní, protoe
+DalÅ¡Ã­ pÅ™Ã­klad izomorfismu jsou tÅ™eba logaritmy. Jak do nÃ¡s hustili uÅ¾ v EO1 a naposledy PARech, nÃ¡sobenÃ­ se dÃ¡ pomocÃ­ logaritmu pÅ™evÃ©st na sÄÃ­tÃ¡nÃ­. TakÅ¾e mÃ¡m dvÄ› grupy. Jedna pro nÃ¡sobenÃ­ (kladnÃ½ch ÄÃ­sel): $G_1 = (\mathbb{R}^+, \cdot , 1, ^{-1})$\footnote{Tohle oznaÄenÃ­ zmamenÃ¡, Å¾e grupa je definovanÃ¡ na mnoÅ¾inÄ› $\mathbb{R}^+$, s operacÃ­ nÃ¡sobenÃ­, neutrÃ¡lnÃ­ prvek je $1$ a inverzi k prvku $x$ vytvoÅ™Ã­m aplikacÃ­ $x^{-1}$} a druhÃ¡ pro sÄÃ­tÃ¡nÃ­: $G_2 = (\mathbb{R},+, 0,-)$. Homomorfismus je zobrazenÃ­ $\exp : \mathbb{R} \rightarrow \mathbb{R}^+$, zadÃ¡no pÅ™edpisem $x \mapsto e^x$ (protoÅ¾e splÅˆuje definici homomorfismu, tedy pro $\forall(x, y): \exp(x + y) = e^{x+y} = e^x\cdot e^y = (\exp x) \cdot (\exp y)$). A je zÃ¡roveÅˆ i izomorfnÃ­, protoÅ¾e
 
 $$\ln: (\mathbb{R}^+, \cdot , 1, ^{-1}) \rightarrow (\mathbb{R},+, 0,-)$$
-a inverzní zobrazení je $\ln^{-1} = \exp$:
+a inverznÃ­ zobrazenÃ­ je $\ln^{-1} = \exp$:
 $$\exp: (\mathbb{R},+, 0,-) \rightarrow (\mathbb{R}^+, \cdot , 1, ^{-1}).$$
 
-Teï u je koneènì jasné, co se po mnì v poznámce k zadání pøíkladu vlastnì chce. Mám najít takové zobrazení, které pøevede $(\mathbb{Z}_{13}^{*},\cdot)$ na $(\mathbb{Z}_{12},+)$. Prvkù mají obì stejnì $12$, take to asi nìjak pùjde.
+TeÄ uÅ¾ je koneÄnÄ› jasnÃ©, co se po mnÄ› v poznÃ¡mce k zadÃ¡nÃ­ pÅ™Ã­kladu vlastnÄ› chce. MÃ¡m najÃ­t takovÃ© zobrazenÃ­, kterÃ© pÅ™evede $(\mathbb{Z}_{13}^{*},\cdot)$ na $(\mathbb{Z}_{12},+)$. PrvkÅ¯ majÃ­ obÄ› stejnÄ› $12$, takÅ¾e to asi nÄ›jak pÅ¯jde.
 
-$(\mathbb{Z}_{13}^{*},\cdot)$ je generována prvkem 2, tedy $(\mathbb{Z}_{13}^{*},\cdot) = {<}2{>} = \{2^1=2, 2^2=4, 2^3=8, 2^4 = 8,\ldots,2^{12}=1\}$. To si mùu pøedstavit jako zobrazení, které kadému prvku pøiøadí "jakou je mocninou generátoru 2", tedy $f(a)=f(2^k)=k$. To je zøejmì bijekce (jednoznaèné zobrazení, kadı prvek má jednoznaènı obraz a naopak) do $\mathbb{Z}_{12}$. Teï musím ovìøit, e se skuteènì jedná o homomorfismus. To znamená, e respektuje binární operace, neutrály a inverzy se pak podle vìty z pøednášky respektují automaticky:
+$(\mathbb{Z}_{13}^{*},\cdot)$ je generovÃ¡na prvkem 2, tedy $(\mathbb{Z}_{13}^{*},\cdot) = {<}2{>} = \{2^1=2, 2^2=4, 2^3=8, 2^4 = 8,\ldots,2^{12}=1\}$. To si mÅ¯Å¾u pÅ™edstavit jako zobrazenÃ­, kterÃ© kaÅ¾dÃ©mu prvku pÅ™iÅ™adÃ­ "jakou je mocninou generÃ¡toru 2", tedy $f(a)=f(2^k)=k$. To je zÅ™ejmÄ› bijekce (jednoznaÄnÃ© zobrazenÃ­, kaÅ¾dÃ½ prvek mÃ¡ jednoznaÄnÃ½ obraz a naopak) do $\mathbb{Z}_{12}$. TeÄ musÃ­m ovÄ›Å™it, Å¾e se skuteÄnÄ› jednÃ¡ o homomorfismus. To znamenÃ¡, Å¾e respektuje binÃ¡rnÃ­ operace, neutrÃ¡ly a inverzy se pak podle vÄ›ty z pÅ™ednÃ¡Å¡ky respektujÃ­ automaticky:
 
-Dejme tomu, e $a = 2^k, b = 2^l$ jsou prvky ze $\mathbb{Z}_{13}^{*}$.
+Dejme tomu, Å¾e $a = 2^k, b = 2^l$ jsou prvky ze $\mathbb{Z}_{13}^{*}$.
 \[ f(a\cdot b) = f(2^k \cdot 2^l) = k + l = f(2^k) + f(2^l) = f(a) + f(b) \]
 
-Jinımi slovy, násobení mezi vzory (operace v grupì, z ní zobrazuji), se pøevede na sèítání mezi obrazy (co je operace v grupì, do ní zobrazuji). Dostal jsem tedy homomorfismus.   
+JinÃ½mi slovy, nÃ¡sobenÃ­ mezi vzory (operace v grupÄ›, z nÃ­Å¾ zobrazuji), se pÅ™evede na sÄÃ­tÃ¡nÃ­ mezi obrazy (coÅ¾ je operace v grupÄ›, do nÃ­Å¾ zobrazuji). Dostal jsem tedy homomorfismus.   
 
-Podrobnìji viz kapitola \ref{kapitola4}.
+PodrobnÄ›ji viz kapitola \ref{kapitola4}.
 
 
 %---------------------------------------Priklad 10-------------------------------- 
-\subsection{Pøíklad 10}
-Nejdìte øády všech prvkù v $(\mathbb{Z}_{11}^*, \cdot)$.
+\subsection{PÅ™Ã­klad 10}
+NejdÄ›te Å™Ã¡dy vÅ¡ech prvkÅ¯ v $(\mathbb{Z}_{11}^*, \cdot)$.
 
 \line(1,0){400}
 
-Pøíklad podobnı asi tøem minulım, v zásadì spoèívá pouze v nalezení generátoru a pak dopoèítání øádù prvkù podle \ref{rady-prvku}. Vím, e $r(1) = 1$. Standardnì zkouším dvojku, která zatím vdycky vyšla jako generátor a mocním do $\varphi(11) = 10$:
+PÅ™Ã­klad podobnÃ½ asi tÅ™em minulÃ½m, v zÃ¡sadÄ› spoÄÃ­vÃ¡ pouze v nalezenÃ­ generÃ¡toru a pak dopoÄÃ­tÃ¡nÃ­ Å™Ã¡dÅ¯ prvkÅ¯ podle \ref{rady-prvku}. VÃ­m, Å¾e $r(1) = 1$. StandardnÄ› zkouÅ¡Ã­m dvojku, kterÃ¡ zatÃ­m vÅ¾dycky vyÅ¡la jako generÃ¡tor a mocnÃ­m do $\varphi(11) = 10$:
 
 \begin{align*}
 2^1 & = 2\\
@@ -384,23 +386,23 @@ Pøíklad podobnı asi tøem minulım, v zásadì spoèívá pouze v nalezení generátoru a
 2^{10} & = 1\\
 \end{align*}
 
-Dvojka je generátor (pøekvapivì), $r(2) = 10$. Další generátory budou $2^k$, kde $\gcd(k, \varphi(11)) = 1$, co jsou $\{6,7,8\}$. $\gcd(k = 5,10) = 2$, take $r(10) = 5$. Zbylé prvky budou mít øád $5$, protoe moné øády jsou jen ty, co dìlí $10$.  
+Dvojka je generÃ¡tor (pÅ™ekvapivÄ›), $r(2) = 10$. DalÅ¡Ã­ generÃ¡tory budou $2^k$, kde $\gcd(k, \varphi(11)) = 1$, coÅ¾ jsou $\{6,7,8\}$. $\gcd(k = 5,10) = 2$, takÅ¾e $r(10) = 5$. ZbylÃ© prvky budou mÃ­t Å™Ã¡d $5$, protoÅ¾e moÅ¾nÃ© Å™Ã¡dy jsou jen ty, co dÄ›lÃ­ $10$.  
 
 
 %---------------------------------------Priklad 11-------------------------------- 
-\subsection{\label{priklad1-11}Pøíklad 11}
-V $\mathbb{Z}_{21}$ najdìte všechna øešení rovnice $x^2 = x$.
+\subsection{\label{priklad1-11}PÅ™Ã­klad 11}
+V $\mathbb{Z}_{21}$ najdÄ›te vÅ¡echna Å™eÅ¡enÃ­ rovnice $x^2 = x$.
 
 \line(1,0){400}
 
-Pøíklady tohoto typu je asi nejrychlejší øešit Èínskou vìtou o zbytcích. $\mathbb{Z}_{21}$ si rozdìlím na $\mathbb{Z}_{3} \times \mathbb{Z}_{7}$ a øeším pro tyto dvì grupy:
+PÅ™Ã­klady tohoto typu je asi nejrychlejÅ¡Ã­ Å™eÅ¡it ÄŒÃ­nskou vÄ›tou o zbytcÃ­ch. $\mathbb{Z}_{21}$ si rozdÄ›lÃ­m na $\mathbb{Z}_{3} \times \mathbb{Z}_{7}$ a Å™eÅ¡Ã­m pro tyto dvÄ› grupy:
 
 \begin{itemize}
 	\item $\mathbb{Z}_{3}$: $x^2 = x \Rightarrow x \in {0,1}$
 	\item $\mathbb{Z}_{7}$: $x^2 = x \Rightarrow x \in {0,1}$ 
 \end{itemize}
 
-Teï si vypoèítám koeficenty pro vìtu:
+TeÄ si vypoÄÃ­tÃ¡m koeficenty pro vÄ›tu:
 
 \begin{align*}
 q_3 & = s\cdot 7 = s\cdot 1 & \left[ 1\right]^{-1}_3 = 1\\
@@ -409,21 +411,21 @@ q_7 & = 3 \cdot s & \left[ 3\right]^{-1}_{7} = 15\\
 		& = 3 \cdot 5 = 15 \\
 \end{align*}
 
-Všechna øešení pak u jen budou všechny kombinace: $\{0,1\}\cdot 7 + \{0,1\}\cdot 15 = \{0,1,7,15\}$.
+VÅ¡echna Å™eÅ¡enÃ­ pak uÅ¾ jen budou vÅ¡echny kombinace: $\{0,1\}\cdot 7 + \{0,1\}\cdot 15 = \{0,1,7,15\}$.
 
 %---------------------------------------Priklad 12-------------------------------- 
-\subsection{\label{priklad1-12}Pøíklad 12}
-V $\mathbb{Z}_{39}$ najdìte všechna øešení rovnice $x^4 = 1$.
+\subsection{\label{priklad1-12}PÅ™Ã­klad 12}
+V $\mathbb{Z}_{39}$ najdÄ›te vÅ¡echna Å™eÅ¡enÃ­ rovnice $x^4 = 1$.
 
 \line(1,0){400}
 
-Podobnı pøíklad jako \ref{priklad1-4} a \ref{priklad1-11}. Zase rozloím $39$ na souèin prvoèísel, take $\mathbb{Z}_{39} = \mathbb{Z}_{3} \times \mathbb{Z}_{13}$ a øeším pro obì zvláš. Obecnì, rovnice $x^k = 1$ v $\mathbb{Z}_n^*$ má $\gcd(k, \varphi(n)) = d$ øešení a jsou to prvky øádù $r$, kde $r|d$.
+PodobnÃ½ pÅ™Ã­klad jako \ref{priklad1-4} a \ref{priklad1-11}. Zase rozloÅ¾Ã­m $39$ na souÄin prvoÄÃ­sel, takÅ¾e $\mathbb{Z}_{39} = \mathbb{Z}_{3} \times \mathbb{Z}_{13}$ a Å™eÅ¡Ã­m pro obÄ› zvlÃ¡Å¡Å¥. ObecnÄ›, rovnice $x^k = 1$ v $\mathbb{Z}_n^*$ mÃ¡ $\gcd(k, \varphi(n)) = d$ Å™eÅ¡enÃ­ a jsou to prvky Å™Ã¡dÅ¯ $r$, kde $r|d$.
 
 \paragraph{v $\mathbb{Z}_3$}
-$r(x)$ dìlí $\varphi(3)$: $x = 1 \wedge x = -1$ 
+$r(x)$ dÄ›lÃ­ $\varphi(3)$: $x = 1 \wedge x = -1$ 
 
 \paragraph{v $\mathbb{Z}_{13}$}
-Rovnice má $gcd(4,12) = 4$ øešení a jsou to prvky øádù ${1,2,4}$. Prvek øádu jedna je jeden, $x = 1$. Prvek øádu dva je taky jeden, a je to $(-1) = 12$. Prvky øádu $4$ jsou dva $(=\varphi(4))$, a najdu je nejlépe pøes generátor (tipnu si dvojku):
+Rovnice mÃ¡ $gcd(4,12) = 4$ Å™eÅ¡enÃ­ a jsou to prvky Å™Ã¡dÅ¯ ${1,2,4}$. Prvek Å™Ã¡du jedna je jeden, $x = 1$. Prvek Å™Ã¡du dva je taky jeden, a je to $(-1) = 12$. Prvky Å™Ã¡du $4$ jsou dva $(=\varphi(4))$, a najdu je nejlÃ©pe pÅ™es generÃ¡tor (tipnu si dvojku):
 
 \begin{align*}
 2^1 &= 2\\
@@ -441,9 +443,9 @@ Rovnice má $gcd(4,12) = 4$ øešení a jsou to prvky øádù ${1,2,4}$. Prvek øádu jed
 \end{align*}
 
 \[ r(2^k) = \frac{12}{\gcd(12,k)} = 4 \Rightarrow k = \{3,9\} \]
-Z toho vyplıvá, e hledaná $x$ jsou $8$ a $5$.
+Z toho vyplÃ½vÃ¡, Å¾e hledanÃ¡ $x$ jsou $8$ a $5$.
 
-Teï vıpoèet koeficientù:
+TeÄ vÃ½poÄet koeficientÅ¯:
  
 \begin{align*}
 q_3 & = s\cdot 13 = s\cdot 1 & \left[ 1\right]^{-1}_3 = 1\\
@@ -452,33 +454,33 @@ q_13 & = 3 \cdot s & \left[ 3\right]^{-1}_{7} = 9\\
 		& = 3 \cdot 9 = 27 = -12 \\
 \end{align*}
 
-Všechna øešení jsou tedy $x = \{1,-1\}\cdot 13 + \{1,5,8,12\}\cdot(-12) = \{1,5,8,14,25,31,34,38\}$.
+VÅ¡echna Å™eÅ¡enÃ­ jsou tedy $x = \{1,-1\}\cdot 13 + \{1,5,8,12\}\cdot(-12) = \{1,5,8,14,25,31,34,38\}$.
 
 %---------------------------------------Priklad 13-------------------------------- 
-\subsection{Pøíklad 13}
+\subsection{PÅ™Ã­klad 13}
 \begin{enumerate}
-	\item Najdìte generátor grupy $(\mathbb{Z}_{37}^*, \cdot)$. Kolik rùznıch prvkù poslouí jako generátor v této cyklické grupì?
-	\item Najdìte všechny prvky øádu $6$ v grupì $(\mathbb{Z}_{37}^*, \cdot)$.
-	\item Øešte rovnici $x^{30} = 1$ v $\mathbb{Z}_{37}$.
+	\item NajdÄ›te generÃ¡tor grupy $(\mathbb{Z}_{37}^*, \cdot)$. Kolik rÅ¯znÃ½ch prvkÅ¯ poslouÅ¾Ã­ jako generÃ¡tor v tÃ©to cyklickÃ© grupÄ›?
+	\item NajdÄ›te vÅ¡echny prvky Å™Ã¡du $6$ v grupÄ› $(\mathbb{Z}_{37}^*, \cdot)$.
+	\item Å˜eÅ¡te rovnici $x^{30} = 1$ v $\mathbb{Z}_{37}$.
 \end{enumerate}
 
 \line(1,0){400}
 
-Moností, jak zvolit generátor je pøesnì tolik, kolik je generátorù všech prvkù nesoudìlnıch s $37$. Takovıch prvkù je $\varphi(37) = 36$ a jejich generátorù je $\varphi(36) = 12$. Zkusím tedy najít generátor øádu $36$, co je napøíklad $2$ (tabulku vypisovat nebudu a doufám, e to po mnì nikdo nikdy nebude chtít). Dále postupuji podle profláknutého vzorce \ref{rady-prvku}:
+MoÅ¾nostÃ­, jak zvolit generÃ¡tor je pÅ™esnÄ› tolik, kolik je generÃ¡torÅ¯ vÅ¡ech prvkÅ¯ nesoudÄ›lnÃ½ch s $37$. TakovÃ½ch prvkÅ¯ je $\varphi(37) = 36$ a jejich generÃ¡torÅ¯ je $\varphi(36) = 12$. ZkusÃ­m tedy najÃ­t generÃ¡tor Å™Ã¡du $36$, coÅ¾ je napÅ™Ã­klad $2$ (tabulku vypisovat nebudu a doufÃ¡m, Å¾e to po mnÄ› nikdo nikdy nebude chtÃ­t). DÃ¡le postupuji podle proflÃ¡knutÃ©ho vzorce \ref{rady-prvku}:
 
 \[ r(2^k) = \frac{36}{\gcd(36,k)} = 6 \Rightarrow k = \{6,30\} \]
 
-Tudí $(\mathbb{Z}_{37}^*, \cdot)$ má prvky $11$ a $27$ øádu $6$.
+TudÃ­Å¾ $(\mathbb{Z}_{37}^*, \cdot)$ mÃ¡ prvky $11$ a $27$ Å™Ã¡du $6$.
 
-Rovnici $x^{30} = 1$ v mùu øešit rovnou v $\mathbb{Z}_{37}$, protoe $37$ je prvoèíslo. Rovnice má $\gcd(30,36) = 6$ øešení a jsou prvky øádù dìlících $6$, tedy $r(a) = \{1,2,3,6\}$ a to jsou $a = \{1,10,11,26,27,36\}$ (zase podle generátoru a vzorce \ref{rady-prvku}). 
+Rovnici $x^{30} = 1$ v mÅ¯Å¾u Å™eÅ¡it rovnou v $\mathbb{Z}_{37}$, protoÅ¾e $37$ je prvoÄÃ­slo. Rovnice mÃ¡ $\gcd(30,36) = 6$ Å™eÅ¡enÃ­ a jsou prvky Å™Ã¡dÅ¯ dÄ›lÃ­cÃ­ch $6$, tedy $r(a) = \{1,2,3,6\}$ a to jsou $a = \{1,10,11,26,27,36\}$ (zase podle generÃ¡toru a vzorce \ref{rady-prvku}). 
 
 %---------------------------------------Priklad 14-------------------------------- 
-\subsection{\label{priklad1-14}Pøíklad 14}
-Pro RSA šifrování je dáno $N = 247$ a veøejnı klíè $t = 11$. Spoètìte soukromı klíè a dešifrujte zprávu $b = 147$. Pro dešifrování pouijte Èínskou vìtu o zbytcích.
+\subsection{\label{priklad1-14}PÅ™Ã­klad 14}
+Pro RSA Å¡ifrovÃ¡nÃ­ je dÃ¡no $N = 247$ a veÅ™ejnÃ½ klÃ­Ä $t = 11$. SpoÄtÄ›te soukromÃ½ klÃ­Ä a deÅ¡ifrujte zprÃ¡vu $b = 147$. Pro deÅ¡ifrovÃ¡nÃ­ pouÅ¾ijte ÄŒÃ­nskou vÄ›tu o zbytcÃ­ch.
 
 \line(1,0){400}
 
-V tìchto typech pøíkladù je zapotøebí si zapamatovat pár vzorcù. Je-li $t$ veøejnı klíè, $s$ soukromı, $a$ dešifrovaná zpráva a $b$ zašifrovaná zpráva, pak
+V tÄ›chto typech pÅ™Ã­kladÅ¯ je zapotÅ™ebÃ­ si zapamatovat pÃ¡r vzorcÅ¯. Je-li $t$ veÅ™ejnÃ½ klÃ­Ä, $s$ soukromÃ½, $a$ deÅ¡ifrovanÃ¡ zprÃ¡va a $b$ zaÅ¡ifrovanÃ¡ zprÃ¡va, pak
 
 \begin{equation}
 	 a = b^s \mbox{ v } \mathbb{Z}_N.
@@ -494,7 +496,7 @@ V tìchto typech pøíkladù je zapotøebí si zapamatovat pár vzorcù. Je-li $t$ veøej
 	\label{rsa-klice}
 \end{equation}
 
-První, co musím udìlat, je vypoèítat rozklad $N$ na prvoèísla. To udìlám hrubou silou, testováním všech èísel od $3$. Tím získám $N = 13\cdot19$. Z toho jednoduše vypoètu $\varphi(N) = 216$ a vyøeším rovnici \ref{rsa-klice}:
+PrvnÃ­, co musÃ­m udÄ›lat, je vypoÄÃ­tat rozklad $N$ na prvoÄÃ­sla. To udÄ›lÃ¡m hrubou silou, testovÃ¡nÃ­m vÅ¡ech ÄÃ­sel od $3$. TÃ­m zÃ­skÃ¡m $N = 13\cdot19$. Z toho jednoduÅ¡e vypoÄtu $\varphi(N) = 216$ a vyÅ™eÅ¡Ã­m rovnici \ref{rsa-klice}:
 
 \begin{align*}
 11s + 216y = 1 & 								& 		&  \\
@@ -504,17 +506,17 @@ První, co musím udìlat, je vypoèítat rozklad $N$ na prvoèísla. To udìlám hrubou 
 4  & = 3\cdot 1 + 1							& 1 	&= 4 - 3 = \underline{59}\cdot 11 - 3 \cdot 216 \\
 \end{align*}
 
-Získal jsem $s = 59$. Teï musím odšifrovat $b$, neboli dosadit a vypoèítat rovnici \ref{rsa-odsifrovani}:
+ZÃ­skal jsem $s = 59$. TeÄ musÃ­m odÅ¡ifrovat $b$, neboli dosadit a vypoÄÃ­tat rovnici \ref{rsa-odsifrovani}:
 
 $$a = 147^{59}\mbox{ v } \mathbb{Z}_{247}$$
 
-Tohle vypoèítám tak, e si rozloím $\mathbb{Z}_{247} = \mathbb{Z}_{13} \times \mathbb{Z}_{19}$ a poèítám pro kadé zvláš:
+Tohle vypoÄÃ­tÃ¡m tak, Å¾e si rozloÅ¾Ã­m $\mathbb{Z}_{247} = \mathbb{Z}_{13} \times \mathbb{Z}_{19}$ a poÄÃ­tÃ¡m pro kaÅ¾dÃ© zvlÃ¡Å¡Å¥:
 
 \paragraph{Pro $\mathbb{Z}_{13}$: }
 $147^{59} = 4^{59} = 4^{4\cdot12 + 11} \stackrel{E-F (\ref{euler-fermat})}{\rightarrow} 4^{11} = 2^{22} = 2^{1\cdot12+10}  \stackrel{E-F}{\rightarrow} 2^{10} = 1024 = 10$
 
 \paragraph{Pro $\mathbb{Z}_{19}$: }
-$147^{59} = 14^{59} = 14^{3\cdot18 + 5} \stackrel{E-F}{\rightarrow} 14^{5}$. Tohle èíslo u bych sice asi nacpal do kalkulaèky, ale ve zkoušce se stejnì píše ještì "spoèítejte pomocí reziduálního umocòování". Take tady jsou opakované ètverce, $5 = 1\cdot4 + 0\cdot2 + 1\cdot1$:
+$147^{59} = 14^{59} = 14^{3\cdot18 + 5} \stackrel{E-F}{\rightarrow} 14^{5}$. Tohle ÄÃ­slo uÅ¾ bych sice asi nacpal do kalkulaÄky, ale ve zkouÅ¡ce se stejnÄ› pÃ­Å¡e jeÅ¡tÄ› "spoÄÃ­tejte pomocÃ­ reziduÃ¡lnÃ­ho umocÅˆovÃ¡nÃ­". TakÅ¾e tady jsou opakovanÃ© Ätverce, $5 = 1\cdot4 + 0\cdot2 + 1\cdot1$:
 \begin{center}  % put inside center environment
   \begin{tabular}{c|c|c|c|c}
 		1 &   & 0 &   & 1 \\ 
@@ -522,7 +524,7 @@ $147^{59} = 14^{59} = 14^{3\cdot18 + 5} \stackrel{E-F}{\rightarrow} 14^{5}$. Toh
 	\end{tabular}
 \end{center}
 
-Jinımi slovy, rozepsal jsem si $5$ do binární podoby, mezi kadou èíslici jsem vepsal $S$ a tam, kde je jednièka, jsem napsal $X$. Teï to napíšu pod sebe (nejlevìjší $X$ je nahoøe, nejpravìjší dole) a dostanu: 
+JinÃ½mi slovy, rozepsal jsem si $5$ do binÃ¡rnÃ­ podoby, mezi kaÅ¾dou ÄÃ­slici jsem vepsal $S$ a tam, kde je jedniÄka, jsem napsal $X$. TeÄ to napÃ­Å¡u pod sebe (nejlevÄ›jÅ¡Ã­ $X$ je nahoÅ™e, nejpravÄ›jÅ¡Ã­ dole) a dostanu: 
 \begin{center}
 	\begin{tabular}{c|l}
 		X & $14^1 = 14$ \\
@@ -532,7 +534,7 @@ Jinımi slovy, rozepsal jsem si $5$ do binární podoby, mezi kadou èíslici jsem v
 	\end{tabular}
 \end{center}
 
-Vısledek je tedy $147^{59} = 10$ v $\mathbb{Z}_{19}$. Teï vypoèítám koeficenty pro Èínskou vìtu o zbytcích:
+VÃ½sledek je tedy $147^{59} = 10$ v $\mathbb{Z}_{19}$. TeÄ vypoÄÃ­tÃ¡m koeficenty pro ÄŒÃ­nskou vÄ›tu o zbytcÃ­ch:
 
 \begin{align*}
 q_{13} & = s\cdot 19 = s\cdot 6 & \left[ 6\right]^{-1}_{13} = 11\\
@@ -541,39 +543,39 @@ q_{19} & = 13 \cdot s & \left[ 13\right]^{-1}_{19} = 3\\
 		& = 13 \cdot 3 = 39 \\
 \end{align*}
 
-A vısledek $\underline{a} = -38\cdot10 + 39\cdot10 = \underline{10}$.
+A vÃ½sledek $\underline{a} = -38\cdot10 + 39\cdot10 = \underline{10}$.
 
 %---------------------------------------Priklad 15-------------------------------- 
-\subsection{Pøíklad 15}
-Pro RSA šifrování je dáno $N = 247$ a veøejnı klíè $t = 11$. Najdìte všechny zprávy $x$, které se po zašifrování nezmìní, tj. platí $x^t = x$ v $\mathbb{Z}_N$, pro dané $t$ a $N$. 
+\subsection{PÅ™Ã­klad 15}
+Pro RSA Å¡ifrovÃ¡nÃ­ je dÃ¡no $N = 247$ a veÅ™ejnÃ½ klÃ­Ä $t = 11$. NajdÄ›te vÅ¡echny zprÃ¡vy $x$, kterÃ© se po zaÅ¡ifrovÃ¡nÃ­ nezmÄ›nÃ­, tj. platÃ­ $x^t = x$ v $\mathbb{Z}_N$, pro danÃ© $t$ a $N$. 
 
 \line(1,0){400}
 
-Pøíklad podobnı pøíkladu \ref{priklad1-12}. V zásadì jenom øeším $x^{11} = x$ v $\mathbb{Z}_{13}$ a $\mathbb{Z}_{19}$ a pomocí Èínské vìty o zbytcích tato øešení nakombinuji.
+PÅ™Ã­klad podobnÃ½ pÅ™Ã­kladu \ref{priklad1-12}. V zÃ¡sadÄ› jenom Å™eÅ¡Ã­m $x^{11} = x$ v $\mathbb{Z}_{13}$ a $\mathbb{Z}_{19}$ a pomocÃ­ ÄŒÃ­nskÃ© vÄ›ty o zbytcÃ­ch tato Å™eÅ¡enÃ­ nakombinuji.
 
-\paragraph{Pro $\mathbb{Z}_{13}$: } Nejdøív vydìlím rovnici $x$ a zapíšu si øešení $x = 0$. Dostanu $x^{10} = 1$, pøièem rovnice má $\gcd(10,12) = 2 = d$ øešení, a jsou to prvky øádu $1$ a $2$. Prvek øádu $1$ je $x = 1$, prvek øádu $2$ je jen jeden, jeliko grupa ma za základ prvoèíslo a je tudí cyklická (prvkù øádu $r$, kde $r$ dìlí mohutnost grupy, je právì $\varphi(r)$. Takovı prvek je -1.
-Hledaná øešení jsou tedy $x_{13} = \{0, 1, -1\}$
+\paragraph{Pro $\mathbb{Z}_{13}$: } NejdÅ™Ã­v vydÄ›lÃ­m rovnici $x$ a zapÃ­Å¡u si Å™eÅ¡enÃ­ $x = 0$. Dostanu $x^{10} = 1$, pÅ™iÄemÅ¾ rovnice mÃ¡ $\gcd(10,12) = 2 = d$ Å™eÅ¡enÃ­, a jsou to prvky Å™Ã¡du $1$ a $2$. Prvek Å™Ã¡du $1$ je $x = 1$, prvek Å™Ã¡du $2$ je jen jeden, jelikoÅ¾ grupa ma za zÃ¡klad prvoÄÃ­slo a je tudÃ­Å¾ cyklickÃ¡ (prvkÅ¯ Å™Ã¡du $r$, kde $r$ dÄ›lÃ­ mohutnost grupy, je prÃ¡vÄ› $\varphi(r)$. TakovÃ½ prvek je -1.
+HledanÃ¡ Å™eÅ¡enÃ­ jsou tedy $x_{13} = \{0, 1, -1\}$
 
-\paragraph{Pro $\mathbb{Z}_{19}$: } Toté jako v pøedchozím, rovnice má $\gcd(10,18) = 2 = d$ øešení, øádu $1$ a $2$. Hledaná øešení jsou tedy $x_{19} = \{0, 1, -1\}$
+\paragraph{Pro $\mathbb{Z}_{19}$: } TotÃ©Å¾ jako v pÅ™edchozÃ­m, rovnice mÃ¡ $\gcd(10,18) = 2 = d$ Å™eÅ¡enÃ­, Å™Ã¡du $1$ a $2$. HledanÃ¡ Å™eÅ¡enÃ­ jsou tedy $x_{19} = \{0, 1, -1\}$
 
-Z minulého pøíkladu \ref{priklad1-14} znám $q_{13} = -38$ a $q_{19} = 39$, všechna øešení budou jen kombinace $-38\cdot\{0,1,-1\} + 39\cdot\{0,1,-1\} = \{0,1,38,39,77,170,208,209,246\}$. 
+Z minulÃ©ho pÅ™Ã­kladu \ref{priklad1-14} znÃ¡m $q_{13} = -38$ a $q_{19} = 39$, vÅ¡echna Å™eÅ¡enÃ­ budou jen kombinace $-38\cdot\{0,1,-1\} + 39\cdot\{0,1,-1\} = \{0,1,38,39,77,170,208,209,246\}$. 
 
 %---------------------------------------Priklad 16-------------------------------- 
-\subsection{Pøíklad 16}
-Pro RSA šifrování Vám byla pøidìlena prvoèísla $p = 23$, $q = 59$ a veøejnı klíè $t = 181$.
+\subsection{PÅ™Ã­klad 16}
+Pro RSA Å¡ifrovÃ¡nÃ­ VÃ¡m byla pÅ™idÄ›lena prvoÄÃ­sla $p = 23$, $q = 59$ a veÅ™ejnÃ½ klÃ­Ä $t = 181$.
 \begin{enumerate}
-	\item Spoètìte svùj soukromı klíè
-	\item Písmena anglické abecedy kódujte dvojèíslími $A = 01$, $B = 02$, $\ldots Z = 26$, $mezera = 00$. Posíláte zprávu HARD DAY a chcete ji digitálnì podepsat. Domluvená hašovací funkce vybere ze zprávy kadou pátou èíslici (poèítáno zleva). Spoètìte tento podpis a pouijte k tomu Èínskou vìtu o zbytcích.
+	\item SpoÄtÄ›te svÅ¯j soukromÃ½ klÃ­Ä
+	\item PÃ­smena anglickÃ© abecedy kÃ³dujte dvojÄÃ­slÃ­mi $A = 01$, $B = 02$, $\ldots Z = 26$, $mezera = 00$. PosÃ­lÃ¡te zprÃ¡vu HARD DAY a chcete ji digitÃ¡lnÄ› podepsat. DomluvenÃ¡ haÅ¡ovacÃ­ funkce vybere ze zprÃ¡vy kaÅ¾dou pÃ¡tou ÄÃ­slici (poÄÃ­tÃ¡no zleva). SpoÄtÄ›te tento podpis a pouÅ¾ijte k tomu ÄŒÃ­nskou vÄ›tu o zbytcÃ­ch.
 \end{enumerate}
 
 \line(1,0){400}
 
-Ze zadání vyplıvá, e $N = 23\cdot59 = 1357$. Spoètení soukromého klíèe se øeší stejnım zpùsobem jako v \ref{priklad1-14}, zde v $\mathbb{Z}_{\varphi(N)} = \mathbb{Z}_{22\cdot58} = \mathbb{Z}_{1276}$. Po vıpoètu eukleida vyjde
+Ze zadÃ¡nÃ­ vyplÃ½vÃ¡, Å¾e $N = 23\cdot59 = 1357$. SpoÄtenÃ­ soukromÃ©ho klÃ­Äe se Å™eÅ¡Ã­ stejnÃ½m zpÅ¯sobem jako v \ref{priklad1-14}, zde v $\mathbb{Z}_{\varphi(N)} = \mathbb{Z}_{22\cdot58} = \mathbb{Z}_{1276}$. Po vÃ½poÄtu eukleida vyjde
 
 $$1 = \underline{141}\cdot181 - 20\cdot1276,$$
-tudí $s = 141$.
+tudÃ­Å¾ $s = 141$.
 
-Teï musím zakódovat HARD DAY do èísel:
+TeÄ musÃ­m zakÃ³dovat HARD DAY do ÄÃ­sel:
 
 \begin{center}  % put inside center environment
   \begin{tabular}{c|c|c|c|c|c|c|c}
@@ -582,10 +584,10 @@ Teï musím zakódovat HARD DAY do èísel:
 	\end{tabular}
 \end{center}
 
-Hašovací funkce je tedy $f(a) = 102$. Teï tenhle podpis musím zašifrovat, co znamená vypoèítat
+HaÅ¡ovacÃ­ funkce je tedy $f(a) = 102$. TeÄ tenhle podpis musÃ­m zaÅ¡ifrovat, coÅ¾ znamenÃ¡ vypoÄÃ­tat
 $$ f(a)^s \mbox{ v } \mathbb{Z}_N = 102^{141} \mbox{ v } \mathbb{Z}_{1357}.$$
 
-To se udìlá nejlépe Èínskou vìtou o zbytcích, pro $\mathbb{Z}_{23}$ a $\mathbb{Z}_{59}$. Nejdøív to umocním pomocí reziduálního umocòování:
+To se udÄ›lÃ¡ nejlÃ©pe ÄŒÃ­nskou vÄ›tou o zbytcÃ­ch, pro $\mathbb{Z}_{23}$ a $\mathbb{Z}_{59}$. NejdÅ™Ã­v to umocnÃ­m pomocÃ­ reziduÃ¡lnÃ­ho umocÅˆovÃ¡nÃ­:
 
 \paragraph{Pro $\mathbb{Z}_{23}$: } $102^{141} = 10^{141} = 10^{6\cdot22 + 9} \stackrel{E-F}{\rightarrow} 10^9$.
 
@@ -631,7 +633,7 @@ $25 = 1\cdot16 + 1\cdot8 + 0\cdot4 + 0\cdot2 + 1\cdot1:$
 	\end{tabular}
 \end{center}
  
-Koeficienty (pro jejich vıpoèet je ještì zapotøebí $2\times$ e-euklid, ale šetøím místem):
+Koeficienty (pro jejich vÃ½poÄet je jeÅ¡tÄ› zapotÅ™ebÃ­ $2\times$ e-euklid, ale Å¡etÅ™Ã­m mÃ­stem):
 
 \begin{align*}
 q_{23} & = s\cdot 59 = s\cdot 13 & \left[ 13\right]^{-1}_{23} = -7\\
@@ -644,15 +646,15 @@ Podpis pak bude $-413\cdot20 + 414\cdot50 = 12440 = \underline{227}$ (v $\mathbb
 
 \clearpage
 
-\section{Polynomy nad $\mathbb{Z}_n$ a koneèná tìlesa }
+\section{Polynomy nad $\mathbb{Z}_n$ a koneÄnÃ¡ tÄ›lesa }
 
 %---------------------------------------Priklad 2-1-------------------------------- 
-\subsection{Pøíklad 1}
-V $\mathbb{Z}_2[x]$ najdìte nejvìtší spoleènı dìlitel $d(x)$ polynomù $p(x) = x^7 + x^6 + x^5 + x$ a $q(x) = x^3 + 1$. Polynom $d(x)$ napište jako kombinaci polynomù $p(x)$ a $q(x)$. 
+\subsection{PÅ™Ã­klad 1}
+V $\mathbb{Z}_2[x]$ najdÄ›te nejvÄ›tÅ¡Ã­ spoleÄnÃ½ dÄ›litel $d(x)$ polynomÅ¯ $p(x) = x^7 + x^6 + x^5 + x$ a $q(x) = x^3 + 1$. Polynom $d(x)$ napiÅ¡te jako kombinaci polynomÅ¯ $p(x)$ a $q(x)$. 
 
 \line(1,0){400}
 
-Postup je takovı, e dìlím polynomy, dokud to jde (tzn., dokud nedostanu nulovı zbytek) a toto si píšu do tabulky podobné euklidovì algoritmu. Nejdøív tedy ty dva polynomy vydìlím a uvidím, co vznikne:
+Postup je takovÃ½, Å¾e dÄ›lÃ­m polynomy, dokud to jde (tzn., dokud nedostanu nulovÃ½ zbytek) a toto si pÃ­Å¡u do tabulky podobnÃ© euklidovÄ› algoritmu. NejdÅ™Ã­v tedy ty dva polynomy vydÄ›lÃ­m a uvidÃ­m, co vznikne:
 
 \begin{tabular}{rrrrrrrr|ll}
 		$x^7$ 	& $+x^6$ 	& $+ x^5$ & $+x^4$ 	&   				&  				& $+ x$  	&  		& $: (x^3 + 1)$ 	& = $x^4 + x^3 + x^2 + 1$ \\ 
@@ -671,31 +673,31 @@ Postup je takovı, e dìlím polynomy, dokud to jde (tzn., dokud nedostanu nulovı 
 		
 \end{tabular}
 
-Vidím, e mi vznikl nìjakı podíl a nìjakı zbytek po dìlení. Pokraèuji dál:
+VidÃ­m, Å¾e mi vznikl nÄ›jakÃ½ podÃ­l a nÄ›jakÃ½ zbytek po dÄ›lenÃ­. PokraÄuji dÃ¡l:
 
 \begin{align*}
 \overbrace{x^7 + x^6 + x^5 + x^4 + x}^{p(x)} & = \overbrace{(x^3 + 1)}^{q(x)}(x^4 + x^3 + x^2) + (x^2 + x + 1)  \\
 q(x) & = (x+1)\underline{(x^2 + x + 1)} + 0 
 \end{align*}
 
-Zde $(x+1)$ vzniklo jako podíl $(x^3+1):(x^2 + x + 1)$.
+Zde $(x+1)$ vzniklo jako podÃ­l $(x^3+1):(x^2 + x + 1)$.
 
-Z toho je jasnì viditelné, e $\gcd$ je $d(x) = (x^2 + x + 1)$ a $d(x)= p(x) - (x^4 + x^3 + x^2)\cdot q(x)$ (v dané soustavì je $+$ toté co $-$, take zároveò $d(x)= p(x) + (x^4 + x^3 + x^2)\cdot q(x)$).
+Z toho je jasnÄ› viditelnÃ©, Å¾e $\gcd$ je $d(x) = (x^2 + x + 1)$ a $d(x)= p(x) - (x^4 + x^3 + x^2)\cdot q(x)$ (v danÃ© soustavÄ› je $+$ totÃ©Å¾ co $-$, takÅ¾e zÃ¡roveÅˆ $d(x)= p(x) + (x^4 + x^3 + x^2)\cdot q(x)$).
 
 
 %---------------------------------------Priklad 2-2-------------------------------- 
-\subsection{\label{priklad2-2}Pøíklad 2}
-Najdìte všechny ireducibilní polynomy pátého stupnì v $\mathbb{Z}_2[x]$ a dokate, e jsou ireducibilní.
+\subsection{\label{priklad2-2}PÅ™Ã­klad 2}
+NajdÄ›te vÅ¡echny ireducibilnÃ­ polynomy pÃ¡tÃ©ho stupnÄ› v $\mathbb{Z}_2[x]$ a dokaÅ¾te, Å¾e jsou ireducibilnÃ­.
 
 \line(1,0){400}
 
-Polynomy pátého stupnì v $\mathbb{Z}_2[x]$ budou vdy tvaru
+Polynomy pÃ¡tÃ©ho stupnÄ› v $\mathbb{Z}_2[x]$ budou vÅ¾dy tvaru
 
 \[ a\cdot x^5 + b\cdot x^4 + c\cdot x^3 + d\cdot x^2 + e\cdot x + f\cdot1 \]
 
-Jeliko polynom s nulovım absolutním èlenem má koøen $0$, pak absolutní èlen musí bıt roven $1$. Dál vím, e musí mít lichı poèet nenulovıch èlenù, jeliko kdyby mìl sudı, tak by øešením byla jednièka (protoe $(1+1) = 0$). 
+JelikoÅ¾ polynom s nulovÃ½m absolutnÃ­m Älenem mÃ¡ koÅ™en $0$, pak absolutnÃ­ Älen musÃ­ bÃ½t roven $1$. DÃ¡l vÃ­m, Å¾e musÃ­ mÃ­t lichÃ½ poÄet nenulovÃ½ch ÄlenÅ¯, jelikoÅ¾ kdyby mÄ›l sudÃ½, tak by Å™eÅ¡enÃ­m byla jedniÄka (protoÅ¾e $(1+1) = 0$). 
 
-Tím jsem vyèerpal všechny monosti, jak øešení osekat a nastává èas na BruteForce\texttrademark. K ireducibilním polynomùm se mùu chovat podobnì jako k prvoèíslùm. Tøeba na to, abych dokázal, e $5$ je prvoèíslo, mi staèí vyzkoušet jen èísla do $\left\lfloor \sqrt{5} \right\rfloor$. Stejnì tak na to, abych zjistil zda-li je polynom øádu $n$ ireducibilní, mi staèí vyskoušet ho dìlit polynomu do stupnì  $\left\lfloor n/2 \right\rfloor$. Tudí musím najít ireducibilní polynomy stupnì $1$ a $2$ (to jsou $(x+1)$ a $(x^2 + x + 1)$) a zkusit jimi vydìlit polynom øádu $5$ (protoe polynom øádu $5$ mùe vzniknout jen jako násobek $1\cdot4, 2\cdot3, 3\cdot2, 4\cdot1$). Polynomy si pro zkrácení napíšu jako n-tici $(a,b,c,d,e,f)$, hned vyøadím ty se sudım poètem èlenù a zkusím dìlit (kdy to dìlitelné danım polynomem není, škrtnu ho):
+TÃ­m jsem vyÄerpal vÅ¡echny moÅ¾nosti, jak Å™eÅ¡enÃ­ osekat a nastÃ¡vÃ¡ Äas na BruteForce\texttrademark. K ireducibilnÃ­m polynomÅ¯m se mÅ¯Å¾u chovat podobnÄ› jako k prvoÄÃ­slÅ¯m. TÅ™eba na to, abych dokÃ¡zal, Å¾e $5$ je prvoÄÃ­slo, mi staÄÃ­ vyzkouÅ¡et jen ÄÃ­sla do $\left\lfloor \sqrt{5} \right\rfloor$. StejnÄ› tak na to, abych zjistil zda-li je polynom Å™Ã¡du $n$ ireducibilnÃ­, mi staÄÃ­ vyskouÅ¡et ho dÄ›lit polynomu do stupnÄ›  $\left\lfloor n/2 \right\rfloor$. TudÃ­Å¾ musÃ­m najÃ­t ireducibilnÃ­ polynomy stupnÄ› $1$ a $2$ (to jsou $(x+1)$ a $(x^2 + x + 1)$) a zkusit jimi vydÄ›lit polynom Å™Ã¡du $5$ (protoÅ¾e polynom Å™Ã¡du $5$ mÅ¯Å¾e vzniknout jen jako nÃ¡sobek $1\cdot4, 2\cdot3, 3\cdot2, 4\cdot1$). Polynomy si pro zkrÃ¡cenÃ­ napÃ­Å¡u jako n-tici $(a,b,c,d,e,f)$, hned vyÅ™adÃ­m ty se sudÃ½m poÄtem ÄlenÅ¯ a zkusÃ­m dÄ›lit (kdyÅ¾ to dÄ›litelnÃ© danÃ½m polynomem nenÃ­, Å¡krtnu ho):
 
 \begin{itemize}
 	\item $(1,0,0,0,1,1)$: $\cancel{(x+1)}$, $(x^2 + x + 1)\cdot(x^3 + x^2 + 1)$ 
@@ -708,23 +710,23 @@ Tím jsem vyèerpal všechny monosti, jak øešení osekat a nastává èas na BruteForc
 	\item $\underline{(1,1,1,1,0,1)}$: $\cancel{(x+1)}$, $\cancel{(x^2 + x + 1)}$
 \end{itemize}
 
-Vıpoèet se zase dá ponìkud zkrátit, kdy si uvìdomím, e pokud polynom nemá koøen, pak zaruèenì není ani dìlitelnı lineárním polynomem (èím mi v tomto pøípadì vypadne dìlení $(x+1)$).
+VÃ½poÄet se zase dÃ¡ ponÄ›kud zkrÃ¡tit, kdyÅ¾ si uvÄ›domÃ­m, Å¾e pokud polynom nemÃ¡ koÅ™en, pak zaruÄenÄ› nenÃ­ ani dÄ›litelnÃ½ lineÃ¡rnÃ­m polynomem (ÄÃ­mÅ¾ mi v tomto pÅ™Ã­padÄ› vypadne dÄ›lenÃ­ $(x+1)$).
 
-Ireducibilní polynomy pátého stupnì v $\mathbb{Z}_2[x]$ jsou: $x^5 + x^2 + 1, x^5 + x^3 + 1, x^5 + x^3 + x^2 + x + 1, x^5 + x^4 + x^2 + x + 1, x^5 + x^4 + x^3  + x + 1, x^5 + x^4 + x^3 + x^2 + 1$.
+IreducibilnÃ­ polynomy pÃ¡tÃ©ho stupnÄ› v $\mathbb{Z}_2[x]$ jsou: $x^5 + x^2 + 1, x^5 + x^3 + 1, x^5 + x^3 + x^2 + x + 1, x^5 + x^4 + x^2 + x + 1, x^5 + x^4 + x^3  + x + 1, x^5 + x^4 + x^3 + x^2 + 1$.
 
 %---------------------------------------Priklad 2-3-------------------------------- 
-\subsection{Pøíklad 3}
-Rozlote polynom $p(x) = x^7 - x$ na souèin ireducibilních polynomù v okruzích $\mathbb{Z}_2[x]$ a $\mathbb{Z}_7[x]$.
+\subsection{PÅ™Ã­klad 3}
+RozloÅ¾te polynom $p(x) = x^7 - x$ na souÄin ireducibilnÃ­ch polynomÅ¯ v okruzÃ­ch $\mathbb{Z}_2[x]$ a $\mathbb{Z}_7[x]$.
 
 \line(1,0){400}
 
-V okruhu $\mathbb{Z}_7[x]$ je to jednoduché, jeliko
+V okruhu $\mathbb{Z}_7[x]$ je to jednoduchÃ©, jelikoÅ¾
 
-\[ \mbox{ v } \mathbb{Z}_p[x]\mbox{ platí: } x^p - x = x (x-1) \cdots (x - (p-1)) \]
+\[ \mbox{ v } \mathbb{Z}_p[x]\mbox{ platÃ­: } x^p - x = x (x-1) \cdots (x - (p-1)) \]
 
-a polynom  $x^7 - x$ se dá rozloit na $x(x-1)(x-2)(x-3)(x-4)(x-5)(x-6) = x(x+1)(x+2)(x+3)(x+4)(x+5)(x+6)$. 
+a polynom  $x^7 - x$ se dÃ¡ rozloÅ¾it na $x(x-1)(x-2)(x-3)(x-4)(x-5)(x-6) = x(x+1)(x+2)(x+3)(x+4)(x+5)(x+6)$. 
 
-V $\mathbb{Z}_2[x]$ je to o nìco horší, protoe takovı krásnı vzoreèek nemám. Take musím postupnì dìlit, nejdøív $x$kem a pak postupnì ireducibilními polynomy:
+V $\mathbb{Z}_2[x]$ je to o nÄ›co horÅ¡Ã­, protoÅ¾e takovÃ½ krÃ¡snÃ½ vzoreÄek nemÃ¡m. TakÅ¾e musÃ­m postupnÄ› dÄ›lit, nejdÅ™Ã­v $x$kem a pak postupnÄ› ireducibilnÃ­mi polynomy:
 
 \begin{align*}
 x^7 + x & = x\cdot(x^6 + 1)\\
@@ -733,83 +735,83 @@ x^7 + x & = x\cdot(x^6 + 1)\\
 				& = x\cdot(x+1)(x+1)(x^2 + x + 1)(x^2 + x +1)  \\
 \end{align*}
 
-Ten souèin je tedy $x\cdot(x+1)^2(x^2 + x + 1)^2$.
+Ten souÄin je tedy $x\cdot(x+1)^2(x^2 + x + 1)^2$.
 
 %---------------------------------------Priklad 2-4-------------------------------- 
-\subsection{Pøíklad 4}
-V $\mathbb{Z}_3[x]$ rozlote na souèin ireducibilních polynomù polynom $p(x) = x^7 + 2x^6 + x + 2$.
+\subsection{PÅ™Ã­klad 4}
+V $\mathbb{Z}_3[x]$ rozloÅ¾te na souÄin ireducibilnÃ­ch polynomÅ¯ polynom $p(x) = x^7 + 2x^6 + x + 2$.
 
 \line(1,0){400}
 
-$x^7 + 2x^6 + x + 2$ si napíšu jako $x^6(x + 2) + x + 2 = (x^6 + 1)(x+2)$. Teï si vzpomenu na další krásnı vzoreèek:
+$x^7 + 2x^6 + x + 2$ si napÃ­Å¡u jako $x^6(x + 2) + x + 2 = (x^6 + 1)(x+2)$. TeÄ si vzpomenu na dalÅ¡Ã­ krÃ¡snÃ½ vzoreÄek:
 \begin{veta}
-	\[(a+b)^p = a^p + b^p \text{ nad kadım tìlesem charakteristiky } p,\]
+	\[(a+b)^p = a^p + b^p \text{ nad kaÅ¾dÃ½m tÄ›lesem charakteristiky } p,\]
 \end{veta}
 
-tedy $(x^6+1) = ((x^2)^3+1) = (x^2+1)^3$ a koneènı vısledek je $p(x) = (x^2 + 1)^3(x+2)$.
+tedy $(x^6+1) = ((x^2)^3+1) = (x^2+1)^3$ a koneÄnÃ½ vÃ½sledek je $p(x) = (x^2 + 1)^3(x+2)$.
 
 %---------------------------------------Priklad 2-5-------------------------------- 
-\subsection{\label{priklad2-5}Pøíklad 5}
-Najdìte všechny prvky, které jsou invertibilní v $\mathbb{Z}_3[x]/(x^2 + 2)$. Spoètìte k nim inverzní prvky.
+\subsection{\label{priklad2-5}PÅ™Ã­klad 5}
+NajdÄ›te vÅ¡echny prvky, kterÃ© jsou invertibilnÃ­ v $\mathbb{Z}_3[x]/(x^2 + 2)$. SpoÄtÄ›te k nim inverznÃ­ prvky.
 
 \line(1,0){400}
 
-Pøedevším je nutné si uvìdomit, které všechny prvky mùe obsahovat okruh:
+PÅ™edevÅ¡Ã­m je nutnÃ© si uvÄ›domit, kterÃ© vÅ¡echny prvky mÅ¯Å¾e obsahovat okruh:
 
 \[ \mathbb{Z}_p[x]/q(x) = \{[a(x)] | st(a) < st(q)\} \]
 
-Jinımi slovy, okruh je mnoina polynomù (+ operace sèítání a násobení), které mají stupeò niší ne $q(x)$. Poèet jejích prvkù je $p^{st(q(x))}$. Ještì jinak se dá øíct, e je to okruh zbytkovıch tøíd modulo $q(x)$, co je nìco jako grupa v $\mathbb{Z}_p$, jen prvky nejsou èísla, nıbr polynomy.
+JinÃ½mi slovy, okruh je mnoÅ¾ina polynomÅ¯ (+ operace sÄÃ­tÃ¡nÃ­ a nÃ¡sobenÃ­), kterÃ© majÃ­ stupeÅˆ niÅ¾Å¡Ã­ neÅ¾ $q(x)$. PoÄet jejÃ­ch prvkÅ¯ je $p^{st(q(x))}$. JeÅ¡tÄ› jinak se dÃ¡ Å™Ã­ct, Å¾e je to okruh zbytkovÃ½ch tÅ™Ã­d modulo $q(x)$, coÅ¾ je nÄ›co jako grupa v $\mathbb{Z}_p$, jen prvky nejsou ÄÃ­sla, nÃ½brÅ¾ polynomy.
 
-První, co musím udìlat, je zjistit, jestli ten okruh je taky tìleso. Pokud je, tak to znamená, e všechny prvky (mimo $0$) mají inverz. Take musím udìlat \texttt{std::deleni} ireducibilními polynomy. Zkusím $(x+1)$, dostanu $p(x) = (x + 1)(x + 2)$. Take to není tìleso, a inverzy budou mít jen polynomy nesoudìlné s $(x + 1)(x + 2)$ (obdoba toho, co se dìlalo u grup, pokud by $\gcd$ bylo $> 1$, pak neumím najít inverz). Prvky okruhu jsou $0,1,2,x,x+1,x+2,2x,2x+1,2x+2$: 
+PrvnÃ­, co musÃ­m udÄ›lat, je zjistit, jestli ten okruh je taky tÄ›leso. Pokud je, tak to znamenÃ¡, Å¾e vÅ¡echny prvky (mimo $0$) majÃ­ inverz. TakÅ¾e musÃ­m udÄ›lat \texttt{std::deleni} ireducibilnÃ­mi polynomy. ZkusÃ­m $(x+1)$, dostanu $p(x) = (x + 1)(x + 2)$. TakÅ¾e to nenÃ­ tÄ›leso, a inverzy budou mÃ­t jen polynomy nesoudÄ›lnÃ© s $(x + 1)(x + 2)$ (obdoba toho, co se dÄ›lalo u grup, pokud by $\gcd$ bylo $> 1$, pak neumÃ­m najÃ­t inverz). Prvky okruhu jsou $0,1,2,x,x+1,x+2,2x,2x+1,2x+2$: 
 
 \begin{itemize}
-	\item $0$ inverz je asi $-\infty$, zkrátka ho nemá :-)
+	\item $0$ inverz je asi $-\infty$, zkrÃ¡tka ho nemÃ¡ :-)
 	\item $1 \rightarrow 1^{-1} = 1$
-	\item $2 \rightarrow 2^{-1} = 2$ (poèítám to jakoby v $\mathbb{Z}_p$)
-	\item $x \rightarrow x^{-1} = x$ (protoe pouívám pøepisovací pravidlo $x^2 = -2 \Rightarrow x^2 = 1$)
-	\item $x+1$ - soudìlné s $q(x)$, nemá inverz
-	\item $x+2$ - soudìlné s $q(x)$, nemá inverz
+	\item $2 \rightarrow 2^{-1} = 2$ (poÄÃ­tÃ¡m to jakoby v $\mathbb{Z}_p$)
+	\item $x \rightarrow x^{-1} = x$ (protoÅ¾e pouÅ¾Ã­vÃ¡m pÅ™episovacÃ­ pravidlo $x^2 = -2 \Rightarrow x^2 = 1$)
+	\item $x+1$ - soudÄ›lnÃ© s $q(x)$, nemÃ¡ inverz
+	\item $x+2$ - soudÄ›lnÃ© s $q(x)$, nemÃ¡ inverz
 	\item $2x \rightarrow 2x^{-1} = 2x\ (2x\cdot2x = 4x^2 = 1)$ 
-	\item $2x+1$ - soudìlné s $q(x)$, protoe $x^2 + 2 = (2x+1)\cdot(2x+2)$, nemá inverz  
-	\item $2x+2 = 2(x+1)$ - soudìlné s $q(x)$, nemá inverz
+	\item $2x+1$ - soudÄ›lnÃ© s $q(x)$, protoÅ¾e $x^2 + 2 = (2x+1)\cdot(2x+2)$, nemÃ¡ inverz  
+	\item $2x+2 = 2(x+1)$ - soudÄ›lnÃ© s $q(x)$, nemÃ¡ inverz
 \end{itemize} 
 
 %---------------------------------------Priklad 2-6-------------------------------- 
-\subsection{Pøíklad 6}
-Zjistìte, zda okruh $A = \mathbb{Z}_3[x]/P(x)$, kde $P(x) = x^3 + x^2 + x + 2$, tvoøí tìleso. Kolik má okruh $A$ prvkù?
+\subsection{PÅ™Ã­klad 6}
+ZjistÄ›te, zda okruh $A = \mathbb{Z}_3[x]/P(x)$, kde $P(x) = x^3 + x^2 + x + 2$, tvoÅ™Ã­ tÄ›leso. Kolik mÃ¡ okruh $A$ prvkÅ¯?
 
-Nech je $\alpha$ koøen polynomu $P(x)$ v okruhu $A$. Vypište všechny prvky okruhu $A$ ve tvaru polynomù v promìnné $\alpha$ a odvoïte pravidla pro pøepisování vyšších mocnin pøi násobení.
+NechÅ¥ je $\alpha$ koÅ™en polynomu $P(x)$ v okruhu $A$. VypiÅ¡te vÅ¡echny prvky okruhu $A$ ve tvaru polynomÅ¯ v promÄ›nnÃ© $\alpha$ a odvoÄte pravidla pro pÅ™episovÃ¡nÃ­ vyÅ¡Å¡Ã­ch mocnin pÅ™i nÃ¡sobenÃ­.
 
-Ovìøte, zda je $\alpha$ také koøenem polynomu $Q(x) = 2x^4 + x^3 + x^2 + 1$ v okruhu $A$.
+OvÄ›Å™te, zda je $\alpha$ takÃ© koÅ™enem polynomu $Q(x) = 2x^4 + x^3 + x^2 + 1$ v okruhu $A$.
 
-Najdìte inverzní prvek k $(2\alpha^2 + \alpha + 2)$ v okruhu $A$, pokud existuje. 
+NajdÄ›te inverznÃ­ prvek k $(2\alpha^2 + \alpha + 2)$ v okruhu $A$, pokud existuje. 
 
 \line(1,0){400}
 
-Okruh tvoøí tìleso, protoe $P(x)$ je ireducibilní, protoe je stupnì $3$ a nemá koøen:
+Okruh tvoÅ™Ã­ tÄ›leso, protoÅ¾e $P(x)$ je ireducibilnÃ­, protoÅ¾e je stupnÄ› $3$ a nemÃ¡ koÅ™en:
 
 \begin{veta}
-Polynom stupnì $2$ nebo $3$ je ireducibilní právì tehdy, kdy nemá koøen.
+Polynom stupnÄ› $2$ nebo $3$ je ireducibilnÃ­ prÃ¡vÄ› tehdy, kdyÅ¾ nemÃ¡ koÅ™en.
 \end{veta}
 
-Má $p^{st(P)} = 3^3 = 27$ prvkù (viz pøíklad \ref{priklad2-5}).  
+MÃ¡ $p^{st(P)} = 3^3 = 27$ prvkÅ¯ (viz pÅ™Ã­klad \ref{priklad2-5}).  
 
-Pro imaginární koøen $\alpha$ platí: $\alpha^3 + \alpha^2 + \alpha + 2 = 0$. Z toho se dají odvodit pøepisovací pravidla pro násobení:  
+Pro imaginÃ¡rnÃ­ koÅ™en $\alpha$ platÃ­: $\alpha^3 + \alpha^2 + \alpha + 2 = 0$. Z toho se dajÃ­ odvodit pÅ™episovacÃ­ pravidla pro nÃ¡sobenÃ­:  
 
 \[ \alpha^3 = 2\alpha^2 + 2\alpha + 1 \]
 \[ \alpha^4 = \alpha \cdot(2\alpha^2 + 2\alpha + 1) = 2\alpha^3 + 2\alpha^2 + \alpha = 2(2\alpha^2 + 2\alpha + 1) + 2\alpha^2 + \alpha = 2\alpha + 2\]
 
-To, jestli je $\alpha$ koøenem nìèeho, zjistím snadno - za $x$ dosadím $\alpha$ a pokud se to zredukuje na $0$, je $\alpha$ koøen.
+To, jestli je $\alpha$ koÅ™enem nÄ›Äeho, zjistÃ­m snadno - za $x$ dosadÃ­m $\alpha$ a pokud se to zredukuje na $0$, je $\alpha$ koÅ™en.
 
 \[ 2\alpha^4 + \alpha^3 + \alpha^2 + 1 = 4\alpha + 4 + 2\alpha^2 + 2\alpha + 1 + \alpha^2 + 1 = 6\alpha + 3\alpha^2 + 6 = \underline{0} \]
 
-Nalezení inverzního prvku k $(2\alpha^2 + \alpha + 2)$ se dá udìlat dvìma zpùsoby:
+NalezenÃ­ inverznÃ­ho prvku k $(2\alpha^2 + \alpha + 2)$ se dÃ¡ udÄ›lat dvÄ›ma zpÅ¯soby:
 
 \begin{enumerate}
-	\item Vyøešení rovnice $(2\alpha^2 + \alpha + 2)\cdot( a\cdot \alpha^2 + b \cdot \alpha + c) = 1$ pro nalezení $a,b,c$
+	\item VyÅ™eÅ¡enÃ­ rovnice $(2\alpha^2 + \alpha + 2)\cdot( a\cdot \alpha^2 + b \cdot \alpha + c) = 1$ pro nalezenÃ­ $a,b,c$
 	\[ 2a\alpha^4 + 2b\alpha^3 + 2c\alpha^2 + a\alpha^3 + b\alpha^2 + c\alpha + 2a\alpha^2 + 2b\alpha + 2c = \]
 	\begin{center}
-		$\ldots$ následuje asi 7 øádkù upravování a dosazování $\ldots$
+		$\ldots$ nÃ¡sleduje asi 7 Å™Ã¡dkÅ¯ upravovÃ¡nÃ­ a dosazovÃ¡nÃ­ $\ldots$
 	\end{center}
 	\[ = a(\alpha^2 + 1) + b(2\alpha^2) + c(2\alpha^2 + \alpha + 2) \]
 	
@@ -820,15 +822,15 @@ Nalezení inverzního prvku k $(2\alpha^2 + \alpha + 2)$ se dá udìlat dvìma zpùsob
 			$1$: 				& $a$		&					&	$+ c$		&	$= 1$ \\
 		\end{tabular}
 	\end{center}
-	Z toho vyplıvá jednak to, e inverz je $(\alpha^2 + \alpha)$ a také to, e je to zpùsob extrémnì náchylnı na chyby
-	\item Vyøešení rozšíøeného euklida $A(x)\overbrace{(2x^2 + x + 2)}^{P(x)} + B(x)\overbrace{(x^3 + x^2 + x + 2)}^{R(x)} = 1$
+	Z toho vyplÃ½vÃ¡ jednak to, Å¾e inverz je $(\alpha^2 + \alpha)$ a takÃ© to, Å¾e je to zpÅ¯sob extrÃ©mnÄ› nÃ¡chylnÃ½ na chyby
+	\item VyÅ™eÅ¡enÃ­ rozÅ¡Ã­Å™enÃ©ho euklida $A(x)\overbrace{(2x^2 + x + 2)}^{P(x)} + B(x)\overbrace{(x^3 + x^2 + x + 2)}^{R(x)} = 1$
 	
 \begin{align*}
 R(x) 	& = P(x)\cdot(2x+1) + 2x 	& 2x = R(x) - P(x)(2x+1) \\
 P(x)	& = 2x\cdot(x+2)+2 				& 2 = P(x) - 2x\cdot(x+2)
 \end{align*}
 
-Jako gcd mi vyšla dvojka, kdy vynásobím obì strany inverzem k $2$ dostanu (nìco) $+ 1$. V Bezoutovì rovnosti tedy na zaèátku nechám na pravé stranì $2$, aby se mi to lépe vyjadøovalo, a nakonec to vynásobím $2^{-1}$, abych dostal na pravé stranì $1$:
+Jako gcd mi vyÅ¡la dvojka, kdyÅ¾ vynÃ¡sobÃ­m obÄ› strany inverzem k $2$ dostanu (nÄ›co) $+ 1$. V BezoutovÄ› rovnosti tedy na zaÄÃ¡tku nechÃ¡m na pravÃ© stranÄ› $2$, aby se mi to lÃ©pe vyjadÅ™ovalo, a nakonec to vynÃ¡sobÃ­m $2^{-1}$, abych dostal na pravÃ© stranÄ› $1$:
 
 \begin{align*}
 2 & = P(x) - 2x(x+2) \\
@@ -839,95 +841,95 @@ Jako gcd mi vyšla dvojka, kdy vynásobím obì strany inverzem k $2$ dostanu (nìco
 1 & = P(x)\underline{(x^2+x)} - R(x)(2x+1)
 \end{align*}
 
-Vısledek stejnı, postup taky pracnı :-)
+VÃ½sledek stejnÃ½, postup taky pracnÃ½ :-)
 
 \end{enumerate}
 
 %---------------------------------------Priklad 2-7-------------------------------- 
-\subsection{Pøíklad 7}
-Zjistìte, zda okruh $B = \mathbb{Z}_3[x]/Q(x)$, kde $Q(x) = x^3 + x + 2$, tvoøí tìleso. Kolik má okruh $B$ prvkù?
+\subsection{PÅ™Ã­klad 7}
+ZjistÄ›te, zda okruh $B = \mathbb{Z}_3[x]/Q(x)$, kde $Q(x) = x^3 + x + 2$, tvoÅ™Ã­ tÄ›leso. Kolik mÃ¡ okruh $B$ prvkÅ¯?
 
-Vypište všechny prvky okruhu $B$ ve tvaru polynomù v promìnné $x$.
+VypiÅ¡te vÅ¡echny prvky okruhu $B$ ve tvaru polynomÅ¯ v promÄ›nnÃ© $x$.
 
-Najdìte inverzní prvek k $(x^2 + 1)$ a k $(x^2 + 2x + 1)$ v okruhu $B$, pokud existují (øešte polynomiální rovnice).
+NajdÄ›te inverznÃ­ prvek k $(x^2 + 1)$ a k $(x^2 + 2x + 1)$ v okruhu $B$, pokud existujÃ­ (Å™eÅ¡te polynomiÃ¡lnÃ­ rovnice).
 
 \line(1,0){400}
 
-Aby okruh tvoøil tìleso, musí bıt $Q(x)$ ireducibilní. Jeliko polynom je stupnì 3 a nemá koøen, pak je ireducibilní; v opaèném pøípadì ireducibilní není (je reducibilní :-) ). Koøen má, a to 2, take je je dìlitelnı polynonem $(x - 2) = (x + 1)$:
+Aby okruh tvoÅ™il tÄ›leso, musÃ­ bÃ½t $Q(x)$ ireducibilnÃ­. JelikoÅ¾ polynom je stupnÄ› 3 a nemÃ¡ koÅ™en, pak je ireducibilnÃ­; v opaÄnÃ©m pÅ™Ã­padÄ› ireducibilnÃ­ nenÃ­ (je reducibilnÃ­ :-) ). KoÅ™en mÃ¡, a to 2, takÅ¾e je je dÄ›litelnÃ½ polynonem $(x - 2) = (x + 1)$:
 
 \[ x^3 + x + 2 = (x+1)(x^2 + 2x + 2)\]
 
-Ireducibilní není, a $B$ není tìleso. Okruh $B$ má $p^{st(P)} = 3^3 = 27$ prvkù. Všechny prvky jsou všechny polynomy stupnì nejvıše $2$ v $\mathbb{Z}_3[x]$.
+IreducibilnÃ­ nenÃ­, a $B$ nenÃ­ tÄ›leso. Okruh $B$ mÃ¡ $p^{st(P)} = 3^3 = 27$ prvkÅ¯. VÅ¡echny prvky jsou vÅ¡echny polynomy stupnÄ› nejvÃ½Å¡e $2$ v $\mathbb{Z}_3[x]$.
 
-Inverzní prvek k $(x^2 + 1)$ najdu vyøešením $A(x)\overbrace{(x^2 + 1)}^{P(x)} + B(x)\overbrace{(x^3 + x + 2)}^{R(x)} = 1$:
+InverznÃ­ prvek k $(x^2 + 1)$ najdu vyÅ™eÅ¡enÃ­m $A(x)\overbrace{(x^2 + 1)}^{P(x)} + B(x)\overbrace{(x^3 + x + 2)}^{R(x)} = 1$:
 
 \begin{align*}
 R(x) 	& = x\cdot P(x) + 2 & 2 = R(x) - x\cdot P(x) \Rightarrow 1 = 2R(x) + \underline{x}\cdot P(x) \\
 \end{align*}
 
-Z toho plyne, e $(x^2 + 1)^{-1} = x$.
+Z toho plyne, Å¾e $(x^2 + 1)^{-1} = x$.
 
-Inverzní prvek k $(x^2 + 2x + 1)$ najdu podobnì: $A(x)\overbrace{(x^2 + 2x + 1)}^{P(x)} + B(x)\overbrace{(x^3 + x + 2)}^{R(x)} = 1$
+InverznÃ­ prvek k $(x^2 + 2x + 1)$ najdu podobnÄ›: $A(x)\overbrace{(x^2 + 2x + 1)}^{P(x)} + B(x)\overbrace{(x^3 + x + 2)}^{R(x)} = 1$
 
 \begin{align*}
 R(x) 	& = (x+1)\cdot P(x) + (x+1) \\
 P(x) & = (x+1)(x+1) + 0 
 \end{align*}
 
-Jak je vidno, k $(x^2 + 2x + 1)$ inverz najít nedokáu, protoe je soudìlnı s $Q(x)$.
+Jak je vidno, k $(x^2 + 2x + 1)$ inverz najÃ­t nedokÃ¡Å¾u, protoÅ¾e je soudÄ›lnÃ½ s $Q(x)$.
 
 %---------------------------------------Priklad 2-8-------------------------------- 
-\subsection{\label{priklad2-8}Pøíklad 8}
-Zdùvodnìte, proè je okruh $\mathbb{Z}_2[x]/(x^5 + x^2 + 1)$ tvoøí tìleso. Kolik má prvkù?
+\subsection{\label{priklad2-8}PÅ™Ã­klad 8}
+ZdÅ¯vodnÄ›te, proÄ je okruh $\mathbb{Z}_2[x]/(x^5 + x^2 + 1)$ tvoÅ™Ã­ tÄ›leso. Kolik mÃ¡ prvkÅ¯?
 
-Najdìte v tomto tìlese inverzní prvek k $x^2 + 1$ (øešte polynomiální rovnici).
+NajdÄ›te v tomto tÄ›lese inverznÃ­ prvek k $x^2 + 1$ (Å™eÅ¡te polynomiÃ¡lnÃ­ rovnici).
 
-Kolik primitivních prvkù má toto tìleso? Naleznìte nìjakı primitivní prvek.
+Kolik primitivnÃ­ch prvkÅ¯ mÃ¡ toto tÄ›leso? NaleznÄ›te nÄ›jakÃ½ primitivnÃ­ prvek.
 
 \line(1,0){400}
 
-Polynom $x^5 + x^2 + 1$ je v $\mathbb{Z}_2$ ireducibilní (viz pøíklad \ref{priklad2-2}), okruh je tedy i tìlesem. Má $p^{st(P)} = 2^5 = 32$ prvkù. 
+Polynom $x^5 + x^2 + 1$ je v $\mathbb{Z}_2$ ireducibilnÃ­ (viz pÅ™Ã­klad \ref{priklad2-2}), okruh je tedy i tÄ›lesem. MÃ¡ $p^{st(P)} = 2^5 = 32$ prvkÅ¯. 
 
-Pro nalezení inverzu k $(x^2 + 1)$ musím øešit rovnici $A(x)\overbrace{(x^2 + 1)}^{P(x)} + B(x)\overbrace{(x^5 + x^2 + 2)}^{R(x)} = 1$
+Pro nalezenÃ­ inverzu k $(x^2 + 1)$ musÃ­m Å™eÅ¡it rovnici $A(x)\overbrace{(x^2 + 1)}^{P(x)} + B(x)\overbrace{(x^5 + x^2 + 2)}^{R(x)} = 1$
 
 \begin{align*}
 R(x) 	& = P(x)\cdot(x^3 + x + 1) + x 	& x = R(x) - P(x)(x^3+x+1) \\
 P(x)	& = x\cdot x + 1  							& 1 = P(x) - x\cdot x \\
 \end{align*}
 
-Podle Bezoutovy vìty dopoèítám inverz:
+Podle Bezoutovy vÄ›ty dopoÄÃ­tÃ¡m inverz:
 
 \[ 1 = P(x) - (R(x) - (P(x)(x^3 + x + 1)))\cdot x = x\cdot R(x) + P(x)\underline{(x^4 + x^2 + x + 1)} \]
 
-Primitivní prvek tìlesa $(F,+,\cdot,0,1)$ je generátor grupy $(F \setminus \{0\},\cdot,1)$, pøièem takovıch primitivních prvkù je $\varphi(m - 1)$, kde $m$ je poèet prvkù tìlesa. Jinımi slovy, primitivní prvek tìlesa je prvek, je mi postupnım umocòováním dokáe vytvoøit všechny nenulové prvky tìlesa. Prvek øádu $1$ je $1$, a jeliko primitivních prvkù tìlesa je $\varphi(m - 1) = \varphi(31) = 30$, tak všechny ostatní (vyjma $0$ a $1$) musí bıt primitivní. Obecnì jsou v grupì prvky takovıch øádù, které dìlí mohutnost grupy - v tomto pøípadì tedy $1$ a $31$. 
+PrimitivnÃ­ prvek tÄ›lesa $(F,+,\cdot,0,1)$ je generÃ¡tor grupy $(F \setminus \{0\},\cdot,1)$, pÅ™iÄemÅ¾ takovÃ½ch primitivnÃ­ch prvkÅ¯ je $\varphi(m - 1)$, kde $m$ je poÄet prvkÅ¯ tÄ›lesa. JinÃ½mi slovy, primitivnÃ­ prvek tÄ›lesa je prvek, jeÅ¾ mi postupnÃ½m umocÅˆovÃ¡nÃ­m dokÃ¡Å¾e vytvoÅ™it vÅ¡echny nenulovÃ© prvky tÄ›lesa. Prvek Å™Ã¡du $1$ je $1$, a jelikoÅ¾ primitivnÃ­ch prvkÅ¯ tÄ›lesa je $\varphi(m - 1) = \varphi(31) = 30$, tak vÅ¡echny ostatnÃ­ (vyjma $0$ a $1$) musÃ­ bÃ½t primitivnÃ­. ObecnÄ› jsou v grupÄ› prvky takovÃ½ch Å™Ã¡dÅ¯, kterÃ© dÄ›lÃ­ mohutnost grupy - v tomto pÅ™Ã­padÄ› tedy $1$ a $31$. 
 
 
 %---------------------------------------Priklad 2-9-------------------------------- 
-\subsection{Pøíklad 9}
-Zkonstruujte tìleso $GF(16)$, popište jeho konstruování a odvoïte pøepisovací pravidla pro násobení.
+\subsection{PÅ™Ã­klad 9}
+Zkonstruujte tÄ›leso $GF(16)$, popiÅ¡te jeho konstruovÃ¡nÃ­ a odvoÄte pÅ™episovacÃ­ pravidla pro nÃ¡sobenÃ­.
 
-Naleznìte ve vašem tìlese všechny primitivní prvky.
+NaleznÄ›te ve vaÅ¡em tÄ›lese vÅ¡echny primitivnÃ­ prvky.
 
 \line(1,0){400}
 
 \begin{veta}
-Koneèné tìleso s $n$ prvky existuje právì tehdy, kdy $n$ je mocnina prvoèísla. Pak existuje právì jedno (a na isomorfismus, tedy ‚pøeznaèení prvkù‘).
+KoneÄnÃ© tÄ›leso s $n$ prvky existuje prÃ¡vÄ› tehdy, kdyÅ¾ $n$ je mocnina prvoÄÃ­sla. Pak existuje prÃ¡vÄ› jedno (aÅ¾ na isomorfismus, tedy â€špÅ™eznaÄenÃ­ prvkÅ¯â€˜).
 \end{veta}
 
-Toto tìleso se nazıvá \textbf{Galoisovo} a znaèí se $GF(p^k)$, kde $p^k$ je poèet jeho prvkù, $k$ je stupeò generujícího (ireducibilního) polynomu a $n$ je základ soustavy grupy $\mathbb{Z}_n$. 
+Toto tÄ›leso se nazÃ½vÃ¡ \textbf{Galoisovo} a znaÄÃ­ se $GF(p^k)$, kde $p^k$ je poÄet jeho prvkÅ¯, $k$ je stupeÅˆ generujÃ­cÃ­ho (ireducibilnÃ­ho) polynomu a $n$ je zÃ¡klad soustavy grupy $\mathbb{Z}_n$. 
 
-V tomto pøípadì tedy mám tìleso $GF(2^4)$ a musím najít ireducibilní polynom stupnì $4$ v $\mathbb{Z}_2$. Vyzkouším tedy postupnì polynomy nemající koøen a nemající nulovı absolutní èlen (rozepíšu si je podobnì jako v pøíkladì \ref{priklad2-2} a jedu):
+V tomto pÅ™Ã­padÄ› tedy mÃ¡m tÄ›leso $GF(2^4)$ a musÃ­m najÃ­t ireducibilnÃ­ polynom stupnÄ› $4$ v $\mathbb{Z}_2$. VyzkouÅ¡Ã­m tedy postupnÄ› polynomy nemajÃ­cÃ­ koÅ™en a nemajÃ­cÃ­ nulovÃ½ absolutnÃ­ Älen (rozepÃ­Å¡u si je podobnÄ› jako v pÅ™Ã­kladÄ› \ref{priklad2-2} a jedu):
 
 \begin{itemize}
 	\item $\underline{(1,0,0,1,1)}$: $\cancel{(x+1)}$, $\cancel{(x^2 + x + 1)}$ 
 \end{itemize}
 
-Hned první pokus byl úspìšnı, polynom $x^4 + x + 1$ je ireducubilní a mùu ho pouít jako generující. Pøepisovací pravidla budou:
+Hned prvnÃ­ pokus byl ÃºspÄ›Å¡nÃ½, polynom $x^4 + x + 1$ je ireducubilnÃ­ a mÅ¯Å¾u ho pouÅ¾Ã­t jako generujÃ­cÃ­. PÅ™episovacÃ­ pravidla budou:
 
 \[ \alpha^4 = \alpha + 1 \]	
 \[ \alpha^5 = (\alpha^4 + 1)\cdot \alpha = \alpha^2 + \alpha\]
 
-Co se tıèe primitivního prvku, platí pravidla z pøíkladu \ref{priklad2-8}, tedy primitivních prvkù je $\varphi(16 - 1) = 8$. Tyto prvky budou evidentnì øádu $15$. Zpùsob, jak takovı prvek najít je obdobnı tomu, co jsem dìlal v první èásti, napø. pøíkladu \ref{priklad1-6}. Zkusím tøeba koøen $\alpha$:
+Co se tÃ½Äe primitivnÃ­ho prvku, platÃ­ pravidla z pÅ™Ã­kladu \ref{priklad2-8}, tedy primitivnÃ­ch prvkÅ¯ je $\varphi(16 - 1) = 8$. Tyto prvky budou evidentnÄ› Å™Ã¡du $15$. ZpÅ¯sob, jak takovÃ½ prvek najÃ­t je obdobnÃ½ tomu, co jsem dÄ›lal v prvnÃ­ ÄÃ¡sti, napÅ™. pÅ™Ã­kladu \ref{priklad1-6}. ZkusÃ­m tÅ™eba koÅ™en $\alpha$:
 
 \begin{align*}
 \triangle \alpha^1 & = \alpha^1\\
@@ -947,47 +949,47 @@ Co se tıèe primitivního prvku, platí pravidla z pøíkladu \ref{priklad2-8}, tedy 
 \triangle \alpha^{15} & = 1
 \end{align*}
 
-Poèet prvkù grupy je $T \setminus \{0\} = 15$, a jak vím, tak øády prvkù musí dìlit øád grupy - v tomto pøípadì tedy ty øády mohou bıt $1, 3, 5$ a $15$. Z toho vyplıvá, e jen pro rozhodnotí, zda-li je danı prvek generátor, mi ho staèí umocnit na tyhle øády (oznaèeny $\triangle$). Ty ostatní se mi pak ale taky budou hodit.
-Evidentnì $\alpha$ je hledanı generátor, další najdu pomocí vzorce \ref{rady-prvku}:
+PoÄet prvkÅ¯ grupy je $T \setminus \{0\} = 15$, a jak vÃ­m, tak Å™Ã¡dy prvkÅ¯ musÃ­ dÄ›lit Å™Ã¡d grupy - v tomto pÅ™Ã­padÄ› tedy ty Å™Ã¡dy mohou bÃ½t $1, 3, 5$ a $15$. Z toho vyplÃ½vÃ¡, Å¾e jen pro rozhodnotÃ­, zda-li je danÃ½ prvek generÃ¡tor, mi ho staÄÃ­ umocnit na tyhle Å™Ã¡dy (oznaÄeny $\triangle$). Ty ostatnÃ­ se mi pak ale taky budou hodit.
+EvidentnÄ› $\alpha$ je hledanÃ½ generÃ¡tor, dalÅ¡Ã­ najdu pomocÃ­ vzorce \ref{rady-prvku}:
 
 \[ r(a^k) = \frac{r(a)}{\gcd(r(a), k)} \Rightarrow \frac{15}{\gcd(15, k)} = 15 \Rightarrow \gcd(15, k) = 1 \]
 
-Hledané primitivní prvky jsou tedy $\{\alpha, \alpha^2, \alpha^4, \alpha^7, \alpha^8, \alpha^{11}, \alpha^{13}, \alpha^{14}\} = \{\alpha, \alpha^2, \alpha + 1, \alpha^4 + \alpha^3, \alpha^2 + 1, \alpha^3 + \alpha^2 + \alpha, \alpha^3 + \alpha^2 + 1, \alpha^3 + 1 \}$. 
+HledanÃ© primitivnÃ­ prvky jsou tedy $\{\alpha, \alpha^2, \alpha^4, \alpha^7, \alpha^8, \alpha^{11}, \alpha^{13}, \alpha^{14}\} = \{\alpha, \alpha^2, \alpha + 1, \alpha^4 + \alpha^3, \alpha^2 + 1, \alpha^3 + \alpha^2 + \alpha, \alpha^3 + \alpha^2 + 1, \alpha^3 + 1 \}$. 
 
 %---------------------------------------Priklad 2-10-------------------------------- 
-\subsection{Pøíklad 10}
-Okruh komplexních èísel nad $\mathbb{Z}_p$ je mnoina $K_p = \{a + b\imath,\mbox{ kde } a,b \in \mathbb{Z}_p \}$ s operacemi sèítání a násobení jako u komplexních èísel, tj. $\imath^2 = -1$. Dokate, e okruh komplexních èísel nad $\mathbb{Z}_7$ tvoøí tìleso, zatímco okruh komplexních èísel nad $\mathbb{Z}_5$ tìleso netvoøí. (Návod: Najdìte izomorfismus na nìjakı faktorovı okruh okruhu polynomù nad $\mathbb{Z}_p$.)
+\subsection{PÅ™Ã­klad 10}
+Okruh komplexnÃ­ch ÄÃ­sel nad $\mathbb{Z}_p$ je mnoÅ¾ina $K_p = \{a + b\imath,\mbox{ kde } a,b \in \mathbb{Z}_p \}$ s operacemi sÄÃ­tÃ¡nÃ­ a nÃ¡sobenÃ­ jako u komplexnÃ­ch ÄÃ­sel, tj. $\imath^2 = -1$. DokaÅ¾te, Å¾e okruh komplexnÃ­ch ÄÃ­sel nad $\mathbb{Z}_7$ tvoÅ™Ã­ tÄ›leso, zatÃ­mco okruh komplexnÃ­ch ÄÃ­sel nad $\mathbb{Z}_5$ tÄ›leso netvoÅ™Ã­. (NÃ¡vod: NajdÄ›te izomorfismus na nÄ›jakÃ½ faktorovÃ½ okruh okruhu polynomÅ¯ nad $\mathbb{Z}_p$.)
 
-Najdìte øády prvkù $\imath, \imath + 1$ a $\imath + 2$ v multiplikativní grupì tìlesa $K_7$. Je nìkterı z nich primitivním prvkem v tìlese $K_7$?
+NajdÄ›te Å™Ã¡dy prvkÅ¯ $\imath, \imath + 1$ a $\imath + 2$ v multiplikativnÃ­ grupÄ› tÄ›lesa $K_7$. Je nÄ›kterÃ½ z nich primitivnÃ­m prvkem v tÄ›lese $K_7$?
 
 \line(1,0){400}
 
-Návod smìøuje na pouití následující vìty:
+NÃ¡vod smÄ›Å™uje na pouÅ¾itÃ­ nÃ¡sledujÃ­cÃ­ vÄ›ty:
 
 \begin{veta}
-Faktorovı okruh $\mathbb{Z}_p[x]/q(x)$ je tìlesem právì tehdy, kdy polynom $q(x)$ je ireducibilní polynom nad $\mathbb{Z}_p$.
+FaktorovÃ½ okruh $\mathbb{Z}_p[x]/q(x)$ je tÄ›lesem prÃ¡vÄ› tehdy, kdyÅ¾ polynom $q(x)$ je ireducibilnÃ­ polynom nad $\mathbb{Z}_p$.
 \end{veta}
 
-Jinımi slovy, pokud dokáu najít izomorfismus na faktorovı okruh polynomù, tak k rozhodnutí, jestli je daná vìc tìleso èi nikoliv mi pak jen staèí otestovat, zda-li je $q(x)$ ireducibilní v $\mathbb{Z}_5$ a $\mathbb{Z}_7$. 
+JinÃ½mi slovy, pokud dokÃ¡Å¾u najÃ­t izomorfismus na faktorovÃ½ okruh polynomÅ¯, tak k rozhodnutÃ­, jestli je danÃ¡ vÄ›c tÄ›leso Äi nikoliv mi pak jen staÄÃ­ otestovat, zda-li je $q(x)$ ireducibilnÃ­ v $\mathbb{Z}_5$ a $\mathbb{Z}_7$. 
 
-Podle zadání je sèítání definováno následovnì:
+Podle zadÃ¡nÃ­ je sÄÃ­tÃ¡nÃ­ definovÃ¡no nÃ¡sledovnÄ›:
 \[ (a\imath + b) + (c\imath + d) = (a + c)\imath + (b + d) \]
-a násobení jako
+a nÃ¡sobenÃ­ jako
 \[(a\imath + b) \cdot (c\imath + d) = ac\underbrace{\imath^2}_{= -1} + (ad + bc)\imath + bd = (ad + bc)\imath + (bd - ac) \]
 
-Kdy se na násobení podívám poøádnì, tak mì mùe napadnout, e to, co dìlám, je vlastnì násobení modulo $x^2+1$ (na to by se asi dalo pøijít tak, e si øeknu, e $x=\imath$ a $x^2 + 1 = 0$):
+KdyÅ¾ se na nÃ¡sobenÃ­ podÃ­vÃ¡m poÅ™Ã¡dnÄ›, tak mÄ› mÅ¯Å¾e napadnout, Å¾e to, co dÄ›lÃ¡m, je vlastnÄ› nÃ¡sobenÃ­ modulo $x^2+1$ (na to by se asi dalo pÅ™ijÃ­t tak, Å¾e si Å™eknu, Å¾e $x=\imath$ a $x^2 + 1 = 0$):
 
 \[(ax + b) \cdot (cx + d) = (acx^2 + (ad + bc)\imath + bd)\mbox{ mod }(x^2 + 1) = (ad + bc)x + (bd - ac) \]
 
-Hledanı izomorfismus je tedy $\mathbb{Z}_p[x]/x^2+1$ (ovšem jak se tohle dá dokázat podle definice od Demlové fakt netuším). 
+HledanÃ½ izomorfismus je tedy $\mathbb{Z}_p[x]/x^2+1$ (ovÅ¡em jak se tohle dÃ¡ dokÃ¡zat podle definice od DemlovÃ© fakt netuÅ¡Ã­m). 
 
-Další, v zásadì triviální záleitost, je zjistit, jestli je $x^2+1$ ireducibilní v $\mathbb{Z}_5$. Má koøen 2 a 3, take
+DalÅ¡Ã­, v zÃ¡sadÄ› triviÃ¡lnÃ­ zÃ¡leÅ¾itost, je zjistit, jestli je $x^2+1$ ireducibilnÃ­ v $\mathbb{Z}_5$. MÃ¡ koÅ™en 2 a 3, takÅ¾e
 
 \[ (x^2+1)=(x+2)(x+3) \mbox { v } \mathbb{Z}_5. \]
  
-V $\mathbb{Z}_5$ tedy ireducibilní není, zatímco v $\mathbb{Z}_7$ u koøen nemá - tady ireducibilní je. 
+V $\mathbb{Z}_5$ tedy ireducibilnÃ­ nenÃ­, zatÃ­mco v $\mathbb{Z}_7$ uÅ¾ koÅ™en nemÃ¡ - tady ireducibilnÃ­ je. 
 
-Co se tıèe øádù prvkù v grupì, tak ty dìlí poèet prvkù v grupì. Poèet prvkù v grupì $K_7 - \{0\}$ (neboli všechny kombinace $ax+b$, kde pro $a$ mám $7$ moností a pro $b$ taky $7$ moností) je $7^2 - 1 = 48$ prvkù, øády mohou bıt $1,2,3,4,6,8,12,16,24,48$. V $\mathbb{Z}_7$:
+Co se tÃ½Äe Å™Ã¡dÅ¯ prvkÅ¯ v grupÄ›, tak ty dÄ›lÃ­ poÄet prvkÅ¯ v grupÄ›. PoÄet prvkÅ¯ v grupÄ› $K_7 - \{0\}$ (neboli vÅ¡echny kombinace $ax+b$, kde pro $a$ mÃ¡m $7$ moÅ¾nostÃ­ a pro $b$ taky $7$ moÅ¾nostÃ­) je $7^2 - 1 = 48$ prvkÅ¯, Å™Ã¡dy mohou bÃ½t $1,2,3,4,6,8,12,16,24,48$. V $\mathbb{Z}_7$:
 
 \begin{figure}[h]
   \hfill
@@ -1032,38 +1034,38 @@ Co se tıèe øádù prvkù v grupì, tak ty dìlí poèet prvkù v grupì. Poèet prvkù v gr
   \hfill
 \end{figure}
 
-Z toho vyplıvá, e $(\imath + 2)$ je primitivní prvek; $r(\imath + 2) = 48, r(\imath + 1) = 24$ a $r(\imath) = 4$.
+Z toho vyplÃ½vÃ¡, Å¾e $(\imath + 2)$ je primitivnÃ­ prvek; $r(\imath + 2) = 48, r(\imath + 1) = 24$ a $r(\imath) = 4$.
 
 %---------------------------------------Priklad 2-11-------------------------------- 
-\subsection{Pøíklad 11}
-Rozlote polynom $f(x) = x^4 + 2x^2 + x + 1$ na souèin ireducibilních polynomù nad $\mathbb{Z}_3$ a potom na tìlesem $GF(27)$, které si pro tento úèel vhodnì zkonstruujte.
+\subsection{PÅ™Ã­klad 11}
+RozloÅ¾te polynom $f(x) = x^4 + 2x^2 + x + 1$ na souÄin ireducibilnÃ­ch polynomÅ¯ nad $\mathbb{Z}_3$ a potom na tÄ›lesem $GF(27)$, kterÃ© si pro tento ÃºÄel vhodnÄ› zkonstruujte.
 
 \line(1,0){400}
 
-Nejdøív zkusím vydìlit polynom $f(x)$ ireducibilními polynomy niších stupòù, zaènu polynomem $(x+1)$:
+NejdÅ™Ã­v zkusÃ­m vydÄ›lit polynom $f(x)$ ireducibilnÃ­mi polynomy niÅ¾Å¡Ã­ch stupÅˆÅ¯, zaÄnu polynomem $(x+1)$:
 
 \[ f(x)=(x+1)(x^3 + 2x + 1) \]
 
-A právì jsem dostal rozklad $f(x)$, jeliko polynom $(x^3 + 2x + 1)$ nemá koøen, a pokud polynom stupnì $2$ èi $3$ nemá koøen, tak je ireducibilní.
+A prÃ¡vÄ› jsem dostal rozklad $f(x)$, jelikoÅ¾ polynom $(x^3 + 2x + 1)$ nemÃ¡ koÅ™en, a pokud polynom stupnÄ› $2$ Äi $3$ nemÃ¡ koÅ™en, tak je ireducibilnÃ­.
 
-Tím jsem získal takovı pìknı ireducibilní polynom, vhodnı jako základ tìlesa $GF(27)$: $GF(27) = GF(3^3) = \mathbb{Z}_3[x]/x^3 + 2x + 1$. 
+TÃ­m jsem zÃ­skal takovÃ½ pÄ›knÃ½ ireducibilnÃ­ polynom, vhodnÃ½ jako zÃ¡klad tÄ›lesa $GF(27)$: $GF(27) = GF(3^3) = \mathbb{Z}_3[x]/x^3 + 2x + 1$. 
 
 \begin{veta}
-Prvek $a \in K$ je koøen polynomu $p(x)$, pokud platí rovnost $p(a) = 0$.
+Prvek $a \in K$ je koÅ™en polynomu $p(x)$, pokud platÃ­ rovnost $p(a) = 0$.
 \end{veta}
 
-Take mùu zkoušet koøeny $1,2,\alpha \ldots$ a pokud to po dosazení dá jako vısledek $0$, je to koøen, vydìlím jím $f(x)$ a jedu dál.
+TakÅ¾e mÅ¯Å¾u zkouÅ¡et koÅ™eny $1,2,\alpha \ldots$ a pokud to po dosazenÃ­ dÃ¡ jako vÃ½sledek $0$, je to koÅ™en, vydÄ›lÃ­m jÃ­m $f(x)$ a jedu dÃ¡l.
 \begin{center}
-\textsc{FIXME: Nesedí s vısledky dr. Gollové!}	
+\textsc{FIXME: NesedÃ­ s vÃ½sledky dr. GollovÃ©!}	
 \end{center}
 
 \clearpage
 
-\section{Lineární a cyklické kódy}
+\section{LineÃ¡rnÃ­ a cyklickÃ© kÃ³dy}
 
 %---------------------------------------Priklad 3-1-------------------------------- 
-\subsection{\label{priklad3-1}Pøíklad 1}
-Lineární kód $K$ nad $\mathbb{Z}_3$ délky 5 má generující matici $\mathbf{G} = 
+\subsection{\label{priklad3-1}PÅ™Ã­klad 1}
+LineÃ¡rnÃ­ kÃ³d $K$ nad $\mathbb{Z}_3$ dÃ©lky 5 mÃ¡ generujÃ­cÃ­ matici $\mathbf{G} = 
 \begin{pmatrix}
   2 & 2 & 0 & 1 & 2 \\
   2 & 0 & 2 & 2 & 2 \\
@@ -1073,15 +1075,15 @@ Lineární kód $K$ nad $\mathbb{Z}_3$ délky 5 má generující matici $\mathbf{G} =
 \renewcommand{\labelenumi}{\alph{enumi})}
 
 \begin{enumerate}
-	\item Zakódujte informaci $\bar{a} = (102)$ pomocí matice $\mathbf{G}$. Spoètìte systematickou generující matici $\mathbf{G}_S$ kódu $K$ a opìt zakódujte informaci $\bar{a} = (102)$ pomocí systematické matice $\mathbf{G}_S$.
-	\item Spoètìte kontrolní matici $\mathbf{H}$ kódu $K$ a zkontrolujte, zda je slovo $\bar{v} = (12201)$ kódové.
-	\item Dekódujte $\bar{v}$ za pøedpokladu, e bylo pouito systematické kódování, a potom za pøedpokladu, e bylo pouito kódování pomocí matice $\mathbf{G}$.
+	\item ZakÃ³dujte informaci $\bar{a} = (102)$ pomocÃ­ matice $\mathbf{G}$. SpoÄtÄ›te systematickou generujÃ­cÃ­ matici $\mathbf{G}_S$ kÃ³du $K$ a opÄ›t zakÃ³dujte informaci $\bar{a} = (102)$ pomocÃ­ systematickÃ© matice $\mathbf{G}_S$.
+	\item SpoÄtÄ›te kontrolnÃ­ matici $\mathbf{H}$ kÃ³du $K$ a zkontrolujte, zda je slovo $\bar{v} = (12201)$ kÃ³dovÃ©.
+	\item DekÃ³dujte $\bar{v}$ za pÅ™edpokladu, Å¾e bylo pouÅ¾ito systematickÃ© kÃ³dovÃ¡nÃ­, a potom za pÅ™edpokladu, Å¾e bylo pouÅ¾ito kÃ³dovÃ¡nÃ­ pomocÃ­ matice $\mathbf{G}$.
 \end{enumerate}
 
 \line(1,0){400}
 
 \begin{enumerate}
-	\item Kódování se provádí pomocí vzorce
+	\item KÃ³dovÃ¡nÃ­ se provÃ¡dÃ­ pomocÃ­ vzorce
 	\begin{equation}
 	\bar{w} = \bar{a}\cdot \mathbf{G}
 	\label{kodovani}
@@ -1094,7 +1096,7 @@ Lineární kód $K$ nad $\mathbb{Z}_3$ délky 5 má generující matici $\mathbf{G} =
   0 & 2 & 2 & 0 & 0
 	\end{pmatrix} = (1\cdot2 + 0\cdot2 + 2\cdot0, 1\cdot2 + 0\cdot0 + 2\cdot2,1\cdot0 + 0\cdot2 + 2\cdot2,1\cdot1 + 0\cdot2 + 0\cdot0,1\cdot2 + 0\cdot2 + 2\cdot0) = (2,6,4,1,2) = (2,0,1,1,2)$  
 
-	Pøevést matici na systematickou matici znamená udìlat z ní Gaussovou eliminací matici typu $\mathbf{G} = (\;\mathbf{E}\; \mathbf{B}\;)$, kde $\mathbf{E}$ je jednotková matice. Take hurá do toho:
+	PÅ™evÃ©st matici na systematickou matici znamenÃ¡ udÄ›lat z nÃ­ Gaussovou eliminacÃ­ matici typu $\mathbf{G} = (\;\mathbf{E}\; \mathbf{B}\;)$, kde $\mathbf{E}$ je jednotkovÃ¡ matice. TakÅ¾e hurÃ¡ do toho:
 	
 \begin{alignat*}1
 	\begin{gmatrix}[p]
@@ -1135,18 +1137,18 @@ Lineární kód $K$ nad $\mathbb{Z}_3$ délky 5 má generující matici $\mathbf{G} =
 	\end{gmatrix} (=\mathbf{G}_S) 
 \end{alignat*}		
 
-Systematické zakódování znamená vypoèítat $\bar{w}_S = \bar{a}\cdot \mathbf{G}_S = (10221)$ (první tøi èíslice mùu opsat, díky jednotkové matici). 
+SystematickÃ© zakÃ³dovÃ¡nÃ­ znamenÃ¡ vypoÄÃ­tat $\bar{w}_S = \bar{a}\cdot \mathbf{G}_S = (10221)$ (prvnÃ­ tÅ™i ÄÃ­slice mÅ¯Å¾u opsat, dÃ­ky jednotkovÃ© matici). 
 
-	\item Kontrolní matici vypoèítám podle následující vìty:
+	\item KontrolnÃ­ matici vypoÄÃ­tÃ¡m podle nÃ¡sledujÃ­cÃ­ vÄ›ty:
 	\begin{veta}\label{kontrolni-matice}
-	Je-li generující matice $\mathbf{G}_S$ systematická tvaru
+	Je-li generujÃ­cÃ­ matice $\mathbf{G}_S$ systematickÃ¡ tvaru
 	\[ \mathbf{G}_S = (\;\mathbf{E}\; \mathbf{B}\;), \]
-	pak kontrolní matice $\mathbf{H}$ je rovna
+	pak kontrolnÃ­ matice $\mathbf{H}$ je rovna
 	\[ \mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;), \]
-	kde $\mathbf{E}$ je jednotková matice øádu $n-k$.
+	kde $\mathbf{E}$ je jednotkovÃ¡ matice Å™Ã¡du $n-k$.
 	\end{veta}
 	
-	Kód $K$ má $k$ informaèních znakù a $n-k$ kontrolních - napø. tenhle kód má 3 informaèní znaky a 2 kontrolní ($n$ je délka kódu, ze $\mathbb{Z}_p^n$, v tomhle pøípadì $\mathbb{Z}_3^5$).
+	KÃ³d $K$ mÃ¡ $k$ informaÄnÃ­ch znakÅ¯ a $n-k$ kontrolnÃ­ch - napÅ™. tenhle kÃ³d mÃ¡ 3 informaÄnÃ­ znaky a 2 kontrolnÃ­ ($n$ je dÃ©lka kÃ³du, ze $\mathbb{Z}_p^n$, v tomhle pÅ™Ã­padÄ› $\mathbb{Z}_3^5$).
 	
 	\[ \mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;) = \left( -\begin{pmatrix}
   0 & 1 \\
@@ -1164,13 +1166,13 @@ Systematické zakódování znamená vypoèítat $\bar{w}_S = \bar{a}\cdot \mathbf{G}_S
   \end{pmatrix}
 	\]
 	
-	Kontrola správnosti slova se provádí pomocí vıpoètu syndromu
+	Kontrola sprÃ¡vnosti slova se provÃ¡dÃ­ pomocÃ­ vÃ½poÄtu syndromu
 	\begin{equation}
 	\bar{s}^T = \mathbf{H}\cdot\bar{v}^T
 	\label{syndrom}
 	\end{equation}
 	
-	Pokud je syndrom nulovı, pak je $\bar{v}$ kódové slovo. V tomhle pøíkladu to vychází
+	Pokud je syndrom nulovÃ½, pak je $\bar{v}$ kÃ³dovÃ© slovo. V tomhle pÅ™Ã­kladu to vychÃ¡zÃ­
 	\[ \bar{s}^T = \mathbf{H}\cdot\bar{v}^T = \begin{pmatrix}
   0 & 1 & 2 & 1 & 0 \\
   2 & 0 & 0 & 0 & 1 \\
@@ -1183,11 +1185,11 @@ Systematické zakódování znamená vypoèítat $\bar{w}_S = \bar{a}\cdot \mathbf{G}_S
   1
   \end{pmatrix} = (6,3) = (0,0) = \bar{o}.\]
    
-	Slovo je kódové.
+	Slovo je kÃ³dovÃ©.
 	
-	\item Dekódování je v pøípadì systematického kódování jednoduché, jednoduše vezmu informaèní znaky: $\bar{v}=(\framebox{122}01)$, slovo je $\bar{a}_S = (122)$.
+	\item DekÃ³dovÃ¡nÃ­ je v pÅ™Ã­padÄ› systematickÃ©ho kÃ³dovÃ¡nÃ­ jednoduchÃ©, jednoduÅ¡e vezmu informaÄnÃ­ znaky: $\bar{v}=(\framebox{122}01)$, slovo je $\bar{a}_S = (122)$.
 	
-	Obecnì je to trošku sloitìjší, musím najít souøadnice kódového slova $\bar{v}$ vùèi bázi v $\mathbf{G}$. To znamená vyøešit soustavu $n$ rovnic o $k$ neznámıch, $(12201) = a_1\cdot(22012) + a_2\cdot(20222) + a_3(02200)$.
+	ObecnÄ› je to troÅ¡ku sloÅ¾itÄ›jÅ¡Ã­, musÃ­m najÃ­t souÅ™adnice kÃ³dovÃ©ho slova $\bar{v}$ vÅ¯Äi bÃ¡zi v $\mathbf{G}$. To znamenÃ¡ vyÅ™eÅ¡it soustavu $n$ rovnic o $k$ neznÃ¡mÃ½ch, $(12201) = a_1\cdot(22012) + a_2\cdot(20222) + a_3(02200)$.
 	
 	\[\begin{matrix}
   2a_1 & +2a_2 	&  			& = 1\\
@@ -1197,34 +1199,34 @@ Systematické zakódování znamená vypoèítat $\bar{w}_S = \bar{a}\cdot \mathbf{G}_S
   2a_1 & +2a_2 	& 			& = 1\\
   \end{matrix}\]
 
-Od posledního øádku mùu odeèíst pøedposlední, vyjde mi $a_1 = 1$. Pak u staèí jen dosazovat, $a_2 = 1, a_3 = 0$. Tedy slovo $\bar{a} = (110)$.
+Od poslednÃ­ho Å™Ã¡dku mÅ¯Å¾u odeÄÃ­st pÅ™edposlednÃ­, vyjde mi $a_1 = 1$. Pak uÅ¾ staÄÃ­ jen dosazovat, $a_2 = 1, a_3 = 0$. Tedy slovo $\bar{a} = (110)$.
 
-Trochu vìtší problém by nastal, kdyby základ soustavy nebylo prvoèíslo, protoe bych pak nemohl pouít Gaussovu eliminaci, ale musel bych to poèítat pøes inverzní matici a matici doplòkù.
+Trochu vÄ›tÅ¡Ã­ problÃ©m by nastal, kdyby zÃ¡klad soustavy nebylo prvoÄÃ­slo, protoÅ¾e bych pak nemohl pouÅ¾Ã­t Gaussovu eliminaci, ale musel bych to poÄÃ­tat pÅ™es inverznÃ­ matici a matici doplÅˆkÅ¯.
 	
 \end{enumerate}
 
 %---------------------------------------Priklad 3-2-------------------------------- 
-\subsection{\label{priklad3-2}Pøíklad 2}
-Je dána kontrolní matice lineárního kódu $K$ nad $\mathbb{Z}_7$, $\mathbf{H} = 
+\subsection{\label{priklad3-2}PÅ™Ã­klad 2}
+Je dÃ¡na kontrolnÃ­ matice lineÃ¡rnÃ­ho kÃ³du $K$ nad $\mathbb{Z}_7$, $\mathbf{H} = 
 \begin{pmatrix}
   1 & 2 & 2 & 0 & 4 \\
   0 & 2 & 3 & 6 & 1
 \end{pmatrix}$.
 
 \begin{enumerate}
-	\item Kolik informaèních a kolik kontrolních znakù má kód $K$? Kolik je kódovıch slov v $K$?
-	\item Spoètìte systematickou generující matici a zakódujte pomocí ní informaci $\bar{a} = (a_1 \ldots a_k)$, kde $a_i = 2$ pro všechna $i = 1,\ldots ,k$.
-	\item Slovo $\bar{v} = (13360)$ bylo zakódováno systematicky. Ovìøte, zda je bez chyby, pøípadnou chybu opravte a dekódujte (Pøedpokládáme, e chyba je nejvıše jedna).
+	\item Kolik informaÄnÃ­ch a kolik kontrolnÃ­ch znakÅ¯ mÃ¡ kÃ³d $K$? Kolik je kÃ³dovÃ½ch slov v $K$?
+	\item SpoÄtÄ›te systematickou generujÃ­cÃ­ matici a zakÃ³dujte pomocÃ­ nÃ­ informaci $\bar{a} = (a_1 \ldots a_k)$, kde $a_i = 2$ pro vÅ¡echna $i = 1,\ldots ,k$.
+	\item Slovo $\bar{v} = (13360)$ bylo zakÃ³dovÃ¡no systematicky. OvÄ›Å™te, zda je bez chyby, pÅ™Ã­padnou chybu opravte a dekÃ³dujte (PÅ™edpoklÃ¡dÃ¡me, Å¾e chyba je nejvÃ½Å¡e jedna).
 \end{enumerate}
 
 \line(1,0){400}
 
 \begin{enumerate}
-	\item Kontrolní matice není urèena jednoznaènì, a proto ani generující matice nemùe bıt urèena jednoznaènì. Nicménì vdy platí, e má vdy $n$ sloupcù a její hodnost je $n-k$. Take zadanı kód má 5 znakù, 2 kontrolní a 3 informaèní. 
+	\item KontrolnÃ­ matice nenÃ­ urÄena jednoznaÄnÄ›, a proto ani generujÃ­cÃ­ matice nemÅ¯Å¾e bÃ½t urÄena jednoznaÄnÄ›. NicmÃ©nÄ› vÅ¾dy platÃ­, Å¾e mÃ¡ vÅ¾dy $n$ sloupcÅ¯ a jejÃ­ hodnost je $n-k$. TakÅ¾e zadanÃ½ kÃ³d mÃ¡ 5 znakÅ¯, 2 kontrolnÃ­ a 3 informaÄnÃ­. 
 	
-Dejme tomu, e mám bázi $(\beta_1 \ldots \beta_k)$ kódu $K$. Potom libovolné kódové slovo lze právì jedním zpùsobem vyjádøit jako lineární kombinaci ${a_1\beta_1 + a_2\beta_2 + \ldots + a_k\beta_k}$, pøièem koeficienty $a_i$ volím nezávisle $p$ (v $\mathbb{Z}_p$) zpùsoby. Take existuje celkem $p\cdot p \cdot p \ldots ... = p^k$ rùznıch lineárních kombinací. Neboli poèet slov je $7^3$. 
+Dejme tomu, Å¾e mÃ¡m bÃ¡zi $(\beta_1 \ldots \beta_k)$ kÃ³du $K$. Potom libovolnÃ© kÃ³dovÃ© slovo lze prÃ¡vÄ› jednÃ­m zpÅ¯sobem vyjÃ¡dÅ™it jako lineÃ¡rnÃ­ kombinaci ${a_1\beta_1 + a_2\beta_2 + \ldots + a_k\beta_k}$, pÅ™iÄemÅ¾ koeficienty $a_i$ volÃ­m nezÃ¡visle $p$ (v $\mathbb{Z}_p$) zpÅ¯soby. TakÅ¾e existuje celkem $p\cdot p \cdot p \ldots ... = p^k$ rÅ¯znÃ½ch lineÃ¡rnÃ­ch kombinacÃ­. Neboli poÄet slov je $7^3$. 
 
-	\item Spoèítání systematické generující matice z $\mathbf{H}$ je obrácená aplikace vìty \ref{kontrolni-matice}, lépe øeèeno vzorce $\mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;)$. Postup je takovı, e si tu kontrolní matici pøevedu do tvaru, kdy na konci bude jednotková matice a pak pomocí tohohle vzorce získám $\mathbf{B}$. To staèí u jen dosadit do $\mathbf{G}_S = (\;\mathbf{E}\; \mathbf{B}\;)$ a mám generující matici.
+	\item SpoÄÃ­tÃ¡nÃ­ systematickÃ© generujÃ­cÃ­ matice z $\mathbf{H}$ je obrÃ¡cenÃ¡ aplikace vÄ›ty \ref{kontrolni-matice}, lÃ©pe Å™eÄeno vzorce $\mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;)$. Postup je takovÃ½, Å¾e si tu kontrolnÃ­ matici pÅ™evedu do tvaru, kdy na konci bude jednotkovÃ¡ matice a pak pomocÃ­ tohohle vzorce zÃ­skÃ¡m $\mathbf{B}$. To staÄÃ­ uÅ¾ jen dosadit do $\mathbf{G}_S = (\;\mathbf{E}\; \mathbf{B}\;)$ a mÃ¡m generujÃ­cÃ­ matici.
 	
 	\[ \mathbf{H} = \begin{gmatrix}[p]
 		1 & 2 & 2 & 0 & 4 \\
@@ -1261,9 +1263,9 @@ Dejme tomu, e mám bázi $(\beta_1 \ldots \beta_k)$ kódu $K$. Potom libovolné kód
     \end{pmatrix}.
 	 \]
 	
-	Zakódování slova se øídí vzorcem \ref{kodovani}, take $\bar{a} = (222)$ se zakóduje na $\bar{w} = (22241)$.
+	ZakÃ³dovÃ¡nÃ­ slova se Å™Ã­dÃ­ vzorcem \ref{kodovani}, takÅ¾e $\bar{a} = (222)$ se zakÃ³duje na $\bar{w} = (22241)$.
 	
-	\item Ovìøení správnosti slova se øídí stejnımi pravidly jako v pøíkladu \ref{priklad3-1}; musím spoèítat syndrom, a pokud nebude nulovı, tak opravit chybu. 
+	\item OvÄ›Å™enÃ­ sprÃ¡vnosti slova se Å™Ã­dÃ­ stejnÃ½mi pravidly jako v pÅ™Ã­kladu \ref{priklad3-1}; musÃ­m spoÄÃ­tat syndrom, a pokud nebude nulovÃ½, tak opravit chybu. 
 	\[ \bar{s}^T = \mathbf{H}\cdot\bar{v}^T = 
 	\begin{pmatrix}
 		1 & 2 & 2 & 0 & 4 \\
@@ -1281,27 +1283,27 @@ Dejme tomu, e mám bázi $(\beta_1 \ldots \beta_k)$ kódu $K$. Potom libovolné kód
 	  2
 	\end{pmatrix} \]
 	
-	Syndrom vyšel nenulovı, take slovo obsahuje chybu. Pro její nalezení musím najít, se kterım sloupcem $\mathbf{H}$ je syndrom lineární kombinací. Takovı sloupec je sloupec tøetí, jeliko $3\cdot2 = 6$ a $3\cdot3 = 2$. Další takovı sloupec není, slovo obsahuje jednu chybu (a víc stejnì neumím opravit). Chybové slovo $\bar{e}$ vytvoøím tak, e si oznaèím koeficient, kterım jsem vynásobil syndrom tak, abych dostal $l$-tı sloupec v $\mathbf{H}$ a tento koeficient napíšu na $l$-té místo v $\bar{e}$, ostatní koeficienty budou nulové: $\bar{e} = (00300)$. Teï tenhle vektor odeètu od pøijatého slova a dostanu opravené slovo $\bar{w}$: $\bar{w} = \bar{v} - \bar{e} = (13360) - (00300) = (13060)$.
+	Syndrom vyÅ¡el nenulovÃ½, takÅ¾e slovo obsahuje chybu. Pro jejÃ­ nalezenÃ­ musÃ­m najÃ­t, se kterÃ½m sloupcem $\mathbf{H}$ je syndrom lineÃ¡rnÃ­ kombinacÃ­. TakovÃ½ sloupec je sloupec tÅ™etÃ­, jelikoÅ¾ $3\cdot2 = 6$ a $3\cdot3 = 2$. DalÅ¡Ã­ takovÃ½ sloupec nenÃ­, slovo obsahuje jednu chybu (a vÃ­c stejnÄ› neumÃ­m opravit). ChybovÃ© slovo $\bar{e}$ vytvoÅ™Ã­m tak, Å¾e si oznaÄÃ­m koeficient, kterÃ½m jsem vynÃ¡sobil syndrom tak, abych dostal $l$-tÃ½ sloupec v $\mathbf{H}$ a tento koeficient napÃ­Å¡u na $l$-tÃ© mÃ­sto v $\bar{e}$, ostatnÃ­ koeficienty budou nulovÃ©: $\bar{e} = (00300)$. TeÄ tenhle vektor odeÄtu od pÅ™ijatÃ©ho slova a dostanu opravenÃ© slovo $\bar{w}$: $\bar{w} = \bar{v} - \bar{e} = (13360) - (00300) = (13060)$.
 	
 \end{enumerate}
 
 %---------------------------------------Priklad 3-3-------------------------------- 
-\subsection{Pøíklad 3}
-Lineární kód nad $\mathbb{Z}_3$ má generující matici $\mathbf{G} = 
+\subsection{PÅ™Ã­klad 3}
+LineÃ¡rnÃ­ kÃ³d nad $\mathbb{Z}_3$ mÃ¡ generujÃ­cÃ­ matici $\mathbf{G} = 
 \begin{pmatrix}
   1 & 0 & 1 & 2 \\
   2 & 1 & 0 & 2
-\end{pmatrix}$. Najdìte jeho kontrolní matici.
+\end{pmatrix}$. NajdÄ›te jeho kontrolnÃ­ matici.
 
 \begin{enumerate}
-	\item Opravte slovo $\bar{v} = (1020)$ za pøedpokladu, e obsahuje nejvıše jednu chybu.
-	\item Jak by se dalo slovo $\bar{v} = (1020)$ opravit, kdyby v nìm byly právì dvì chyby? Najdìte všechna kódová slova, jejich Hammingova vzdálenost od $\bar{v}$ je 2.
-	\item Dokate, e kód (vdy) opravuje jednu chybu.
+	\item Opravte slovo $\bar{v} = (1020)$ za pÅ™edpokladu, Å¾e obsahuje nejvÃ½Å¡e jednu chybu.
+	\item Jak by se dalo slovo $\bar{v} = (1020)$ opravit, kdyby v nÄ›m byly prÃ¡vÄ› dvÄ› chyby? NajdÄ›te vÅ¡echna kÃ³dovÃ¡ slova, jejichÅ¾ Hammingova vzdÃ¡lenost od $\bar{v}$ je 2.
+	\item DokaÅ¾te, Å¾e kÃ³d (vÅ¾dy) opravuje jednu chybu.
 \end{enumerate}
 
 \line(1,0){400}
 
-Kontrolní matici najdu jedinım krokem GEM
+KontrolnÃ­ matici najdu jedinÃ½m krokem GEM
 \[ \mathbf{G} = 
 	\begin{gmatrix}[p]
 		1 & 0 & 1 & 2 \\
@@ -1314,7 +1316,7 @@ Kontrolní matici najdu jedinım krokem GEM
   0 & 1 & 1 & 1
 \end{pmatrix} \]
 
-a dosazením do $\mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;)$:
+a dosazenÃ­m do $\mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;)$:
 
 \[ \mathbf{H} = \left( -\begin{pmatrix}
    1 & 2 \\
@@ -1327,7 +1329,7 @@ a dosazením do $\mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;)$:
 \]
 
 \begin{enumerate}
-	\item Toté co v pøíkladu \ref{priklad3-2}. Nejdøív si vypoèítám syndrom
+	\item TotÃ©Å¾ co v pÅ™Ã­kladu \ref{priklad3-2}. NejdÅ™Ã­v si vypoÄÃ­tÃ¡m syndrom
 	
 	\[ \bar{s}^T = \mathbf{H}\cdot\bar{v}^T = 
 	\begin{pmatrix}
@@ -1345,31 +1347,31 @@ a dosazením do $\mathbf{H} = (\;-\mathbf{B}^T\; \mathbf{E}\;)$:
 	  1
 	\end{pmatrix}. \]
 	
-	Vidím, e lineárnì závislı je s 2. sloupcem, koeficient je 2. $\bar{e} = (0200), \bar{w} = \bar{v} - \bar{e} = (1020) - (0200) = (1120)$.
+	VidÃ­m, Å¾e lineÃ¡rnÄ› zÃ¡vislÃ½ je s 2. sloupcem, koeficient je 2. $\bar{e} = (0200), \bar{w} = \bar{v} - \bar{e} = (1020) - (0200) = (1120)$.
 
-	\item Opravit by se s jistotou nedalo, jediné, co o nìm vím, e by se lišilo pøesnì ve dvou bitech. To znamená, e jsou to všechna slova s Hammingovou vzdáleností 2. Co jsou $\{(0000),(2021),(1012)\}$.
-	\item Dùkaz spoèívá v tom, e ádnı sloupec $\mathbf{H}$ není násobkem jiného sloupce v $\mathbf{H}$.
+	\item Opravit by se s jistotou nedalo, jedinÃ©, co o nÄ›m vÃ­m, Å¾e by se liÅ¡ilo pÅ™esnÄ› ve dvou bitech. To znamenÃ¡, Å¾e jsou to vÅ¡echna slova s Hammingovou vzdÃ¡lenostÃ­ 2. CoÅ¾ jsou $\{(0000),(2021),(1012)\}$.
+	\item DÅ¯kaz spoÄÃ­vÃ¡ v tom, Å¾e Å¾Ã¡dnÃ½ sloupec $\mathbf{H}$ nenÃ­ nÃ¡sobkem jinÃ©ho sloupce v $\mathbf{H}$.
 		
 \end{enumerate}
 
 
 %---------------------------------------Priklad 3-4-------------------------------- 
-\subsection{Pøíklad 4}
-ISBN (International Standard Book Number) je lineární délky 10 nad $\mathbb{Z}_{11}$, jeho kódová slova splòují rovnici $\sum_{i=1}^{10}{i\cdot v_i = 0 \mbox{ v } \mathbb{Z}_{11}}$. (Pozn. Èíslo 10 se v tomto kódu znaèí X, tedy jako øímská desítka.)
+\subsection{PÅ™Ã­klad 4}
+ISBN (International Standard Book Number) je lineÃ¡rnÃ­ dÃ©lky 10 nad $\mathbb{Z}_{11}$, jehoÅ¾ kÃ³dovÃ¡ slova splÅˆujÃ­ rovnici $\sum_{i=1}^{10}{i\cdot v_i = 0 \mbox{ v } \mathbb{Z}_{11}}$. (Pozn. ÄŒÃ­slo 10 se v tomto kÃ³du znaÄÃ­ X, tedy jako Å™Ã­mskÃ¡ desÃ­tka.)
 
 \begin{enumerate}
-	\item Opravte slovo $\bar{v} = (1020)$ za pøedpokladu, e obsahuje nejvıše jednu chybu.
-	\item Jak by se dalo slovo $\bar{v} = (1020)$ opravit, kdyby v nìm byly právì dvì chyby? Najdìte všechna kódová slova, jejich Hammingova vzdálenost od $\bar{v}$ je 2.
-	\item Dokate, e kód (vdy) opravuje jednu chybu.
+	\item Opravte slovo $\bar{v} = (1020)$ za pÅ™edpokladu, Å¾e obsahuje nejvÃ½Å¡e jednu chybu.
+	\item Jak by se dalo slovo $\bar{v} = (1020)$ opravit, kdyby v nÄ›m byly prÃ¡vÄ› dvÄ› chyby? NajdÄ›te vÅ¡echna kÃ³dovÃ¡ slova, jejichÅ¾ Hammingova vzdÃ¡lenost od $\bar{v}$ je 2.
+	\item DokaÅ¾te, Å¾e kÃ³d (vÅ¾dy) opravuje jednu chybu.
 \end{enumerate}
 
 \line(1,0){400}
 
-Podrobnì vysvìtleno ve Velebilovıch skriptech \cite{velebil}, str. 80-82. Staèil by copy/paste, tak radši nebudu zaplácávat místo. Mimochodem, dokonce je tu Easter Egg - to ISBN mají "Malé dìjiny filozofie".
+PodrobnÄ› vysvÄ›tleno ve VelebilovÃ½ch skriptech \cite{velebil}, str. 80-82. StaÄil by copy/paste, tak radÅ¡i nebudu zaplÃ¡cÃ¡vat mÃ­sto. Mimochodem, dokonce je tu Easter Egg - to ISBN majÃ­ "MalÃ© dÄ›jiny filozofie".
 
 %---------------------------------------Priklad 3-5-------------------------------- 
-\subsection{Pøíklad 5}
-Ovìøte, zda mnoina slov tvoøí binární lineární kód. Pokud ano, naleznìte jeho generující matici
+\subsection{PÅ™Ã­klad 5}
+OvÄ›Å™te, zda mnoÅ¾ina slov tvoÅ™Ã­ binÃ¡rnÃ­ lineÃ¡rnÃ­ kÃ³d. Pokud ano, naleznÄ›te jeho generujÃ­cÃ­ matici
 
 \begin{enumerate}
 	\item $A = \{(11111),(11110),(11101),(11100),(00011),(00010),(00001),(00000)\}$
@@ -1378,7 +1380,7 @@ Ovìøte, zda mnoina slov tvoøí binární lineární kód. Pokud ano, naleznìte jeho g
 
 \line(1,0){400}
 
-Kód je binární, tzn. základ soustavy je 2 a musí mít $2^k$ slov - tím okamitì vypadává monost B), jeliko má jen 7 slov (a tøeba $(0010)+(0011)=(0101)$ není kódové slovo). Co se tıèe 1. monosti, tak další test musí bıt ten, zda-li libovolná lineární kombinace kódovıch slov je zase kódové slovo. Evidentnì je, protoe protoe nenajdu slovo, které bych nedostal lineární kombinací jinıch dvou. Zkusím tedy najít bázi prostoru, tzn. 3 takové vektory (protoe $2^3$), které mi dají libovolné slovo $u = a_1 \cdot g_1 + a_2 \cdot g_2 + a_3 \cdot g_3$, kde $a_n$ je 0 nebo 1. Nejlepší bude najít takové, které mi dají souètem nulovı vektor, ale z nich ani jeden nebude nulovı. Taková kombinace je jen jedna:
+KÃ³d je binÃ¡rnÃ­, tzn. zÃ¡klad soustavy je 2 a musÃ­ mÃ­t $2^k$ slov - tÃ­m okamÅ¾itÄ› vypadÃ¡vÃ¡ moÅ¾nost B), jelikoÅ¾ mÃ¡ jen 7 slov (a tÅ™eba $(0010)+(0011)=(0101)$ nenÃ­ kÃ³dovÃ© slovo). Co se tÃ½Äe 1. moÅ¾nosti, tak dalÅ¡Ã­ test musÃ­ bÃ½t ten, zda-li libovolnÃ¡ lineÃ¡rnÃ­ kombinace kÃ³dovÃ½ch slov je zase kÃ³dovÃ© slovo. EvidentnÄ› je, protoÅ¾e protoÅ¾e nenajdu slovo, kterÃ© bych nedostal lineÃ¡rnÃ­ kombinacÃ­ jinÃ½ch dvou. ZkusÃ­m tedy najÃ­t bÃ¡zi prostoru, tzn. 3 takovÃ© vektory (protoÅ¾e $2^3$), kterÃ© mi dajÃ­ libovolnÃ© slovo $u = a_1 \cdot g_1 + a_2 \cdot g_2 + a_3 \cdot g_3$, kde $a_n$ je 0 nebo 1. NejlepÅ¡Ã­ bude najÃ­t takovÃ©, kterÃ© mi dajÃ­ souÄtem nulovÃ½ vektor, ale z nichÅ¾ ani jeden nebude nulovÃ½. TakovÃ¡ kombinace je jen jedna:
 
 \[ \mathbf{G} = \begin{pmatrix}
 		1 & 1 & 1 & 0 & 0\\
@@ -1386,28 +1388,28 @@ Kód je binární, tzn. základ soustavy je 2 a musí mít $2^k$ slov - tím okamitì v
 	  0 & 0 & 0 & 0 & 1
 	\end{pmatrix}. \]  
 
-Na tuhle matici se dá pøijít tøeba tak, e si vezmu všechna kódová slova, napíšu si je do matice a nad ní provedu GEM. Vypadne mi matice o 3 øádcích, co je hledaná $\mathbf{G}$ (A je podprostor s bází $\mathbf{G}$).
+Na tuhle matici se dÃ¡ pÅ™ijÃ­t tÅ™eba tak, Å¾e si vezmu vÅ¡echna kÃ³dovÃ¡ slova, napÃ­Å¡u si je do matice a nad nÃ­ provedu GEM. Vypadne mi matice o 3 Å™Ã¡dcÃ­ch, coÅ¾ je hledanÃ¡ $\mathbf{G}$ (A je podprostor s bÃ¡zÃ­ $\mathbf{G}$).
 
 %---------------------------------------Priklad 3-6-------------------------------- 
-\subsection{\label{priklad3-6}Pøíklad 6}
-Lineární kód délky 4 nad $\mathbb{Z}_3$ má generující matici $\mathbf{G} = 
+\subsection{\label{priklad3-6}PÅ™Ã­klad 6}
+LineÃ¡rnÃ­ kÃ³d dÃ©lky 4 nad $\mathbb{Z}_3$ mÃ¡ generujÃ­cÃ­ matici $\mathbf{G} = 
 \begin{pmatrix}
   2 & 2 & 1 & 1 \\
   2 & 0 & 1 & 0
 \end{pmatrix}$.
 
 \begin{enumerate}
-	\item Vypište všechna kódová slova a ovìøte, e se jedná o cyklickı kód. 
-	\item Najdìte generující polynom a pomocí nìj zakódujte informaci $\bar{a} = (12)$.
-	\item Najdìte generující matici, která urèuje stejné kódování jako generující polynom. Ovìøte to zakódováním informace $\bar{a} = (12)$ pomocí této matice.
+	\item VypiÅ¡te vÅ¡echna kÃ³dovÃ¡ slova a ovÄ›Å™te, Å¾e se jednÃ¡ o cyklickÃ½ kÃ³d. 
+	\item NajdÄ›te generujÃ­cÃ­ polynom a pomocÃ­ nÄ›j zakÃ³dujte informaci $\bar{a} = (12)$.
+	\item NajdÄ›te generujÃ­cÃ­ matici, kterÃ¡ urÄuje stejnÃ© kÃ³dovÃ¡nÃ­ jako generujÃ­cÃ­ polynom. OvÄ›Å™te to zakÃ³dovÃ¡nÃ­m informace $\bar{a} = (12)$ pomocÃ­ tÃ©to matice.
 \end{enumerate}
 
 \line(1,0){400}
 
 \begin{enumerate}
-	\item Kódová slova budou všechny kombinace báze, tedy $K = \{a_1\beta_1 + a_2\beta_2, a_i \in \mathbb{Z}_3 \}$. Kódovıch slov bude $p^k = 3^2$ (viz pøíklad \ref{priklad3-2}). Ta slova jsou $(2211),(2112),(1122),(1221),(0000),(2010),(0102),(1020),(0201)$. Jak je vidno, pro kadé slovo existuje v $K$ i jeho cyklickı posun $\Rightarrow$ kód je cyklickı. 
-	\item Generující polynom je nenulovı polynom nejnišího stupnì ($=n-k$). Takovı polynom je tady stupnì 2 a z tìch kódovıch slov, co jsem si nahoøe vypsal, jsou takoví adepti 2. Já si vyberu $(0102)$, pak $g(z) = z^2 + 2$ je monickı. Zakódování $(12)$ znamená vynásobit polynom $g(z)$ polynomem $u(z) = 1 + 2z$ (v $\mathbb{Z}_3^{(4)}$, co je jiné oznaèení pro okruh $\mathbb{Z}_3[x]/(x^4 - 1)$). Take zakódovanì $v(z) = 2 + z + z^2 + 2z^3$.   
-	\item Generující matice kódu je rovna
+	\item KÃ³dovÃ¡ slova budou vÅ¡echny kombinace bÃ¡ze, tedy $K = \{a_1\beta_1 + a_2\beta_2, a_i \in \mathbb{Z}_3 \}$. KÃ³dovÃ½ch slov bude $p^k = 3^2$ (viz pÅ™Ã­klad \ref{priklad3-2}). Ta slova jsou $(2211),(2112),(1122),(1221),(0000),(2010),(0102),(1020),(0201)$. Jak je vidno, pro kaÅ¾dÃ© slovo existuje v $K$ i jeho cyklickÃ½ posun $\Rightarrow$ kÃ³d je cyklickÃ½. 
+	\item GenerujÃ­cÃ­ polynom je nenulovÃ½ polynom nejniÅ¾Å¡Ã­ho stupnÄ› ($=n-k$). TakovÃ½ polynom je tady stupnÄ› 2 a z tÄ›ch kÃ³dovÃ½ch slov, co jsem si nahoÅ™e vypsal, jsou takovÃ­ adepti 2. JÃ¡ si vyberu $(0102)$, pak $g(z) = z^2 + 2$ je monickÃ½. ZakÃ³dovÃ¡nÃ­ $(12)$ znamenÃ¡ vynÃ¡sobit polynom $g(z)$ polynomem $u(z) = 1 + 2z$ (v $\mathbb{Z}_3^{(4)}$, coÅ¾ je jinÃ© oznaÄenÃ­ pro okruh $\mathbb{Z}_3[x]/(x^4 - 1)$). TakÅ¾e zakÃ³dovanÄ› $v(z) = 2 + z + z^2 + 2z^3$.   
+	\item GenerujÃ­cÃ­ matice kÃ³du je rovna
 	\[ \mathbf{G} = \begin{pmatrix}
   g(z) \\
   z\cdot g(z) \\
@@ -1424,7 +1426,7 @@ Lineární kód délky 4 nad $\mathbb{Z}_3$ má generující matici $\mathbf{G} =
 	\end{pmatrix}
 \]
 
-Zkusím zakódovat $(12)$ a uvidíme, jestli mi vyjde $(2112)$:
+ZkusÃ­m zakÃ³dovat $(12)$ a uvidÃ­me, jestli mi vyjde $(2112)$:
 \[ \bar{w} = \begin{pmatrix}
   2 & 0 & 1 & 0\\
   0 & 2 & 0 & 1 
@@ -1435,56 +1437,56 @@ Zkusím zakódovat $(12)$ a uvidíme, jestli mi vyjde $(2112)$:
 	\end{pmatrix} = (2112)
 	\]
 	
-	Vyšlo, matice urèuje stejné kódování.	
+	VyÅ¡lo, matice urÄuje stejnÃ© kÃ³dovÃ¡nÃ­.	
 \end{enumerate}
 
 %---------------------------------------Priklad 3-7-------------------------------- 
-\subsection{Pøíklad 7}
-Cyklickı kód délky 6 nad $\mathbb{Z}_3$ má generující polynom $g(z) = z^2 + z + 1$.
+\subsection{PÅ™Ã­klad 7}
+CyklickÃ½ kÃ³d dÃ©lky 6 nad $\mathbb{Z}_3$ mÃ¡ generujÃ­cÃ­ polynom $g(z) = z^2 + z + 1$.
 
 \begin{enumerate}
-	\item Kolik informaèních znakù a kolik kontrolních znakù má kód $K$? Kolik je kódovıch slov v $K$? 
-	\item Zakódujte pomocí $g(z)$ informaci ze samıch 1, tj. $\bar{a} = (a_1\ldots a_k)$, kde $a_i = 1$ pro všechna $i = 1,\ldots,k$.
-	\item Najdìte kontrolní polynom a ovìøte pomocí nìj, zda je slovo $\bar{v} = (100200)$ bez chyb. Pokud ano, dekódujte.
+	\item Kolik informaÄnÃ­ch znakÅ¯ a kolik kontrolnÃ­ch znakÅ¯ mÃ¡ kÃ³d $K$? Kolik je kÃ³dovÃ½ch slov v $K$? 
+	\item ZakÃ³dujte pomocÃ­ $g(z)$ informaci ze samÃ½ch 1, tj. $\bar{a} = (a_1\ldots a_k)$, kde $a_i = 1$ pro vÅ¡echna $i = 1,\ldots,k$.
+	\item NajdÄ›te kontrolnÃ­ polynom a ovÄ›Å™te pomocÃ­ nÄ›j, zda je slovo $\bar{v} = (100200)$ bez chyb. Pokud ano, dekÃ³dujte.
 \end{enumerate}
 
 \line(1,0){400}
 
 \begin{enumerate}
-	\item Generující polynom má stupeò $n-k=2$ ($k$ je poèet info-znakù a $n$ délka kódu), a tedy kontrolní znaky jsou $2$ a informaèní znaky jsou $4$. Kódovıch slov je $p^k = 3^4$. 
-	\item Zakódování $\bar{a} = (1111)$:
+	\item GenerujÃ­cÃ­ polynom mÃ¡ stupeÅˆ $n-k=2$ ($k$ je poÄet info-znakÅ¯ a $n$ dÃ©lka kÃ³du), a tedy kontrolnÃ­ znaky jsou $2$ a informaÄnÃ­ znaky jsou $4$. KÃ³dovÃ½ch slov je $p^k = 3^4$. 
+	\item ZakÃ³dovÃ¡nÃ­ $\bar{a} = (1111)$:
 	\[ w(z) = g(z)\cdot a(z) = (z^2 + z + 1)(1+z+z^2+z^3) = 1 + 2z + 2z^4 + z^5 \]
-	\item Kontrolní polynom $h(z)$ získám jako podíl $(z^n-1):g(z)$, tedy $h(z) = (z^6-1):(z^2 + z + 1) = z^4 + 2z^3 + z + 2$. Ovìøení znamená vynásobit $h(z)\cdot v(z)$ v $\mathbb{Z}_3$ podle pravidla $z^6=1$ a jako vısledek dostat 0: $(z^4 + 2z^3 + z + 2)\cdot(1 + 2z^3) = 3z^4 + 6z^3 + 3z + 6 = 0$ $\Rightarrow$ je bez chyb. Dekódování $\bar{v} = (100200)$ znamená vydìlit kódové slovo generujícím polynomem:
+	\item KontrolnÃ­ polynom $h(z)$ zÃ­skÃ¡m jako podÃ­l $(z^n-1):g(z)$, tedy $h(z) = (z^6-1):(z^2 + z + 1) = z^4 + 2z^3 + z + 2$. OvÄ›Å™enÃ­ znamenÃ¡ vynÃ¡sobit $h(z)\cdot v(z)$ v $\mathbb{Z}_3$ podle pravidla $z^6=1$ a jako vÃ½sledek dostat 0: $(z^4 + 2z^3 + z + 2)\cdot(1 + 2z^3) = 3z^4 + 6z^3 + 3z + 6 = 0$ $\Rightarrow$ je bez chyb. DekÃ³dovÃ¡nÃ­ $\bar{v} = (100200)$ znamenÃ¡ vydÄ›lit kÃ³dovÃ© slovo generujÃ­cÃ­m polynomem:
 	\[ \bar{w} = (2z^3 + 1):(z^2 + z + 1) = 2z + 1 \equiv \bar{a} = (1200).\] 
 \end{enumerate}
 
 
 %---------------------------------------Priklad 3-8-------------------------------- 
-\subsection{Pøíklad 8}
-Ovìøte, e polynom $g(z) = 1 + 2z + 2z^2 + z^3$ mùe generovat cyklickı kód délky 6 nad $\mathbb{Z}_3$.
+\subsection{PÅ™Ã­klad 8}
+OvÄ›Å™te, Å¾e polynom $g(z) = 1 + 2z + 2z^2 + z^3$ mÅ¯Å¾e generovat cyklickÃ½ kÃ³d dÃ©lky 6 nad $\mathbb{Z}_3$.
 
 \begin{enumerate}
-	\item Zakódujte systematicky zprávu $\bar{a} = (122)$ pomocí $g(z)$.
-	\item Najdìte kontrolní polynom $h(z)$ a ovìøte, e váš polynom je kódovı.
-	\item Naleznìte systematickou generující matici daného kódu a pomocí ní opìt systematicky zakódujte zprávu $\bar{a} = (122)$.
+	\item ZakÃ³dujte systematicky zprÃ¡vu $\bar{a} = (122)$ pomocÃ­ $g(z)$.
+	\item NajdÄ›te kontrolnÃ­ polynom $h(z)$ a ovÄ›Å™te, Å¾e vÃ¡Å¡ polynom je kÃ³dovÃ½.
+	\item NaleznÄ›te systematickou generujÃ­cÃ­ matici danÃ©ho kÃ³du a pomocÃ­ nÃ­ opÄ›t systematicky zakÃ³dujte zprÃ¡vu $\bar{a} = (122)$.
 \end{enumerate}
 
 \line(1,0){400}
 
-Aby polynom mohl generovat lineární kód délky 6 nad $\mathbb{Z}_3$, musí dìlit generující polynom $(z^6-1)$ v $\mathbb{Z}_3$ beze zbytku. Jeliko 
+Aby polynom mohl generovat lineÃ¡rnÃ­ kÃ³d dÃ©lky 6 nad $\mathbb{Z}_3$, musÃ­ dÄ›lit generujÃ­cÃ­ polynom $(z^6-1)$ v $\mathbb{Z}_3$ beze zbytku. JelikoÅ¾ 
 \[ (z^6-1):(z^3 + 2z^2 + 2z + 1) = z^3 + z^2 + 2z + 2 \:(= h(z)),\] 
-tak $g(x)$ je generující polynom.
+tak $g(x)$ je generujÃ­cÃ­ polynom.
 
 \begin{enumerate}
-	\item Systematické zakódování zprávy znamená udìlat z ní polynom takovı, kterı bude na zaèátku stejnı jako kódové slovo a na konci bude mít nìjaké kontrolní znaky (podobnì to bylo v lineárních kódech, viz. tøeba pøíklad \ref{priklad3-1}). Aby se prohloubila schizofrenie studenta algebry, tak teï u slova nebudou kódovat jako $(a_1 a_2 a_3)$ $\sim (a_1\cdot z^0 + a_2\cdot z^1 + a_3\cdot z^2)$, jak tomu bylo v pøípadì cyklickıch nesystematickıch kódù, ale pro zmìnu jako $(a_1a_2a_3)\sim (a_1\cdot z^2 + a_2\cdot z^1 + a_3\cdot z^0 )$.
+	\item SystematickÃ© zakÃ³dovÃ¡nÃ­ zprÃ¡vy znamenÃ¡ udÄ›lat z nÃ­ polynom takovÃ½, kterÃ½ bude na zaÄÃ¡tku stejnÃ½ jako kÃ³dovÃ© slovo a na konci bude mÃ­t nÄ›jakÃ© kontrolnÃ­ znaky (podobnÄ› to bylo v lineÃ¡rnÃ­ch kÃ³dech, viz. tÅ™eba pÅ™Ã­klad \ref{priklad3-1}). Aby se prohloubila schizofrenie studenta algebry, tak teÄ uÅ¾ slova nebudou kÃ³dovat jako $(a_1 a_2 a_3)$ $\sim (a_1\cdot z^0 + a_2\cdot z^1 + a_3\cdot z^2)$, jak tomu bylo v pÅ™Ã­padÄ› cyklickÃ½ch nesystematickÃ½ch kÃ³dÅ¯, ale pro zmÄ›nu jako $(a_1a_2a_3)\sim (a_1\cdot z^2 + a_2\cdot z^1 + a_3\cdot z^0 )$.
 	
-	Zakódovanou zprávu vytvoøím tak, e si vytvoøím polynom s nejvššími koeficienty na zaèátku, tedy v tomto pøípadì $(122)$ jako $(z^5 + 2z^4 + 2z^3)$ a tenhle polynom vydìlím polynomem generujícím. Tím získám nìjakı zbytek po dìlení, kterı odeètu od posílaného polynomu. Take:
+	ZakÃ³dovanou zprÃ¡vu vytvoÅ™Ã­m tak, Å¾e si vytvoÅ™Ã­m polynom s nejvÅ¡Å¡Ã­mi koeficienty na zaÄÃ¡tku, tedy v tomto pÅ™Ã­padÄ› $(122)$ jako $(z^5 + 2z^4 + 2z^3)$ a tenhle polynom vydÄ›lÃ­m polynomem generujÃ­cÃ­m. TÃ­m zÃ­skÃ¡m nÄ›jakÃ½ zbytek po dÄ›lenÃ­, kterÃ½ odeÄtu od posÃ­lanÃ©ho polynomu. TakÅ¾e:
 	
 	\[ (z^5 + 2z^4 + 2z^3):(z^3 + 2z^2 + 2z + 1) = z^2, \text{ zbytek } r(z) = 2z^2 \]
 	\[ w(z) = v(z) - r(z) = z^5 + 2z^4 + 2z^3 + z^2 \]
 	
-	\item Kontrolní polynom $h(z)$ u jsem našel na zaèátku, ovìøení znamená vynásobit $h(z)\cdot w(z) = (z^3 + z^2 + 2z + 2)\cdot(z^5 + 2z^4 + 2z^3 + z^2) = 0$, mùj polynom je kódovı.
-	\item Systematickou generující matici daného kódu najdu úplnì stejnım postupem jako v pøíkladu \ref{priklad3-6}. Nejdøív si musím uvìdomit, jak získám $k$. Dr. Gollová pouívá nìjakı sofistikovanı vıpoèet, já postupuji systémem \textsc{Kouknu a vidim}\texttrademark: generujcí polynom je nejnišího stupnì, jakı se v tom kódu vyskytuje, a ten stupeò je roven $n-k=3$. Evidentnì $n-(n-k)=k$, take $n-3=k \Rightarrow n=6, k=3$ (ono je to úplnì jasné, pokud si èlovìk uvìdomí, e pokud se vyuívají jen znaky od 3 a vıš, protoe nejmenší polynom je $z^3\ldots$ tak ty kódovì nevyuité znaky øádu $0,1,2$ se pouijí na kontrolní znaky).
+	\item KontrolnÃ­ polynom $h(z)$ uÅ¾ jsem naÅ¡el na zaÄÃ¡tku, ovÄ›Å™enÃ­ znamenÃ¡ vynÃ¡sobit $h(z)\cdot w(z) = (z^3 + z^2 + 2z + 2)\cdot(z^5 + 2z^4 + 2z^3 + z^2) = 0$, mÅ¯j polynom je kÃ³dovÃ½.
+	\item Systematickou generujÃ­cÃ­ matici danÃ©ho kÃ³du najdu ÃºplnÄ› stejnÃ½m postupem jako v pÅ™Ã­kladu \ref{priklad3-6}. NejdÅ™Ã­v si musÃ­m uvÄ›domit, jak zÃ­skÃ¡m $k$. Dr. GollovÃ¡ pouÅ¾Ã­vÃ¡ nÄ›jakÃ½ sofistikovanÃ½ vÃ½poÄet, jÃ¡ postupuji systÃ©mem \textsc{Kouknu a vidim}\texttrademark: generujcÃ­ polynom je nejniÅ¾Å¡Ã­ho stupnÄ›, jakÃ½ se v tom kÃ³du vyskytuje, a ten stupeÅˆ je roven $n-k=3$. EvidentnÄ› $n-(n-k)=k$, takÅ¾e $n-3=k \Rightarrow n=6, k=3$ (ono je to ÃºplnÄ› jasnÃ©, pokud si ÄlovÄ›k uvÄ›domÃ­, Å¾e pokud se vyuÅ¾Ã­vajÃ­ jen znaky od 3 a vÃ½Å¡, protoÅ¾e nejmenÅ¡Ã­ polynom je $z^3\ldots$ tak ty kÃ³dovÄ› nevyuÅ¾itÃ© znaky Å™Ã¡du $0,1,2$ se pouÅ¾ijÃ­ na kontrolnÃ­ znaky).
 	
 	\[ \mathbf{G} = \begin{pmatrix}
   g(z) \\
@@ -1504,7 +1506,7 @@ tak $g(x)$ je generující polynom.
 	\end{pmatrix}
 \]
 	
-	Tahle matice zrovna moc systematicky nevypadá, take ji ještì proenu GEM, abych takovou získal:
+	Tahle matice zrovna moc systematicky nevypadÃ¡, takÅ¾e ji jeÅ¡tÄ› proÅ¾enu GEM, abych takovou zÃ­skal:
 	
 \begin{alignat*}1
 	\begin{gmatrix}[p]
@@ -1529,7 +1531,7 @@ tak $g(x)$ je generující polynom.
 		\end{gmatrix} (=\mathbf{G}_S) 
 \end{alignat*}			
 	
-	Následuje zakódování $\bar{a} = (122)$, co u jsem dìlal minimálnì ve tøech pøedchozích pøíkladech, a to podle vzorce \ref{kodovani}.
+	NÃ¡sleduje zakÃ³dovÃ¡nÃ­ $\bar{a} = (122)$, coÅ¾ uÅ¾ jsem dÄ›lal minimÃ¡lnÄ› ve tÅ™ech pÅ™edchozÃ­ch pÅ™Ã­kladech, a to podle vzorce \ref{kodovani}.
 	\[ \bar{w} = \bar{a}\cdot \mathbf{G}_S = (122)\cdot \begin{pmatrix}
 		1 & 0 & 0 & 1 & 2 & 2\\
   	0 & 1 & 0 & 1 & 0 & 1\\
@@ -1542,24 +1544,24 @@ tak $g(x)$ je generující polynom.
 
 
 %---------------------------------------Priklad 3-9-------------------------------- 
-\subsection{Pøíklad 9}
-Najdìte generující polynomy všech cyklickıch kódù délky 5 nad $\mathbb{Z}_5$.
+\subsection{PÅ™Ã­klad 9}
+NajdÄ›te generujÃ­cÃ­ polynomy vÅ¡ech cyklickÃ½ch kÃ³dÅ¯ dÃ©lky 5 nad $\mathbb{Z}_5$.
 
 \begin{enumerate}
-	\item Vyberte nìjakı generující polynom cyklického kódu délky 5 nad $\mathbb{Z}_5$ se 3 informaèními znaky. Najdìte nìkterou jeho generující matici a nìkterou jeho kontrolní matici.
-	\item Zjistìte, zda je $\bar{v} = (12221)$ kódové slovo vámi vybraného kódu. Pokud ne, opravte chybu, je-li to moné.
+	\item Vyberte nÄ›jakÃ½ generujÃ­cÃ­ polynom cyklickÃ©ho kÃ³du dÃ©lky 5 nad $\mathbb{Z}_5$ se 3 informaÄnÃ­mi znaky. NajdÄ›te nÄ›kterou jeho generujÃ­cÃ­ matici a nÄ›kterou jeho kontrolnÃ­ matici.
+	\item ZjistÄ›te, zda je $\bar{v} = (12221)$ kÃ³dovÃ© slovo vÃ¡mi vybranÃ©ho kÃ³du. Pokud ne, opravte chybu, je-li to moÅ¾nÃ©.
 \end{enumerate}
 
 \line(1,0){400}
 
-Generující polynom musí dìlit polynom $(x^5 - 1) \mbox{ v } \mathbb{Z}_5[x]$. Jeliko 5 je prvoèíslo, a tedy to, nad èím poèítám je tìleso, tak platí následující vzorec:
+GenerujÃ­cÃ­ polynom musÃ­ dÄ›lit polynom $(x^5 - 1) \mbox{ v } \mathbb{Z}_5[x]$. JelikoÅ¾ 5 je prvoÄÃ­slo, a tedy to, nad ÄÃ­m poÄÃ­tÃ¡m je tÄ›leso, tak platÃ­ nÃ¡sledujÃ­cÃ­ vzorec:
 
 \[ (a+b)^p = a^p + b^p \]
 
-$(x^5 - 1)$ si tedy mùu napsat jako $(x^5 + (-1)^5)$, co se podle vzorce rovná $(x-1)^5$. Teï u je pomìrnì jednoduché najít všechny generující polynomy: jsou to polynomy $(x-1)^i$, kde $i \in <0;5>$. Jeliko však polynom $(x-1)^0$ nemá kontrolní znaky, a $(x-1)^5$ zase nemá ádné informaèní, tak netriviální generující polynomy jsou jen tvaru $(x-1)^i$, kde $i \in \{1,2,3,4\}$.
+$(x^5 - 1)$ si tedy mÅ¯Å¾u napsat jako $(x^5 + (-1)^5)$, coÅ¾ se podle vzorce rovnÃ¡ $(x-1)^5$. TeÄ uÅ¾ je pomÄ›rnÄ› jednoduchÃ© najÃ­t vÅ¡echny generujÃ­cÃ­ polynomy: jsou to polynomy $(x-1)^i$, kde $i \in <0;5>$. JelikoÅ¾ vÅ¡ak polynom $(x-1)^0$ nemÃ¡ kontrolnÃ­ znaky, a $(x-1)^5$ zase nemÃ¡ Å¾Ã¡dnÃ© informaÄnÃ­, tak netriviÃ¡lnÃ­ generujÃ­cÃ­ polynomy jsou jen tvaru $(x-1)^i$, kde $i \in \{1,2,3,4\}$.
 
 \begin{enumerate}
-	\item Generující polynom se 3 informaèními znaky je $g(z) = (z-1)^2 = z^2 - 2z + 1 = z^2 + 3z + 1$ ($k=3$). Generující matici najdu stejnì jako minule: 
+	\item GenerujÃ­cÃ­ polynom se 3 informaÄnÃ­mi znaky je $g(z) = (z-1)^2 = z^2 - 2z + 1 = z^2 + 3z + 1$ ($k=3$). GenerujÃ­cÃ­ matici najdu stejnÄ› jako minule: 
 
 \[ \mathbf{G} = \begin{pmatrix}
   g(z) \\
@@ -1579,7 +1581,7 @@ $(x^5 - 1)$ si tedy mùu napsat jako $(x^5 + (-1)^5)$, co se podle vzorce rovná
 	\end{pmatrix}
 	\]
 	
-	Pro vytvoøení kontrolní matice musím nejdøív najít kontrolní polynom. Ten najdu vydìlením: $h(z) = (z-1)^5:(z-1)^2 = (z-1)^3 = z^3 + 2z^2 + 3z + 4$. Kontrolní matici pak vytvoøím tak, e vezmu postupnì koeficienty od nejvyššího do nejnišího øádu a píšu je do øádkù matice, zaènu vlevo a na kadém øádku posunu koeficienty o 1 doprava. Zbylé budou 0. Poèet øádkù je tolik, kolik je kontrolních znakù = 2.
+	Pro vytvoÅ™enÃ­ kontrolnÃ­ matice musÃ­m nejdÅ™Ã­v najÃ­t kontrolnÃ­ polynom. Ten najdu vydÄ›lenÃ­m: $h(z) = (z-1)^5:(z-1)^2 = (z-1)^3 = z^3 + 2z^2 + 3z + 4$. KontrolnÃ­ matici pak vytvoÅ™Ã­m tak, Å¾e vezmu postupnÄ› koeficienty od nejvyÅ¡Å¡Ã­ho do nejniÅ¾Å¡Ã­ho Å™Ã¡du a pÃ­Å¡u je do Å™Ã¡dkÅ¯ matice, zaÄnu vlevo a na kaÅ¾dÃ©m Å™Ã¡dku posunu koeficienty o 1 doprava. ZbylÃ© budou 0. PoÄet Å™Ã¡dkÅ¯ je tolik, kolik je kontrolnÃ­ch znakÅ¯ = 2.
 \[
  \mathbf{H} = \begin{pmatrix}
   0 & 1 & 2 & 3 & 4\\
@@ -1587,7 +1589,7 @@ $(x^5 - 1)$ si tedy mùu napsat jako $(x^5 + (-1)^5)$, co se podle vzorce rovná
  \end{pmatrix} 
 \]	
 	
-	\item Zjištìní, zda je $\bar{v} = (12221)$ kódové slovo se provádí stejnım zpùsobem jako v pøíkladu \ref{priklad3-2}. Nejdøív si vypoèítám syndrom:
+	\item ZjiÅ¡tÄ›nÃ­, zda je $\bar{v} = (12221)$ kÃ³dovÃ© slovo se provÃ¡dÃ­ stejnÃ½m zpÅ¯sobem jako v pÅ™Ã­kladu \ref{priklad3-2}. NejdÅ™Ã­v si vypoÄÃ­tÃ¡m syndrom:
 	
 	\[ \bar{s}^T = \mathbf{H}\cdot\bar{v}^T = 
 	\begin{pmatrix}
@@ -1607,20 +1609,20 @@ $(x^5 - 1)$ si tedy mùu napsat jako $(x^5 + (-1)^5)$, co se podle vzorce rovná
 	\end{pmatrix} \]
 \end{enumerate}
 
-Syndrom je nenulovı, a je lineární kombinací sloupce 3, s koeficientem $e = 2$. Tedy $\bar{e}=(00200)$ a $\bar{w} = \bar{v} - \bar{e} = (12221) - (00200) = (12021)$. 
+Syndrom je nenulovÃ½, a je lineÃ¡rnÃ­ kombinacÃ­ sloupce 3, s koeficientem $e = 2$. Tedy $\bar{e}=(00200)$ a $\bar{w} = \bar{v} - \bar{e} = (12221) - (00200) = (12021)$. 
 
 
 %---------------------------------------Priklad 3-10-------------------------------- 
-\subsection{Pøíklad 10}
-Najdìte generující polynomy všech binárních cyklickıch kódù délky 5 a napište jejich systematické generující matice.
+\subsection{PÅ™Ã­klad 10}
+NajdÄ›te generujÃ­cÃ­ polynomy vÅ¡ech binÃ¡rnÃ­ch cyklickÃ½ch kÃ³dÅ¯ dÃ©lky 5 a napiÅ¡te jejich systematickÃ© generujÃ­cÃ­ matice.
 
 \line(1,0){400}
 
-Stejnı postup jako minule, generující polynom musí dìlit polynom $(x^5 - 1) \mbox{ v } \mathbb{Z}_2[x]$. Bohuel u tady nemùu pouít ten zupa vzorec, protoe polynom má jinı øád ne je základ soustavy. Take zkusím dìlit ireudicibilními polynomy:
+StejnÃ½ postup jako minule, generujÃ­cÃ­ polynom musÃ­ dÄ›lit polynom $(x^5 - 1) \mbox{ v } \mathbb{Z}_2[x]$. BohuÅ¾el uÅ¾ tady nemÅ¯Å¾u pouÅ¾Ã­t ten zupa vzorec, protoÅ¾e polynom mÃ¡ jinÃ½ Å™Ã¡d neÅ¾ je zÃ¡klad soustavy. TakÅ¾e zkusÃ­m dÄ›lit ireudicibilnÃ­mi polynomy:
 
 \[ (x^5 + 1) = (x+1)(x^4 + x^3 + x^2 + x + 1)\]
 
-Take jsem našel jeden $g_1(x) = (x+1)$. Teï je otázka, jestli je $(x^4 + x^3 + x^2 + x + 1)$ ireducibilní. Nemá koøen, take zøejmì u nepùjde vydìlit $(x+1)$. Mohl by jít tedy vydìlit $(x^2 + x + 1)$, co je ireducibilní polynom stupnì 2. To ovšem taky nejde $\Rightarrow g_2(x) = (x^4 + x^3 + x^2 + x + 1)$. 
+TakÅ¾e jsem naÅ¡el jeden $g_1(x) = (x+1)$. TeÄ je otÃ¡zka, jestli je $(x^4 + x^3 + x^2 + x + 1)$ ireducibilnÃ­. NemÃ¡ koÅ™en, takÅ¾e zÅ™ejmÄ› uÅ¾ nepÅ¯jde vydÄ›lit $(x+1)$. Mohl by jÃ­t tedy vydÄ›lit $(x^2 + x + 1)$, coÅ¾ je ireducibilnÃ­ polynom stupnÄ› 2. To ovÅ¡em taky nejde $\Rightarrow g_2(x) = (x^4 + x^3 + x^2 + x + 1)$. 
 
 \paragraph {$(z+1)$}:
 
@@ -1651,7 +1653,7 @@ Take jsem našel jeden $g_1(x) = (x+1)$. Teï je otázka, jestli je $(x^4 + x^3 + 
 	\end{pmatrix}
 	\]
 	 
-	 Kdy se na to èlovìk podívá, tak se jedná o slova délky 5 se sudım poètem jednièek - take jde o paritní kód.
+	 KdyÅ¾ se na to ÄlovÄ›k podÃ­vÃ¡, tak se jednÃ¡ o slova dÃ©lky 5 se sudÃ½m poÄtem jedniÄek - takÅ¾e jde o paritnÃ­ kÃ³d.
 	 
 \paragraph {$(x^4 + x^3 + x^2 + x + 1)$}:
 
@@ -1670,16 +1672,16 @@ Take jsem našel jeden $g_1(x) = (x+1)$. Teï je otázka, jestli je $(x^4 + x^3 + 
   \end{pmatrix}
 	\]
 	 
-Moná slova jsou jen $\{(00000),(11111)\}$, tudí se jedná o opakovací kód.
+MoÅ¾nÃ¡ slova jsou jen $\{(00000),(11111)\}$, tudÃ­Å¾ se jednÃ¡ o opakovacÃ­ kÃ³d.
 
 
 %---------------------------------------Priklad 3-11-------------------------------- 
-\subsection{\label{priklad3-11}Pøíklad 11}
-Najdìte cyklickı kód nad $\mathbb{Z}_3$, jeho kontrolní matice má ve sloupcích všechna nenulová slova délky 2 nad $\mathbb{Z}_3$. Najdìte generující polynom tohoto kódu. Návod: vyuijte tìleso GF(9) a jeho primitivní prvek. 
+\subsection{\label{priklad3-11}PÅ™Ã­klad 11}
+NajdÄ›te cyklickÃ½ kÃ³d nad $\mathbb{Z}_3$, jehoÅ¾ kontrolnÃ­ matice mÃ¡ ve sloupcÃ­ch vÅ¡echna nenulovÃ¡ slova dÃ©lky 2 nad $\mathbb{Z}_3$. NajdÄ›te generujÃ­cÃ­ polynom tohoto kÃ³du. NÃ¡vod: vyuÅ¾ijte tÄ›leso GF(9) a jeho primitivnÃ­ prvek. 
 
 \line(1,0){400}
 
-To tìleso $GF(9) = GF(3^2), \mathbb{Z}_3, \mbox{ st}(g(x)) = 2$, generující polynom tøeba $P(x) = x^2 + x + 2$ má primitivní prvek napø. $\alpha = i+1$. Ten mi dokáe vygenerovat všechny nenulové prvky, které chci (pøepisovací pravidlo $i^2 = 2i+1$): 
+To tÄ›leso $GF(9) = GF(3^2), \mathbb{Z}_3, \mbox{ st}(g(x)) = 2$, generujÃ­cÃ­ polynom tÅ™eba $P(x) = x^2 + x + 2$ mÃ¡ primitivnÃ­ prvek napÅ™. $\alpha = i+1$. Ten mi dokÃ¡Å¾e vygenerovat vÅ¡echny nenulovÃ© prvky, kterÃ© chci (pÅ™episovacÃ­ pravidlo $i^2 = 2i+1$): 
 
 \begin{align*}
 \alpha^1 & = i + 1\\
@@ -1692,7 +1694,7 @@ To tìleso $GF(9) = GF(3^2), \mathbb{Z}_3, \mbox{ st}(g(x)) = 2$, generující poly
 \alpha^8 & = 1
 \end{align*}
 
-Pøepsáno do matice $\mathbf{H}$:
+PÅ™epsÃ¡no do matice $\mathbf{H}$:
 \[
 	\mathbf{H} = \begin{pmatrix}
  1 & 1 & 2 & 0 & 2 & 2 & 1 & 0\\
@@ -1700,7 +1702,7 @@ Pøepsáno do matice $\mathbf{H}$:
   \end{pmatrix}
 \]
 
-Protoe sloupce $\mathbf{H}$ jsou uspoøádány podle mocnin, tak $\mathbf{H}\cdot v^T=o^T \mbox{ iff } v(\alpha)=0$, aneb kódová jsou právì ta slova, která mají koøen $\alpha$ ve vytvoøeném tìlese $GF(9)$. Polynom $p(x)$ pouitı k vytváøení tìlesa má koøen $\alpha$ a ádnı polynom nišího stupnì nemá v tìlese koøen $\alpha$ (nebo pomocí toho $\alpha$ se zapisují prvky tìlesa a jsou to všechny polynomy nišího stupnì ne st(p), a nejsou to nuly). Take $p(z)$ je nenulovı kódovı polynom nejnišího stupnì, tedy generující polynom. 
+ProtoÅ¾e sloupce $\mathbf{H}$ jsou uspoÅ™Ã¡dÃ¡ny podle mocnin, tak $\mathbf{H}\cdot v^T=o^T \mbox{ iff } v(\alpha)=0$, aneb kÃ³dovÃ¡ jsou prÃ¡vÄ› ta slova, kterÃ¡ majÃ­ koÅ™en $\alpha$ ve vytvoÅ™enÃ©m tÄ›lese $GF(9)$. Polynom $p(x)$ pouÅ¾itÃ½ k vytvÃ¡Å™enÃ­ tÄ›lesa mÃ¡ koÅ™en $\alpha$ a Å¾Ã¡dnÃ½ polynom niÅ¾Å¡Ã­ho stupnÄ› nemÃ¡ v tÄ›lese koÅ™en $\alpha$ (neboÅ¥ pomocÃ­ toho $\alpha$ se zapisujÃ­ prvky tÄ›lesa a jsou to vÅ¡echny polynomy niÅ¾Å¡Ã­ho stupnÄ› neÅ¾ st(p), a nejsou to nuly). TakÅ¾e $p(z)$ je nenulovÃ½ kÃ³dovÃ½ polynom nejniÅ¾Å¡Ã­ho stupnÄ›, tedy generujÃ­cÃ­ polynom. 
 
 \clearpage
 
@@ -1716,54 +1718,54 @@ Protoe sloupce $\mathbf{H}$ jsou uspoøádány podle mocnin, tak $\mathbf{H}\cdot 
 \end{flushright}
 
 %---------------------------------------Priklad 4-1-------------------------------- 
-\subsection{Pøíklad 1}
-Popište obraz libovolného binárního slova $u$ v homomorfismu $\varphi: \: (\{0,1\}^*,\circ) \rightarrow (\mathbb{Z}_{12},+)$, je-li dáno $\phi(0) = 3, \phi(1) = 7$. (Pozn.: $\{0,1\}^*$ je mnoina všech binárních slov vèetnì prázdného a $\circ$ je zøetìzení binárních slov.
+\subsection{PÅ™Ã­klad 1}
+PopiÅ¡te obraz libovolnÃ©ho binÃ¡rnÃ­ho slova $u$ v homomorfismu $\varphi: \: (\{0,1\}^*,\circ) \rightarrow (\mathbb{Z}_{12},+)$, je-li dÃ¡no $\phi(0) = 3, \phi(1) = 7$. (Pozn.: $\{0,1\}^*$ je mnoÅ¾ina vÅ¡ech binÃ¡rnÃ­ch slov vÄetnÄ› prÃ¡zdnÃ©ho a $\circ$ je zÅ™etÄ›zenÃ­ binÃ¡rnÃ­ch slov.
 
 \line(1,0){400}
 
-Co øíká to zadání je, e chci nìjaké mapování, nìjaké zobrazení, funkci, které mi øekne, jakou hodnotu bude mít zøetìzení dvou binárních slov v zadaném homomorfismu.
+Co Å™Ã­kÃ¡ to zadÃ¡nÃ­ je, Å¾e chci nÄ›jakÃ© mapovÃ¡nÃ­, nÄ›jakÃ© zobrazenÃ­, funkci, kterÃ© mi Å™ekne, jakou hodnotu bude mÃ­t zÅ™etÄ›zenÃ­ dvou binÃ¡rnÃ­ch slov v zadanÃ©m homomorfismu.
 
-Jinak øeèeno, tupì si opíšu definici \ref{def-homomorfismus}:
+Jinak Å™eÄeno, tupÄ› si opÃ­Å¡u definici \ref{def-homomorfismus}:
 
 \[ \phi(f_A(x_1, \ldots, x_n)) = f_B(\phi(x_1), \ldots, \phi(x_n)) \]
 
-Nejdøív zkusím, co mi to udìlá po dosazení dvou prvkù:
+NejdÅ™Ã­v zkusÃ­m, co mi to udÄ›lÃ¡ po dosazenÃ­ dvou prvkÅ¯:
 
 \[ \phi(f_A(x_1,x_2)) = f_B(\phi(x_1), \phi(x_2)) \]
 \[ \phi(x_1 \circ x_2) = \phi(x_1) + \phi(x_2) \]
 \[ \phi(0 \circ 1) = \underbrace{\phi(0)}_{3} + \underbrace{\phi(1)}_{7} \]
 
-Jak vidím, $\phi(0 \circ 1)$ musí mít hodnotu 10. Zkusím to teda pro více hodnot:
+Jak vidÃ­m, $\phi(0 \circ 1)$ musÃ­ mÃ­t hodnotu 10. ZkusÃ­m to teda pro vÃ­ce hodnot:
 
 \[ \underbrace{\phi(0 \circ 0 \circ 1)}_{13} = \underbrace{\phi(0)}_{3} + \underbrace{\phi(0)}_{3} + \underbrace{\phi(1)}_{7} \]
 \[ \underbrace{\phi(0 \circ 1 \circ 1)}_{17} = \underbrace{\phi(0)}_{3} + \underbrace{\phi(1)}_{7} + \underbrace{\phi(1)}_{7} \]
 
-Takhle to budu zkoušet do zblbnutí, nebo do té doby, ne mi dojde, e ta hodnota na levé stranì je 3x poèet nul + 7x poèet jednièek. Take obraz binárního slova $u$ je $\varphi(u) = 3n + 7j$, kde $n$ je poèet jeho nul a $j$ je poèet jednièek.
+Takhle to budu zkouÅ¡et do zblbnutÃ­, nebo do tÃ© doby, neÅ¾ mi dojde, Å¾e ta hodnota na levÃ© stranÄ› je 3x poÄet nul + 7x poÄet jedniÄek. TakÅ¾e obraz binÃ¡rnÃ­ho slova $u$ je $\varphi(u) = 3n + 7j$, kde $n$ je poÄet jeho nul a $j$ je poÄet jedniÄek.
 
 
 %---------------------------------------Priklad 4-2-------------------------------- 
-\subsection{Pøíklad 2}
-Najdìte všechny grupové homomorfismy $f: \: (\mathbb{Z}_{6},+) \rightarrow (\mathbb{Z}_{15},+)$ a $g: \: (\mathbb{Z}_{6},+) \rightarrow (\mathbb{Z}_{15}^*,\cdot)$.
+\subsection{PÅ™Ã­klad 2}
+NajdÄ›te vÅ¡echny grupovÃ© homomorfismy $f: \: (\mathbb{Z}_{6},+) \rightarrow (\mathbb{Z}_{15},+)$ a $g: \: (\mathbb{Z}_{6},+) \rightarrow (\mathbb{Z}_{15}^*,\cdot)$.
 
 \line(1,0){400}
 
-Nejdøíve je nutné si uvìdomit, co to vlastnì hledám:
+NejdÅ™Ã­ve je nutnÃ© si uvÄ›domit, co to vlastnÄ› hledÃ¡m:
 
 \begin{definice}
-Nech $(G, \cdot)$ a $(H, \circ)$ jsou grupy. Zobrazení $f: G \rightarrow H$ je grupovı homomorfismus, pokud pro kadé $a, b \in G$ platí
+NechÅ¥ $(G, \cdot)$ a $(H, \circ)$ jsou grupy. ZobrazenÃ­ $f: G \rightarrow H$ je grupovÃ½ homomorfismus, pokud pro kaÅ¾dÃ© $a, b \in G$ platÃ­
 \[ f(a\cdot b) = f(a) \circ f(b),\]
-zároveò 
+zÃ¡roveÅˆ 
 \[ f(e_G) = e_H \]
-a pro kadé $a$ platí 
+a pro kaÅ¾dÃ© $a$ platÃ­ 
 \[ f (a^{-1}) = (f(a))^{-1}. \]
 \end{definice}
 
-V podstatì se jedná o pøepsání definice \ref{def-homomorfismus}. Jinımi slovy, hledám takovou funkci, zobrazení, která mi dá stejnou hodnotu na pravé i levé stranì rovnice pro libovolné $a,b$. Co vím je, e generátor první grupy je ${<}1{>}$, take libovolné $x$ si mùu vyjádøit jako $n\cdot1$. Co dál vím je, e $\varphi(0) = 0$, podle druhého bodu definice. Oznaèím si tedy obraz jednièky jako $a$, neboli $\varphi(a)=1$. Teï si tyhle informace dosadím do definice:
+V podstatÄ› se jednÃ¡ o pÅ™epsÃ¡nÃ­ definice \ref{def-homomorfismus}. JinÃ½mi slovy, hledÃ¡m takovou funkci, zobrazenÃ­, kterÃ¡ mi dÃ¡ stejnou hodnotu na pravÃ© i levÃ© stranÄ› rovnice pro libovolnÃ© $a,b$. Co vÃ­m je, Å¾e generÃ¡tor prvnÃ­ grupy je ${<}1{>}$, takÅ¾e libovolnÃ© $x$ si mÅ¯Å¾u vyjÃ¡dÅ™it jako $n\cdot1$. Co dÃ¡l vÃ­m je, Å¾e $\varphi(0) = 0$, podle druhÃ©ho bodu definice. OznaÄÃ­m si tedy obraz jedniÄky jako $a$, neboli $\varphi(a)=1$. TeÄ si tyhle informace dosadÃ­m do definice:
 
 \[ \varphi(x) = \varphi(\underbrace{1+\ldots+1}_{n}) = \underbrace{\varphi(1) + \ldots + \varphi(1)}_{n} = 
  a\cdot n. \]
  
- Neboli jsem dostal $\varphi(x) = a\cdot n$. Pokud bych mìl jako zadání najít homomorfismus $\mathbb{Z} \rightarrow \mathbb{Z}$, tak to mùu oznaèit za vısledek pro libovolné $x$ a $a$, a konèím. Nicménì to nemùu, protoe grupy mají pouze omezenı poèet prvkù. Zkusím si to rozepsat:  
+ Neboli jsem dostal $\varphi(x) = a\cdot n$. Pokud bych mÄ›l jako zadÃ¡nÃ­ najÃ­t homomorfismus $\mathbb{Z} \rightarrow \mathbb{Z}$, tak to mÅ¯Å¾u oznaÄit za vÃ½sledek pro libovolnÃ© $x$ a $a$, a konÄÃ­m. NicmÃ©nÄ› to nemÅ¯Å¾u, protoÅ¾e grupy majÃ­ pouze omezenÃ½ poÄet prvkÅ¯. ZkusÃ­m si to rozepsat:  
 
 \begin{align*}
 \varphi(1) & = 1a\\
@@ -1774,34 +1776,34 @@ V podstatì se jedná o pøepsání definice \ref{def-homomorfismus}. Jinımi slovy, h
 \varphi(6) & = 6a
 \end{align*}
 
-Problém je, e 6 je toté co 0 v $\mathbb{Z}_6$, neboli $\varphi(6) = 6a = \varphi(0) = 0$. Nyní tedy musím vyøešit tuto rovnici:
+ProblÃ©m je, Å¾e 6 je totÃ©Å¾ co 0 v $\mathbb{Z}_6$, neboli $\varphi(6) = 6a = \varphi(0) = 0$. NynÃ­ tedy musÃ­m vyÅ™eÅ¡it tuto rovnici:
 
 \[ 6a = 0 \text{ v } \mathbb{Z}_{15}. \]
 
-Tato rovnice má pøesnì 3 øešení, jeliko $\gcd(6,15) = 3$, a jsou to $a_1 = 0, a_2 = 5, a_3 = 10$. Teï u mám koneènì hotové øešení, a to $\varphi_1(x) = 0\cdot x, \varphi_2(x) = 5 \cdot x, \varphi_3(x) = 10\cdot x$. Jiná øešení nejsou, kdybych si napsal tøeba $\varphi_s(x)=4x$, tak $\varphi_s(6) = 4\cdot6 = 24 = 9 \neq f(0) = 0$ v $\mathbb{Z}_{15}$.
+Tato rovnice mÃ¡ pÅ™esnÄ› 3 Å™eÅ¡enÃ­, jelikoÅ¾ $\gcd(6,15) = 3$, a jsou to $a_1 = 0, a_2 = 5, a_3 = 10$. TeÄ uÅ¾ mÃ¡m koneÄnÄ› hotovÃ© Å™eÅ¡enÃ­, a to $\varphi_1(x) = 0\cdot x, \varphi_2(x) = 5 \cdot x, \varphi_3(x) = 10\cdot x$. JinÃ¡ Å™eÅ¡enÃ­ nejsou, kdybych si napsal tÅ™eba $\varphi_s(x)=4x$, tak $\varphi_s(6) = 4\cdot6 = 24 = 9 \neq f(0) = 0$ v $\mathbb{Z}_{15}$.
 
 
-Pro druhı homomorfismus budu postupovat podobnì, nejdøív vyøeším neutrální prvky. Tím dostanu rovnici $\varphi(0) = 1$. Dál postupuji jako minule, generátor v první grupì je opìt ${<}1{>}$, $\varphi(1) = a$:
+Pro druhÃ½ homomorfismus budu postupovat podobnÄ›, nejdÅ™Ã­v vyÅ™eÅ¡Ã­m neutrÃ¡lnÃ­ prvky. TÃ­m dostanu rovnici $\varphi(0) = 1$. DÃ¡l postupuji jako minule, generÃ¡tor v prvnÃ­ grupÄ› je opÄ›t ${<}1{>}$, $\varphi(1) = a$:
 
 
 \[ \varphi(x) = \varphi(\underbrace{1+\ldots+1}_{n}) = \underbrace{\varphi(1) \cdot \ldots \cdot \varphi(1)}_{n} = 
  a^n. \]
 
-Dostávám tvar $\varphi(x)=a^n$. Zbıvá doøešit $\varphi(6): \varphi(6) = a^6 = \varphi(0) = 1$. Dostávám rocnici
+DostÃ¡vÃ¡m tvar $\varphi(x)=a^n$. ZbÃ½vÃ¡ doÅ™eÅ¡it $\varphi(6): \varphi(6) = a^6 = \varphi(0) = 1$. DostÃ¡vÃ¡m rocnici
 
 \[ a^6 = 1 \mbox{ v } \mathbb{Z}_{15}, \]
 
-její vyøešení v praxi znamená vyøešit pøíklad podobnı pøíkladu \ref{priklad1-12}:
+jejÃ­Å¾ vyÅ™eÅ¡enÃ­ v praxi znamenÃ¡ vyÅ™eÅ¡it pÅ™Ã­klad podobnÃ½ pÅ™Ã­kladu \ref{priklad1-12}:
 
-Rozloím $15$ na souèin prvoèísel, take $\mathbb{Z}_{15} = \mathbb{Z}_{3} \times \mathbb{Z}_{5}$ a øeším pro obì zvláš. Obecnì, rovnice $x^k = 1$ v $\mathbb{Z}_n^*$ má $\gcd(k, \varphi(n)) = d$ øešení a jsou to prvky øádù $r$, kde $r|d$.
-
-\paragraph{v $\mathbb{Z}_3$}
-Má $\gcd(6,\varphi(3)) = 2$ øešení, a jsou to prvky øádù 1 a 2 $\Rightarrow x = 1 \wedge x = -1$ 
+RozloÅ¾Ã­m $15$ na souÄin prvoÄÃ­sel, takÅ¾e $\mathbb{Z}_{15} = \mathbb{Z}_{3} \times \mathbb{Z}_{5}$ a Å™eÅ¡Ã­m pro obÄ› zvlÃ¡Å¡Å¥. ObecnÄ›, rovnice $x^k = 1$ v $\mathbb{Z}_n^*$ mÃ¡ $\gcd(k, \varphi(n)) = d$ Å™eÅ¡enÃ­ a jsou to prvky Å™Ã¡dÅ¯ $r$, kde $r|d$.
 
 \paragraph{v $\mathbb{Z}_3$}
-Má $\gcd(6,\varphi(5)) = 2$ øešení, a jsou to prvky øádù 1 a 2 $\Rightarrow x = 1 \wedge x = -1$ 
+MÃ¡ $\gcd(6,\varphi(3)) = 2$ Å™eÅ¡enÃ­, a jsou to prvky Å™Ã¡dÅ¯ 1 a 2 $\Rightarrow x = 1 \wedge x = -1$ 
 
-Teï vıpoèet koeficientù èínské vìty:
+\paragraph{v $\mathbb{Z}_3$}
+MÃ¡ $\gcd(6,\varphi(5)) = 2$ Å™eÅ¡enÃ­, a jsou to prvky Å™Ã¡dÅ¯ 1 a 2 $\Rightarrow x = 1 \wedge x = -1$ 
+
+TeÄ vÃ½poÄet koeficientÅ¯ ÄÃ­nskÃ© vÄ›ty:
  
 \begin{align*}
 q_3 & = s\cdot 5 = s\cdot 2 & \left[ 2\right]^{-1}_3 = 2\\
@@ -1810,23 +1812,23 @@ q_5 & = 3 \cdot s & \left[ 3\right]^{-1}_{5} = 2\\
 		& = 3 \cdot 2 = 6 \\
 \end{align*}
 
-Všechna øešení jsou tedy $a = \{1,-1\}\cdot 10 + \{1,-1\}\cdot 6 = \{1,4,11,14\}$.
+VÅ¡echna Å™eÅ¡enÃ­ jsou tedy $a = \{1,-1\}\cdot 10 + \{1,-1\}\cdot 6 = \{1,4,11,14\}$.
 
 Isomorfismy tedy budou 4, a to $g_1(x) = 1,g_2(x) = 4^x,g_3(x) = 11^x,g_4(x) = 14^x, x \in \mathbb{Z}_6$.
 
 
 %---------------------------------------Priklad 4-3-------------------------------- 
-\subsection{Pøíklad 3}
-Najdìte všechny grupové homomorfismy $f: \: (\mathbb{Z}_{9}^*,\cdot) \rightarrow (\mathbb{Z}_{21},+)$ a $g: \: (\mathbb{Z}_{9}^*,\cdot) \rightarrow (\mathbb{Z}_{21}^*,\cdot)$.
+\subsection{PÅ™Ã­klad 3}
+NajdÄ›te vÅ¡echny grupovÃ© homomorfismy $f: \: (\mathbb{Z}_{9}^*,\cdot) \rightarrow (\mathbb{Z}_{21},+)$ a $g: \: (\mathbb{Z}_{9}^*,\cdot) \rightarrow (\mathbb{Z}_{21}^*,\cdot)$.
 
 \line(1,0){400}
 
-Pouiju stejnı postup co minule - nejprve vyøeším neutrály, èím dostanu $f(1) = 0$. Jeliko ${<}2{>}$ je generátor 1. grupy, mùu vyjádøit libovolnı prvek $x$ v ní jako $x=2^n$. Homomorfismus tohoto generátoru si tedy napíšu jako $\varphi(2) = a$, a jedu jako motorová myš:
+PouÅ¾iju stejnÃ½ postup co minule - nejprve vyÅ™eÅ¡Ã­m neutrÃ¡ly, ÄÃ­mÅ¾ dostanu $f(1) = 0$. JelikoÅ¾ ${<}2{>}$ je generÃ¡tor 1. grupy, mÅ¯Å¾u vyjÃ¡dÅ™it libovolnÃ½ prvek $x$ v nÃ­ jako $x=2^n$. Homomorfismus tohoto generÃ¡toru si tedy napÃ­Å¡u jako $\varphi(2) = a$, a jedu jako motorovÃ¡ myÅ¡:
 
 \[ \varphi(x) = \varphi(2^n) = \varphi(\underbrace{2\cdot\ldots\cdot2}_{n}) = \underbrace{\varphi(2) + \ldots + \varphi(2)}_{n} =
  a\cdot n. \]
 
-Neboli tvar homomorfismu je $\varphi(x) = \varphi(2^n) = a\cdot n$, zbıvá najít, pro která $a$ to platí:
+Neboli tvar homomorfismu je $\varphi(x) = \varphi(2^n) = a\cdot n$, zbÃ½vÃ¡ najÃ­t, pro kterÃ¡ $a$ to platÃ­:
 
 \[ \varphi(2^9) = 9a = \varphi(2^0) = \varphi(1) = 0, \]
 
@@ -1834,13 +1836,13 @@ neboli
 
 \[ 9a = 0 \mbox{ v } \mathbb{Z}_{21}. \]
 
-Øešení jsou $gcd(9,21) = 3$, a to  $a_1 = 0, a_2 = 7, a_3 = 14$, vısledek $\varphi_1(x) = 0\cdot n, \varphi_2(x) = 5 \cdot n, \varphi_3(x) = 10\cdot n$. kde $x = 2^n$.
+Å˜eÅ¡enÃ­ jsou $gcd(9,21) = 3$, a to  $a_1 = 0, a_2 = 7, a_3 = 14$, vÃ½sledek $\varphi_1(x) = 0\cdot n, \varphi_2(x) = 5 \cdot n, \varphi_3(x) = 10\cdot n$. kde $x = 2^n$.
 
-Druhı pøíklad je ponìkud zapeklitìjší, ale jeho øešení podobné, jako minule. Dejme tomu, e mám homomorfismus $\varphi$. Protoe $(\mathbb{Z}_{9}^*,\cdot)$ = $<2>$, z hodnoty v bodì 2 mùu dopoèítat hodnoty všech bodech: je-li $\varphi(2) = a$, a $\varphi(1) = 1$, pak
+DruhÃ½ pÅ™Ã­klad je ponÄ›kud zapeklitÄ›jÅ¡Ã­, ale jeho Å™eÅ¡enÃ­ podobnÃ©, jako minule. Dejme tomu, Å¾e mÃ¡m homomorfismus $\varphi$. ProtoÅ¾e $(\mathbb{Z}_{9}^*,\cdot)$ = $<2>$, z hodnoty v bodÄ› 2 mÅ¯Å¾u dopoÄÃ­tat hodnoty vÅ¡ech bodech: je-li $\varphi(2) = a$, a $\varphi(1) = 1$, pak
 
 \[ \varphi(x) = \varphi(2^n) = \varphi(\underbrace{2\cdot\ldots\cdot2}_{n}) = \underbrace{\varphi(2)\cdot \ldots \cdot \varphi(2)}_{n} = a^n. \]
 
-Zbıvá vyøešit
+ZbÃ½vÃ¡ vyÅ™eÅ¡it
 
 \[ \varphi(2^6) = a^6 = \varphi(2^0) = 1, \]
 
@@ -1848,15 +1850,15 @@ neboli
 
 \[ a^6 = 1 \mbox{ v } \mathbb{Z}_{21}^*. \]
 
-To splòují všechny prvky v (necyklické) $\mathbb{Z}_{21}^*$, take øešení je $g_i(x) = a^n$, kde $a \in \mathbb{Z}_{21}^*$, pro $x = 2^k \in \mathbb{Z}_{9}^*$.
+To splÅˆujÃ­ vÅ¡echny prvky v (necyklickÃ©) $\mathbb{Z}_{21}^*$, takÅ¾e Å™eÅ¡enÃ­ je $g_i(x) = a^n$, kde $a \in \mathbb{Z}_{21}^*$, pro $x = 2^k \in \mathbb{Z}_{9}^*$.
 
 %---------------------------------------Priklad 4-4-------------------------------- 
-\subsection{Pøíklad 4}
-Najdìte podgrupu v grupì $\mathbb{Z}_{19}^*$, která je izomorfní s grupou $\mathbb{Z}_{9}^*$. Najdìte pøedpis nìjakého izomorfismu mezi nimi.
+\subsection{PÅ™Ã­klad 4}
+NajdÄ›te podgrupu v grupÄ› $\mathbb{Z}_{19}^*$, kterÃ¡ je izomorfnÃ­ s grupou $\mathbb{Z}_{9}^*$. NajdÄ›te pÅ™edpis nÄ›jakÃ©ho izomorfismu mezi nimi.
 
 \line(1,0){400}
 
-Pro zaèátek musím najít podgrupu $\mathbb{Z}_{19}^*$ mající stejnı poèet prvkù jako $\mathbb{Z}_{9}^*$. Cyklická grupa má $\varphi(n)$ prvkù, take $\mathbb{Z}_{9}^*$ má $\varphi(9) = 3^2 - 3 = 6$ prvkù. V $\mathbb{Z}_{19}^*$ hledám takové prvky, které mají øád 6 - k tomu musím nejprve najít generátor, zkusím 2:
+Pro zaÄÃ¡tek musÃ­m najÃ­t podgrupu $\mathbb{Z}_{19}^*$ majÃ­cÃ­ stejnÃ½ poÄet prvkÅ¯ jako $\mathbb{Z}_{9}^*$. CyklickÃ¡ grupa mÃ¡ $\varphi(n)$ prvkÅ¯, takÅ¾e $\mathbb{Z}_{9}^*$ mÃ¡ $\varphi(9) = 3^2 - 3 = 6$ prvkÅ¯. V $\mathbb{Z}_{19}^*$ hledÃ¡m takovÃ© prvky, kterÃ© majÃ­ Å™Ã¡d 6 - k tomu musÃ­m nejprve najÃ­t generÃ¡tor, zkusÃ­m 2:
 
 \begin{figure}[h]
   \hfill
@@ -1890,37 +1892,37 @@ Pro zaèátek musím najít podgrupu $\mathbb{Z}_{19}^*$ mající stejnı poèet prvkù j
   \hfill
 \end{figure}
 
-Dvojka je, jako obvykle, generátor $\mathbb{Z}_{19}^*$. Nalezení generátoru øádu 6 je u je jednoduché, $\gcd(18,k)=18/3 \Rightarrow k = 3 \wedge k = 12 \Rightarrow g_1 = 8 \wedge g_2 = 12$. Podgrupa izomorfní s $\mathbb{Z}_{9}^*$ je ${<}8{>} = {<}12{>} = \{1,7,8,11,12,18\}$. 
+Dvojka je, jako obvykle, generÃ¡tor $\mathbb{Z}_{19}^*$. NalezenÃ­ generÃ¡toru Å™Ã¡du 6 je uÅ¾ je jednoduchÃ©, $\gcd(18,k)=18/3 \Rightarrow k = 3 \wedge k = 12 \Rightarrow g_1 = 8 \wedge g_2 = 12$. Podgrupa izomorfnÃ­ s $\mathbb{Z}_{9}^*$ je ${<}8{>} = {<}12{>} = \{1,7,8,11,12,18\}$. 
 
-Nalezení izomorfismu znamená nalezení jakéhosi mapování 1:1 mezi nosnımi mnoinami (viz èíslování karet v pøíkladu \ref{priklad1-9}). Takové mapování najdu zøejmì snadno - na levé stranì mám 6 prvkù generovanıch $2^a, a = \left<1,6\right>$, na pravé stranì mám 6 prvkù generovanıch $8^a, a = \left<1,6\right>$ (nebo $12^a$). Izomorfismus tedy bude $2^a \cong 8^a$, neboli $\varphi(x=2^a) = 8^a$ (nebo $\varphi(x=2^a) = 12^a$), $a \in \mathbb{Z}_{9}^*$.       
+NalezenÃ­ izomorfismu znamenÃ¡ nalezenÃ­ jakÃ©hosi mapovÃ¡nÃ­ 1:1 mezi nosnÃ½mi mnoÅ¾inami (viz ÄÃ­slovÃ¡nÃ­ karet v pÅ™Ã­kladu \ref{priklad1-9}). TakovÃ© mapovÃ¡nÃ­ najdu zÅ™ejmÄ› snadno - na levÃ© stranÄ› mÃ¡m 6 prvkÅ¯ generovanÃ½ch $2^a, a = \left<1,6\right>$, na pravÃ© stranÄ› mÃ¡m 6 prvkÅ¯ generovanÃ½ch $8^a, a = \left<1,6\right>$ (nebo $12^a$). Izomorfismus tedy bude $2^a \cong 8^a$, neboli $\varphi(x=2^a) = 8^a$ (nebo $\varphi(x=2^a) = 12^a$), $a \in \mathbb{Z}_{9}^*$.       
 
 %---------------------------------------Priklad 4-5-------------------------------- 
-\subsection{Pøíklad 5}
-Nech T je tìleso o devíti prvcích. Najdìte $n \in \mathbb{N}$ tak, aby multiplikativní grupa $(T^*,\cdot)$ byla izomorfní s grupou $(\mathbb{Z}_n,+)$. Zkonstruujte nìjaké GF(9) na napište pøedpis hledaného izomorfismu.
+\subsection{PÅ™Ã­klad 5}
+NechÅ¥ T je tÄ›leso o devÃ­ti prvcÃ­ch. NajdÄ›te $n \in \mathbb{N}$ tak, aby multiplikativnÃ­ grupa $(T^*,\cdot)$ byla izomorfnÃ­ s grupou $(\mathbb{Z}_n,+)$. Zkonstruujte nÄ›jakÃ© GF(9) na napiÅ¡te pÅ™edpis hledanÃ©ho izomorfismu.
 
 \line(1,0){400}
 
 \begin{veta}
-Cyklická grupa øádu $n$ je izomorfní s $(\mathbb{Z}_n, +)$.
+CyklickÃ¡ grupa Å™Ã¡du $n$ je izomorfnÃ­ s $(\mathbb{Z}_n, +)$.
 \end{veta}
 
-Øád grupy je $8$, jeliko je cyklická a obsahuje všechny prvky tìlesa vyjma nuly - co je osm prvkù. Proto je izomorfní se $(\mathbb{Z}_8, +)$, pøièem $n=8$. 
+Å˜Ã¡d grupy je $8$, jelikoÅ¾ je cyklickÃ¡ a obsahuje vÅ¡echny prvky tÄ›lesa vyjma nuly - coÅ¾ je osm prvkÅ¯. Proto je izomorfnÃ­ se $(\mathbb{Z}_8, +)$, pÅ™iÄemÅ¾ $n=8$. 
 
-Tìleso GF(9) jsem u zkonstruoval v pøíkladu \ref{priklad3-11}.
+TÄ›leso GF(9) jsem uÅ¾ zkonstruoval v pÅ™Ã­kladu \ref{priklad3-11}.
 
-$T^*$ je cyklická grupa, dvì cyklické grupy o stejném poètu prvku jsou izomorfní, prièem izomorfismus zobrazí generátor na generátor (a pak stejné mocniny na stejné mocniny).
-Zbıva u zkonstruovaného tìlesa najít primitivní prvek (generator $T^*$) - tedy (i+1) (viz \ref{priklad3-11}) a napsat pøedpis homomorfismu
+$T^*$ je cyklickÃ¡ grupa, dvÄ› cyklickÃ© grupy o stejnÃ©m poÄtu prvku jsou izomorfnÃ­, priÄemÅ¾ izomorfismus zobrazÃ­ generÃ¡tor na generÃ¡tor (a pak stejnÃ© mocniny na stejnÃ© mocniny).
+ZbÃ½va u zkonstruovanÃ©ho tÄ›lesa najÃ­t primitivnÃ­ prvek (generator $T^*$) - tedy (i+1) (viz \ref{priklad3-11}) a napsat pÅ™edpis homomorfismu
 \[ f: \mathbb{Z}_8 \rightarrow T^*: f(k)=(i+1)^k. \] 
 
 %---------------------------------------Priklad 4-6-------------------------------- 
-\subsection{Pøíklad 6}
-Nech $T = \mathbb{Z}_5[x]/x^2+x+1$. Kolik prvkù mohou mít podgrupy multiplikativní grupy $(T^*,\cdot)$? Vypište tabulku pro násobení v nìjaké tøíprvkové podgrupì a v nìjaké ètyøprvkové podgrupì.
+\subsection{PÅ™Ã­klad 6}
+NechÅ¥ $T = \mathbb{Z}_5[x]/x^2+x+1$. Kolik prvkÅ¯ mohou mÃ­t podgrupy multiplikativnÃ­ grupy $(T^*,\cdot)$? VypiÅ¡te tabulku pro nÃ¡sobenÃ­ v nÄ›jakÃ© tÅ™Ã­prvkovÃ© podgrupÄ› a v nÄ›jakÃ© ÄtyÅ™prvkovÃ© podgrupÄ›.
 
 \line(1,0){400}
 
-První, co musím zjistit je, jestli je $x^2+x+1$ ireducibilní polynom. Zøejmì je, jeliko nemá koøen, a polynomy stupnì 2 a 3 jsou ireducibilní, kdy nemají koøen. $T$ je tedy tìleso, a to dokonce $GF(25) = GF(5^2)$. Jak jsem popsal v pøedchozím pøíkladu, tak jeho grupa má $25-1=24$ prvkù, a jeliko je i cyklická, tak obsahuje podgrupy øádù $d$, kde $d$ dìlí $24$ (viz. tøeba pøíklad \ref{priklad1-8}). Øády jsou tedy $1,2,3,4,6,8,12,24$. Proto, abych našel nìjakou tøíprvkovou a ètyøprvkovou grupu, musím najít nejlépe primitivní prvek tìlesa grupy, nebo alespoò prvky øádu 3 a 4. 
+PrvnÃ­, co musÃ­m zjistit je, jestli je $x^2+x+1$ ireducibilnÃ­ polynom. ZÅ™ejmÄ› je, jelikoÅ¾ nemÃ¡ koÅ™en, a polynomy stupnÄ› 2 a 3 jsou ireducibilnÃ­, kdyÅ¾ nemajÃ­ koÅ™en. $T$ je tedy tÄ›leso, a to dokonce $GF(25) = GF(5^2)$. Jak jsem popsal v pÅ™edchozÃ­m pÅ™Ã­kladu, tak jeho grupa mÃ¡ $25-1=24$ prvkÅ¯, a jelikoÅ¾ je i cyklickÃ¡, tak obsahuje podgrupy Å™Ã¡dÅ¯ $d$, kde $d$ dÄ›lÃ­ $24$ (viz. tÅ™eba pÅ™Ã­klad \ref{priklad1-8}). Å˜Ã¡dy jsou tedy $1,2,3,4,6,8,12,24$. Proto, abych naÅ¡el nÄ›jakou tÅ™Ã­prvkovou a ÄtyÅ™prvkovou grupu, musÃ­m najÃ­t nejlÃ©pe primitivnÃ­ prvek tÄ›lesa grupy, nebo alespoÅˆ prvky Å™Ã¡du 3 a 4. 
 
-Zkusím $\alpha \Rightarrow r(\alpha)=3$, prvek dokáe vygenerovat podgrupu o 3 prvcích, $P_3=\{1,\alpha,4\alpha+4,\}$. Dál zkusím $(\alpha+1) \Rightarrow r(\alpha+1)=6$. Tak zkouším $(\alpha+2) \Rightarrow r(\alpha+2)=24$, koneènì úspìch. Teï u mi jen staèí najít nìjakı prvek øádu 4, tzn. $gcd(24,k)=24/4 \Rightarrow k = 6$ (tøeba). $(\alpha+2)^6 = 3$, $P_4 = \{1,2,3,4\}$.
+ZkusÃ­m $\alpha \Rightarrow r(\alpha)=3$, prvek dokÃ¡Å¾e vygenerovat podgrupu o 3 prvcÃ­ch, $P_3=\{1,\alpha,4\alpha+4,\}$. DÃ¡l zkusÃ­m $(\alpha+1) \Rightarrow r(\alpha+1)=6$. Tak zkouÅ¡Ã­m $(\alpha+2) \Rightarrow r(\alpha+2)=24$, koneÄnÄ› ÃºspÄ›ch. TeÄ uÅ¾ mi jen staÄÃ­ najÃ­t nÄ›jakÃ½ prvek Å™Ã¡du 4, tzn. $gcd(24,k)=24/4 \Rightarrow k = 6$ (tÅ™eba). $(\alpha+2)^6 = 3$, $P_4 = \{1,2,3,4\}$.
 
 \begin{figure}[h]
   \centering
@@ -1958,8 +1960,8 @@ Zkusím $\alpha \Rightarrow r(\alpha)=3$, prvek dokáe vygenerovat podgrupu o 3 p
 
 
 %---------------------------------------Priklad 4-7-------------------------------- 
-\subsection{Pøíklad 7}
-Které z následujících zobrazení $f_i: K \rightarrow K$, kde $K$ je tìleso komplexních èísel nad $\mathbb{Z}_3$, je homomorfismus tìles?
+\subsection{PÅ™Ã­klad 7}
+KterÃ© z nÃ¡sledujÃ­cÃ­ch zobrazenÃ­ $f_i: K \rightarrow K$, kde $K$ je tÄ›leso komplexnÃ­ch ÄÃ­sel nad $\mathbb{Z}_3$, je homomorfismus tÄ›les?
 
 \begin{enumerate}
 	\item $f_1(a\imath + b) = (a\imath + b)^3$,
@@ -1970,9 +1972,9 @@ Které z následujících zobrazení $f_i: K \rightarrow K$, kde $K$ je tìleso komple
 
 \line(1,0){400}
 
-Tady je nutné ovìøit, e se jedná tìlesovı homomorfismus, tedy e respektuje sèítání, násobení, $\underline{0}$ a $\underline{1}$. Tedy napø. zda platí $f(a+b) = f(a) + f(b)$ pro libovolné $a,b \in K$ atd.
+Tady je nutnÃ© ovÄ›Å™it, Å¾e se jednÃ¡ tÄ›lesovÃ½ homomorfismus, tedy Å¾e respektuje sÄÃ­tÃ¡nÃ­, nÃ¡sobenÃ­, $\underline{0}$ a $\underline{1}$. Tedy napÅ™. zda platÃ­ $f(a+b) = f(a) + f(b)$ pro libovolnÃ© $a,b \in K$ atd.
 
-Dùleitou roli hraje vzorec $(a+b)^p = a^p+b^p$ v tìlese charakteristiky $p$ (\textbf{nedopoèítáno}).
+DÅ¯leÅ¾itou roli hraje vzorec $(a+b)^p = a^p+b^p$ v tÄ›lese charakteristiky $p$ (\textbf{nedopoÄÃ­tÃ¡no}).
 
 \begin{enumerate}
 	\item $(\imath + \imath)^3 = (2\imath)^3 = -2\imath = (\imath)^3 + (\imath)^3 = -\imath - \imath$,
@@ -1992,96 +1994,96 @@ Dùleitou roli hraje vzorec $(a+b)^p = a^p+b^p$ v tìlese charakteristiky $p$ (\t
 \end{flushright}
 
 %---------------------------------------Priklad 5-1-------------------------------- 
-\subsection{Pøíklad 1}
-Je dána mnoina $A^*$ všech slov nad abecedou $A$. Na mnoinì $A^*$ je definovaná operace pøedpisem
+\subsection{PÅ™Ã­klad 1}
+Je dÃ¡na mnoÅ¾ina $A^*$ vÅ¡ech slov nad abecedou $A$. Na mnoÅ¾inÄ› $A^*$ je definovanÃ¡ operace pÅ™edpisem
 
-\[ u \sqsubseteq v \text{ iff } v = wu \text{ pro nìjaké slovo } w \in A^*. \]
+\[ u \sqsubseteq v \text{ iff } v = wu \text{ pro nÄ›jakÃ© slovo } w \in A^*. \]
 
-Rozhodnìte, zda se jedná o uspoøádání a zda existují suprema a infima všech dvojic prvkù z $A^*$, pøípadnì jak se suprema a infima najdou.
+RozhodnÄ›te, zda se jednÃ¡ o uspoÅ™Ã¡dÃ¡nÃ­ a zda existujÃ­ suprema a infima vÅ¡ech dvojic prvkÅ¯ z $A^*$, pÅ™Ã­padnÄ› jak se suprema a infima najdou.
  
 \line(1,0){400}
 
-Co to znamená, kdy se øekne, e relace je uspoøádání? To znamená, e relace je \emph{reflexivní}, \emph{antisymetrická} a \emph{tranzitivní} (ve zkratce \textsc{RAT}):
+Co to znamenÃ¡, kdyÅ¾ se Å™ekne, Å¾e relace je uspoÅ™Ã¡dÃ¡nÃ­? To znamenÃ¡, Å¾e relace je \emph{reflexivnÃ­}, \emph{antisymetrickÃ¡} a \emph{tranzitivnÃ­} (ve zkratce \textsc{RAT}):
 
-Relace $\sqsubseteq$ na mnoinì $A$ se nazıvá 
+Relace $\sqsubseteq$ na mnoÅ¾inÄ› $A$ se nazÃ½vÃ¡ 
 \begin{itemize}
- \item \emph{reflexivní}, jestlie pro $\forall a \in A$ platí $a \sqsubseteq a$
- \item \emph{antisymetrická}, jestlie pro $\forall a,b \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b$
- \item \emph{tranzitivní}, jestlie pro $\forall a,b,c \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c$
+ \item \emph{reflexivnÃ­}, jestliÅ¾e pro $\forall a \in A$ platÃ­ $a \sqsubseteq a$
+ \item \emph{antisymetrickÃ¡}, jestliÅ¾e pro $\forall a,b \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b$
+ \item \emph{tranzitivnÃ­}, jestliÅ¾e pro $\forall a,b,c \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c$
 \end{itemize} 
 
-Teï zpátky k zadání. Co se tu øíká je, e slovo $u$ je "menší" ne $v$, pokud $v$ má na svém konci èást $u$ ($u$ je suffixem $u$). Neboli, ještì lépe, pokud tøeba $u = 4$ a $v = 1234$, pak $u \sqsubseteq v$. Teï vyøeším podmínky pro uspoøádání: 
+TeÄ zpÃ¡tky k zadÃ¡nÃ­. Co se tu Å™Ã­kÃ¡ je, Å¾e slovo $u$ je "menÅ¡Ã­" neÅ¾ $v$, pokud $v$ mÃ¡ na svÃ©m konci ÄÃ¡st $u$ ($u$ je suffixem $u$). Neboli, jeÅ¡tÄ› lÃ©pe, pokud tÅ™eba $u = 4$ a $v = 1234$, pak $u \sqsubseteq v$. TeÄ vyÅ™eÅ¡Ã­m podmÃ­nky pro uspoÅ™Ã¡dÃ¡nÃ­: 
 
 \begin{itemize}
- \item \emph{reflexivní}: pro $\forall a \in A$ platí $a \sqsubseteq a$, tzn. tøeba $1234 \sqsubseteq 1234 \Rightarrow$ to je splnìno, jeliko pokud $w = \emptyset$, pak $u = v$.
- \item \emph{antisymetrická}: pro $\forall a,b \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b \Rightarrow$ to je splnìno také. Nedokáu toti najít dvì rozdílná slova, pro nì by platily obì nerovnosti. 
- \item \emph{tranzitivní}:  pro $\forall a,b,c \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c \Rightarrow$ to platí také, znamená to, e $a$ je suffixem jak $b$, tak i $c$. 
+ \item \emph{reflexivnÃ­}: pro $\forall a \in A$ platÃ­ $a \sqsubseteq a$, tzn. tÅ™eba $1234 \sqsubseteq 1234 \Rightarrow$ to je splnÄ›no, jelikoÅ¾ pokud $w = \emptyset$, pak $u = v$.
+ \item \emph{antisymetrickÃ¡}: pro $\forall a,b \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b \Rightarrow$ to je splnÄ›no takÃ©. NedokÃ¡Å¾u totiÅ¾ najÃ­t dvÄ› rozdÃ­lnÃ¡ slova, pro nÄ›Å¾ by platily obÄ› nerovnosti. 
+ \item \emph{tranzitivnÃ­}:  pro $\forall a,b,c \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c \Rightarrow$ to platÃ­ takÃ©, znamenÃ¡ to, Å¾e $a$ je suffixem jak $b$, tak i $c$. 
 \end{itemize} 
 
-Relace je tedy uspoøádání. Teï co je to závora:
+Relace je tedy uspoÅ™Ã¡dÃ¡nÃ­. TeÄ co je to zÃ¡vora:
 
 \begin{definice}
-Pokud je mnoina $A$ uspoøádána relací $\sqsubseteq$ a $B$ je podmnoina $A$, pak prvek $a \in A$ je \textbf{horní závorou} $B$, právì kdy pro $\forall b \in B$ platí $b \sqsubseteq a$.
+Pokud je mnoÅ¾ina $A$ uspoÅ™Ã¡dÃ¡na relacÃ­ $\sqsubseteq$ a $B$ je podmnoÅ¾ina $A$, pak prvek $a \in A$ je \textbf{hornÃ­ zÃ¡vorou} $B$, prÃ¡vÄ› kdyÅ¾ pro $\forall b \in B$ platÃ­ $b \sqsubseteq a$.
 \end{definice}
 
-Není to tedy nutnì prvek mnoiny, v ní hledám horní závoru, a dokonce nemusí bıt jen jeden, ale mùe jich bıt více - tøeba pro mnoinu reálnıch èísel $\left(0,1\right)$ jsou horní závory napø. èísla $1,5,\pi$ ad. Dolní závora má definici podobnou, pro tu mnoinu jsou dolní závory tøeba èísla $0,-1,-\pi$.
+NenÃ­ to tedy nutnÄ› prvek mnoÅ¾iny, v nÃ­Å¾ hledÃ¡m hornÃ­ zÃ¡voru, a dokonce nemusÃ­ bÃ½t jen jeden, ale mÅ¯Å¾e jich bÃ½t vÃ­ce - tÅ™eba pro mnoÅ¾inu reÃ¡lnÃ½ch ÄÃ­sel $\left(0,1\right)$ jsou hornÃ­ zÃ¡vory napÅ™. ÄÃ­sla $1,5,\pi$ ad. DolnÃ­ zÃ¡vora mÃ¡ definici podobnou, pro tu mnoÅ¾inu jsou dolnÃ­ zÃ¡vory tÅ™eba ÄÃ­sla $0,-1,-\pi$.
 
 \begin{definice}
-\textbf{Supremum mnoiny} $B$ je nejmenší ze spoleènıch horních závor všech prvkù mnoiny $B$, podobnì \textbf{infimem mnoiny} $B$ je nejvetší ze spoleènıch dolních závor všech prvkù mnoiny $B$. 
+\textbf{Supremum mnoÅ¾iny} $B$ je nejmenÅ¡Ã­ ze spoleÄnÃ½ch hornÃ­ch zÃ¡vor vÅ¡ech prvkÅ¯ mnoÅ¾iny $B$, podobnÄ› \textbf{infimem mnoÅ¾iny} $B$ je nejvetÅ¡Ã­ ze spoleÄnÃ½ch dolnÃ­ch zÃ¡vor vÅ¡ech prvkÅ¯ mnoÅ¾iny $B$. 
 \end{definice}
 
-Pro ten pøíklad $\left(0,1\right)$ je tedy supremum = 1, infimum = 0, a stejné supremum/infimum má i $\left<0,1\right>$.
+Pro ten pÅ™Ã­klad $\left(0,1\right)$ je tedy supremum = 1, infimum = 0, a stejnÃ© supremum/infimum mÃ¡ i $\left<0,1\right>$.
 
-Zpìt k zadání. Mám zjistit, jestli existují suprema a infima všech \emph{dvojic} prvkù. To slovo dvojic je dùleité, jeliko jinak bych hledal supremum nekoneèné mnoiny. Podstatná vìc, kterou mùu vyèíst ze zadání je, e dva prvky nemusí bıt vùbec porovnatelné - dejme tomu slovo $a = 12$ a slovo $b = 34$ - ani jedno není suffixem druhého, take nemùu rozhodnout, které je menší a které vìtší. Pozor však na to, e aè jsou prvky neporovnatelné, ještì to neznamená, e nemají infimum nebo supremum. 
+ZpÄ›t k zadÃ¡nÃ­. MÃ¡m zjistit, jestli existujÃ­ suprema a infima vÅ¡ech \emph{dvojic} prvkÅ¯. To slovo dvojic je dÅ¯leÅ¾itÃ©, jelikoÅ¾ jinak bych hledal supremum nekoneÄnÃ© mnoÅ¾iny. PodstatnÃ¡ vÄ›c, kterou mÅ¯Å¾u vyÄÃ­st ze zadÃ¡nÃ­ je, Å¾e dva prvky nemusÃ­ bÃ½t vÅ¯bec porovnatelnÃ© - dejme tomu slovo $a = 12$ a slovo $b = 34$ - ani jedno nenÃ­ suffixem druhÃ©ho, takÅ¾e nemÅ¯Å¾u rozhodnout, kterÃ© je menÅ¡Ã­ a kterÃ© vÄ›tÅ¡Ã­. Pozor vÅ¡ak na to, Å¾e aÄ jsou prvky neporovnatelnÃ©, jeÅ¡tÄ› to neznamenÃ¡, Å¾e nemajÃ­ infimum nebo supremum. 
 
-Dejme tomu, e mám dva neporovnatelné prvky, tøeba $234$ a $567$. Nejsem schopen najít jejich spoleènou horní závoru, jeliko pro $234$ (kterı je menší\footnote{Pozor na znaèení, v písemce je vdy nutné pouívat "$\sqsubseteq$" namísto názornìjšího "$\leq$"} ne $1234 < 11234$ atd.) u nikdy nenajdu stejnı prvek, kterı by byl zároveò vìtší ne $567$ ($< 1567 < 11567$ atd.). Supremum nemohu najít. V pøípadì, e jsou prvky porovnatelné, tøeba $1$ a $21$, tak nejmenší horní závora je prvek $21$, neboli ten vìtší z nich. V pøípadì infima, pokud jsou prvky neporovnatelné, jsem ale stále schopen najít nejvìtší dolní závoru - prázdnı øetìzec. Pokud porovnatelné jsou, pak infimum je jejich nejdelší spoleènı suffix (tøeba pro $1$ a $21$ je dolní závora 1).  
+Dejme tomu, Å¾e mÃ¡m dva neporovnatelnÃ© prvky, tÅ™eba \(234\) a \(567\). Nejsem schopen najÃ­t jejich spoleÄnou hornÃ­ zÃ¡voru, jelikoÅ¾ pro $234$ (kterÃ½ je menÅ¡Ã­\footnote{Pozor na znaÄenÃ­, v pÃ­semce je vÅ¾dy nutnÃ© pouÅ¾Ã­vat ,,\(\sqsubseteq\)'' namÃ­sto nÃ¡zornÄ›jÅ¡Ã­ho ,,\(\leq\)''} neÅ¾ \(1234 < 11234\) atd.) uÅ¾ nikdy nenajdu stejnÃ½ prvek, kterÃ½ by byl zÃ¡roveÅˆ vÄ›tÅ¡Ã­ neÅ¾ $567$ ($< 1567 < 11567$ atd.). Supremum nemohu najÃ­t. V pÅ™Ã­padÄ›, Å¾e jsou prvky porovnatelnÃ©, tÅ™eba $1$ a $21$, tak nejmenÅ¡Ã­ hornÃ­ zÃ¡vora je prvek $21$, neboli ten vÄ›tÅ¡Ã­ z nich. V pÅ™Ã­padÄ› infima, pokud jsou prvky neporovnatelnÃ©, jsem ale stÃ¡le schopen najÃ­t nejvÄ›tÅ¡Ã­ dolnÃ­ zÃ¡voru - prÃ¡zdnÃ½ Å™etÄ›zec. Pokud porovnatelnÃ© jsou, pak infimum je jejich nejdelÅ¡Ã­ spoleÄnÃ½ suffix (tÅ™eba pro $1$ a $21$ je dolnÃ­ zÃ¡vora 1).  
 
 %---------------------------------------Priklad 5-2-------------------------------- 
-\subsection{Pøíklad 2}
-Oznaème $\mathcal{F}$ mnoinu všech posloupností $\{a_n\}^{\infty}_{n=0}$ pøirozenıch èísel a definujme relaci $\sqsubseteq$ takto:
+\subsection{PÅ™Ã­klad 2}
+OznaÄme $\mathcal{F}$ mnoÅ¾inu vÅ¡ech posloupnostÃ­ $\{a_n\}^{\infty}_{n=0}$ pÅ™irozenÃ½ch ÄÃ­sel a definujme relaci $\sqsubseteq$ takto:
 
-\[ \{a_n\}^{\infty}_{n=0} \sqsubseteq \{b_n\}^{\infty}_{n=0} \text{ právì tehdy, kdy 1) } a_0 = b_0 \text {, 2) } a_n \geq b_n \]
+\[ \{a_n\}^{\infty}_{n=0} \sqsubseteq \{b_n\}^{\infty}_{n=0} \text{ prÃ¡vÄ› tehdy, kdyÅ¾ 1) } a_0 = b_0 \text {, 2) } a_n \geq b_n \]
 
-Ukate, e $(\mathcal{F},\sqsubseteq)$ je uspoøádaná mnoina. Pro které dvojice posloupností existuje supremum a pro které infimum a jak se utvoøí? Je $(\mathcal{F},\sqsubseteq)$ svaz? 
+UkaÅ¾te, Å¾e $(\mathcal{F},\sqsubseteq)$ je uspoÅ™Ã¡danÃ¡ mnoÅ¾ina. Pro kterÃ© dvojice posloupnostÃ­ existuje supremum a pro kterÃ© infimum a jak se utvoÅ™Ã­? Je $(\mathcal{F},\sqsubseteq)$ svaz? 
  
 \line(1,0){400}
 
-Nejdøív je zase nutné pochopit zadání - jedná se o posloupnosti nekoneènì mnoha èísel, pøièem posloupnost je tøeba $\{1,2,1,2,\ldots\}$, nebo tøeba $\{10,20,30,\ldots\}$. Dùleité je, e mají stejnı poèet prvkù ($=\infty$). Nastává otázka, jestli se jedná o uspoøádání:
+NejdÅ™Ã­v je zase nutnÃ© pochopit zadÃ¡nÃ­ - jednÃ¡ se o posloupnosti nekoneÄnÄ› mnoha ÄÃ­sel, pÅ™iÄemÅ¾ posloupnost je tÅ™eba $\{1,2,1,2,\ldots\}$, nebo tÅ™eba $\{10,20,30,\ldots\}$. DÅ¯leÅ¾itÃ© je, Å¾e majÃ­ stejnÃ½ poÄet prvkÅ¯ ($=\infty$). NastÃ¡vÃ¡ otÃ¡zka, jestli se jednÃ¡ o uspoÅ™Ã¡dÃ¡nÃ­:
 
 \begin{itemize}
- \item \emph{reflexivita}: pro $\forall a \in A$ platí $a \sqsubseteq a$, tzn. tøeba $\{2,3,2,\ldots\} \sqsubseteq \{2,3,2,\ldots\} \Rightarrow$ to je splnìno, $a_0 = a_0$ a libovolné $a_n \geq a_n$.
- \item \emph{antisymetriènost}: pro $a,b \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b \Rightarrow$ to taky platí, $a_0 = b_0$ a pro kadé $a_n$ platí, e je-li $a_n \leq b_n$ a zároveò $a_n \geq b_n$, pak $a_n = b_n$.
- \item \emph{tranzitivita}:  pro $\forall a,b,c \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c \Rightarrow$ to platí také, znamená to, e $a_0 = b_0 = c_0$ a je-li $a_n \geq b_n$ a $b_n \geq c_n$, pak $a_n \geq c_n$. 
+ \item \emph{reflexivita}: pro $\forall a \in A$ platÃ­ $a \sqsubseteq a$, tzn. tÅ™eba $\{2,3,2,\ldots\} \sqsubseteq \{2,3,2,\ldots\} \Rightarrow$ to je splnÄ›no, $a_0 = a_0$ a libovolnÃ© $a_n \geq a_n$.
+ \item \emph{antisymetriÄnost}: pro $a,b \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b \Rightarrow$ to taky platÃ­, $a_0 = b_0$ a pro kaÅ¾dÃ© $a_n$ platÃ­, Å¾e je-li $a_n \leq b_n$ a zÃ¡roveÅˆ $a_n \geq b_n$, pak $a_n = b_n$.
+ \item \emph{tranzitivita}:  pro $\forall a,b,c \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c \Rightarrow$ to platÃ­ takÃ©, znamenÃ¡ to, Å¾e $a_0 = b_0 = c_0$ a je-li $a_n \geq b_n$ a $b_n \geq c_n$, pak $a_n \geq c_n$. 
 \end{itemize} 
 
-$(\mathcal{F},\sqsubseteq)$ je uspoøádaná mnoina. Podle definice je menší ta posloupnost, kde kadé $a_n \geq b_n$. Tzn. èíslo, které bude urèitì menší ne obì posloupnosti, musí mít èíslo na pozici $n$ vìtší, ne jaká jsou $a_n$ i $b_n$ (a pokud to má bıt nejvìtší dolní závora, pak toto èíslo $c_n = \max(a_n, b_n)$, co je hledané infimum; u suprema $c_n = \min(a_n, b_n)$). Problém nastává, pokud èíslo na první pozici bude jiné v obou posloupnostech - pak toti nemohu nikdy rozhodnout, jestli je nìkterá posloupnost menší nebo vìtší, a nemùu ani najít dolní, nebo horní závoru tìch prvních èísel (mám jenom informaci o tom, co se dìje, kdy $a_0 = b_0$, ale u ne o tom, co se dìje, kdy $a_0 \neq b_0$). 
+$(\mathcal{F},\sqsubseteq)$ je uspoÅ™Ã¡danÃ¡ mnoÅ¾ina. Podle definice je menÅ¡Ã­ ta posloupnost, kde kaÅ¾dÃ© $a_n \geq b_n$. Tzn. ÄÃ­slo, kterÃ© bude urÄitÄ› menÅ¡Ã­ neÅ¾ obÄ› posloupnosti, musÃ­ mÃ­t ÄÃ­slo na pozici $n$ vÄ›tÅ¡Ã­, neÅ¾ jakÃ¡ jsou $a_n$ i $b_n$ (a pokud to mÃ¡ bÃ½t nejvÄ›tÅ¡Ã­ dolnÃ­ zÃ¡vora, pak toto ÄÃ­slo $c_n = \max(a_n, b_n)$, coÅ¾ je hledanÃ© infimum; u suprema $c_n = \min(a_n, b_n)$). ProblÃ©m nastÃ¡vÃ¡, pokud ÄÃ­slo na prvnÃ­ pozici bude jinÃ© v obou posloupnostech - pak totiÅ¾ nemohu nikdy rozhodnout, jestli je nÄ›kterÃ¡ posloupnost menÅ¡Ã­ nebo vÄ›tÅ¡Ã­, a nemÅ¯Å¾u ani najÃ­t dolnÃ­, nebo hornÃ­ zÃ¡voru tÄ›ch prvnÃ­ch ÄÃ­sel (mÃ¡m jenom informaci o tom, co se dÄ›je, kdyÅ¾ $a_0 = b_0$, ale uÅ¾ ne o tom, co se dÄ›je, kdyÅ¾ $a_0 \neq b_0$). 
 
-Otázka svazu se vyøeší rychle:
+OtÃ¡zka svazu se vyÅ™eÅ¡Ã­ rychle:
 
 \begin{definice}
-Svaz je uspoøádaná mnoina $(A,\sqsubseteq)$, kde pro kadé $a,b \in A$ existuje $\sup(\{a,b\})$ a $\inf(\{a,b\})$. 
+Svaz je uspoÅ™Ã¡danÃ¡ mnoÅ¾ina $(A,\sqsubseteq)$, kde pro kaÅ¾dÃ© $a,b \in A$ existuje $\sup(\{a,b\})$ a $\inf(\{a,b\})$. 
 \end{definice}
 
-Evidentnì $(\mathcal{F},\sqsubseteq)$ není svaz.
+EvidentnÄ› $(\mathcal{F},\sqsubseteq)$ nenÃ­ svaz.
 
 %---------------------------------------Priklad 5-3-------------------------------- 
-\subsection{Pøíklad 3}
-Na mnoinì $M$ všech binárních slov délky nejvıše tøi je dána relace pøedpisem
+\subsection{PÅ™Ã­klad 3}
+Na mnoÅ¾inÄ› $M$ vÅ¡ech binÃ¡rnÃ­ch slov dÃ©lky nejvÃ½Å¡e tÅ™i je dÃ¡na relace pÅ™edpisem
 
-\[ u \sqsubseteq v \text{ iff } |u| < |v| \text {, anebo }  |u| = |v| \mbox{ a } u_i \leq v_i \text { pro všechna } i \]
+\[ u \sqsubseteq v \text{ iff } |u| < |v| \text {, anebo }  |u| = |v| \mbox{ a } u_i \leq v_i \text { pro vÅ¡echna } i \]
 
 \begin{enumerate} 
-	\item Dokate, e daná relace je uspoøádání a nakreslete Hasseho diagram.
-	\item Ovìøte, e $(M,\sqsubseteq)$ tvoøí svaz (napište, jak najít supremum a infimum pro libovolnou dvojici prvkù).
-	\item Vyšetøete vlastnosti daného svazu (tj. zda má nejvìtší a nejmenší prvek, zda je distributivní, komplementární èi dokonce Booleova algebra).
+	\item DokaÅ¾te, Å¾e danÃ¡ relace je uspoÅ™Ã¡dÃ¡nÃ­ a nakreslete Hasseho diagram.
+	\item OvÄ›Å™te, Å¾e $(M,\sqsubseteq)$ tvoÅ™Ã­ svaz (napiÅ¡te, jak najÃ­t supremum a infimum pro libovolnou dvojici prvkÅ¯).
+	\item VyÅ¡etÅ™ete vlastnosti danÃ©ho svazu (tj. zda mÃ¡ nejvÄ›tÅ¡Ã­ a nejmenÅ¡Ã­ prvek, zda je distributivnÃ­, komplementÃ¡rnÃ­ Äi dokonce Booleova algebra).
 \end{enumerate}
 
 \line(1,0){400}
 
-Zde pøedpokládám, e zavisí na poètu znakù ve slovì, tedy napø. e $001 \neq 01$
+Zde pÅ™edpoklÃ¡dÃ¡m, Å¾e zavisÃ­ na poÄtu znakÅ¯ ve slovÄ›, tedy napÅ™. Å¾e $001 \neq 01$
 
 \begin{enumerate} 
-\item Hasseho diagram je následující:
+\item Hasseho diagram je nÃ¡sledujÃ­cÃ­:
 
 \begin{displaymath}
 \xymatrix@C=0.5pc@R=1pc{
@@ -2097,14 +2099,14 @@ Zde pøedpokládám, e zavisí na poètu znakù ve slovì, tedy napø. e $001 \neq 01$
 \end{displaymath}
 
 \begin{itemize}
- \item \emph{reflexivita}: pro $\forall a \in A$ platí $a \sqsubseteq a$, tzn. tøeba $010 \sqsubseteq 010 \Rightarrow$ to je splnìno, kadı znak je stejnı a délka slova se nemìní.
- \item \emph{antisymetriènost}: pro $a,b \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b \Rightarrow$ to také platí. Dvì slova, aby se nerovnala, musí mít buï jinou délku, nebo rozdílné znaky na alespoò jednom místì - pokud toto není splnìno, pak se nutnì musí rovnat.
- \item \emph{tranzitivita}:  pro $\forall a,b,c \in A$ platí: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c \Rightarrow$ to platí také, znamená to, e se slova buï rovnají, nebo e má menší slovo alespoò na jednom místì menší znak a na ádném místì nemá vìtší. To platí pro všechna slova, tedy tato relace je tranzitivní. 
+ \item \emph{reflexivita}: pro $\forall a \in A$ platÃ­ $a \sqsubseteq a$, tzn. tÅ™eba $010 \sqsubseteq 010 \Rightarrow$ to je splnÄ›no, kaÅ¾dÃ½ znak je stejnÃ½ a dÃ©lka slova se nemÄ›nÃ­.
+ \item \emph{antisymetriÄnost}: pro $a,b \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq a$, pak $a = b \Rightarrow$ to takÃ© platÃ­. DvÄ› slova, aby se nerovnala, musÃ­ mÃ­t buÄ jinou dÃ©lku, nebo rozdÃ­lnÃ© znaky na alespoÅˆ jednom mÃ­stÄ› - pokud toto nenÃ­ splnÄ›no, pak se nutnÄ› musÃ­ rovnat.
+ \item \emph{tranzitivita}:  pro $\forall a,b,c \in A$ platÃ­: je-li $a \sqsubseteq b$ a $b \sqsubseteq c$, pak $a \sqsubseteq c \Rightarrow$ to platÃ­ takÃ©, znamenÃ¡ to, Å¾e se slova buÄ rovnajÃ­, nebo Å¾e mÃ¡ menÅ¡Ã­ slovo alespoÅˆ na jednom mÃ­stÄ› menÅ¡Ã­ znak a na Å¾Ã¡dnÃ©m mÃ­stÄ› nemÃ¡ vÄ›tÅ¡Ã­. To platÃ­ pro vÅ¡echna slova, tedy tato relace je tranzitivnÃ­. 
 \end{itemize} 
 
-\item Pro kadou dvojici prvkù existuje supremum a infimum, co je viditelné z Hasseho diagramu. Pokud jsou jejich délky rozdílné, pak jejich supremum je ten menší prvek z nich, supremum ten vìtší z nich. Pokud jsou jejich délky shodné, pak supremum je slovo sloené z maxim odpovídajících dvojic znakù (tøeba $\sup(101,110)=111$) a infimum z jejich minim ($\sup(101,110)=100$). Uspoøádaná mnoina tvoøí svaz.
+\item Pro kaÅ¾dou dvojici prvkÅ¯ existuje supremum a infimum, coÅ¾ je viditelnÃ© z Hasseho diagramu. Pokud jsou jejich dÃ©lky rozdÃ­lnÃ©, pak jejich supremum je ten menÅ¡Ã­ prvek z nich, supremum ten vÄ›tÅ¡Ã­ z nich. Pokud jsou jejich dÃ©lky shodnÃ©, pak supremum je slovo sloÅ¾enÃ© z maxim odpovÃ­dajÃ­cÃ­ch dvojic znakÅ¯ (tÅ™eba $\sup(101,110)=111$) a infimum z jejich minim ($\sup(101,110)=100$). UspoÅ™Ã¡danÃ¡ mnoÅ¾ina tvoÅ™Ã­ svaz.
 
-\item Svaz má nejmenší prvek \underline{0} a nejvìtší \underline{111}, co vyplıvá z Hasseho diagramu. Aby byl svaz distributivní, nesmí obsahovat ani jeden z následujících svazù jako podsvaz (první se nazıvá trojlampiónek, $\mathcal{L}_3$, druhı pentagon, $\mathcal{P}_5$):
+\item Svaz mÃ¡ nejmenÅ¡Ã­ prvek \underline{0} a nejvÄ›tÅ¡Ã­ \underline{111}, coÅ¾ vyplÃ½vÃ¡ z Hasseho diagramu. Aby byl svaz distributivnÃ­, nesmÃ­ obsahovat ani jeden z nÃ¡sledujÃ­cÃ­ch svazÅ¯ jako podsvaz (prvnÃ­ se nazÃ½vÃ¡ trojlampiÃ³nek, $\mathcal{L}_3$, druhÃ½ pentagon, $\mathcal{P}_5$):
 \[
 \xymatrix@C=0.5pc@R=0.2pc{
 										& \bullet \ar@{-}[dr] \ar@{-}[dl] \ar@{-}[d]	& \\
@@ -2118,29 +2120,29 @@ Zde pøedpokládám, e zavisí na poètu znakù ve slovì, tedy napø. e $001 \neq 01$
 										&	\bullet														&	 }
 \]
 
-Evidentnì neobsahuje ani jeden z nich jako podsvaz, tudí je distributivní. Komplementární u však nikoliv, tøeba 000 nemá komplement.
+EvidentnÄ› neobsahuje ani jeden z nich jako podsvaz, tudÃ­Å¾ je distributivnÃ­. KomplementÃ¡rnÃ­ uÅ¾ vÅ¡ak nikoliv, tÅ™eba 000 nemÃ¡ komplement.
 
 \begin{definice}
 \label{booleova-algebra}
-Kadı distributivní a komplementární svaz nazveme \emph{Booleova algebra}.
+KaÅ¾dÃ½ distributivnÃ­ a komplementÃ¡rnÃ­ svaz nazveme \emph{Booleova algebra}.
 \end{definice}
 
-Svaz není komplementární, nejedná se o Booleovu algebru.
+Svaz nenÃ­ komplementÃ¡rnÃ­, nejednÃ¡ se o Booleovu algebru.
 
 \end{enumerate}
 
 
 %---------------------------------------Priklad 5-4-------------------------------- 
-\subsection{Pøíklad 4}
-Na mnoinì slov délky dva nad $\mathbb{Z}_3$ je definováno uspoøádání vztahem
+\subsection{PÅ™Ã­klad 4}
+Na mnoÅ¾inÄ› slov dÃ©lky dva nad $\mathbb{Z}_3$ je definovÃ¡no uspoÅ™Ã¡dÃ¡nÃ­ vztahem
 
-\[ u \sqsubseteq v \text{ iff } u_i \leq v_i \text { pro všechna } i \]
+\[ u \sqsubseteq v \text{ iff } u_i \leq v_i \text { pro vÅ¡echna } i \]
 
-Nakreslete Hasseho diagram a rozhodnìte podle nìj, zda se jedná o distributivní nebo komplementární svaz. Pokud svaz není distributivní, naleznìte trojici prvkù, na které není splnìn distributivní zákon. Pokud svaz není komplementární, naleznìte prvek, kterı nemá doplnìk
+Nakreslete Hasseho diagram a rozhodnÄ›te podle nÄ›j, zda se jednÃ¡ o distributivnÃ­ nebo komplementÃ¡rnÃ­ svaz. Pokud svaz nenÃ­ distributivnÃ­, naleznÄ›te trojici prvkÅ¯, na kterÃ© nenÃ­ splnÄ›n distributivnÃ­ zÃ¡kon. Pokud svaz nenÃ­ komplementÃ¡rnÃ­, naleznÄ›te prvek, kterÃ½ nemÃ¡ doplnÄ›k
 
 \line(1,0){400}
 
-Nejdøív si napíšu, o která slova se vlastnì jedná:
+NejdÅ™Ã­v si napÃ­Å¡u, o kterÃ¡ slova se vlastnÄ› jednÃ¡:
 
 \begin{center}
 	\begin{tabular}{ccc}
@@ -2150,7 +2152,7 @@ Nejdøív si napíšu, o která slova se vlastnì jedná:
 \end{tabular}
 \end{center}
 
-Z toho na Hasseho diagram pøijdu snadno a rychle:
+Z toho na Hasseho diagram pÅ™ijdu snadno a rychle:
 
 \begin{displaymath}
 \xymatrix@C=0.5pc@R=1pc{
@@ -2160,54 +2162,54 @@ Z toho na Hasseho diagram pøijdu snadno a rychle:
 								& 01\ar@{-}[dr]								&														&	10 \ar@{-}[dl]						& \\
 								&															& 00												&														&	 }
 \end{displaymath}
-Distributivní evidentnì je, neobsahuje $\mathcal{L}_3$ ani $\mathcal{P}_5$. Teï k problému komplementárnosti. 
+DistributivnÃ­ evidentnÄ› je, neobsahuje $\mathcal{L}_3$ ani $\mathcal{P}_5$. TeÄ k problÃ©mu komplementÃ¡rnosti. 
 
 \begin{definice}
-	Svaz $(A,\vee,\wedge,\sqsubseteq)$ s nejmenším prvkem \underline{0} a nejvìtším prvkem \underline{1} se nazıvá \emph{komplementární}, jestlie kadı prvek $a \in A$ má doplnìk.
+	Svaz $(A,\vee,\wedge,\sqsubseteq)$ s nejmenÅ¡Ã­m prvkem \underline{0} a nejvÄ›tÅ¡Ã­m prvkem \underline{1} se nazÃ½vÃ¡ \emph{komplementÃ¡rnÃ­}, jestliÅ¾e kaÅ¾dÃ½ prvek $a \in A$ mÃ¡ doplnÄ›k.
 \end{definice}
 
-Co to znamená, e má prvek doplnìk? To znamená, e prvek $b \in A$ je doplòkem prvku $a \in A$ právì tehdy, kdy 
+Co to znamenÃ¡, Å¾e mÃ¡ prvek doplnÄ›k? To znamenÃ¡, Å¾e prvek $b \in A$ je doplÅˆkem prvku $a \in A$ prÃ¡vÄ› tehdy, kdyÅ¾ 
 \[ b \vee a = \underline{1} \mbox{ a } b\wedge a = \underline{0}. \]   
 
-Pomùcka mùe bıt taková, e to $\vee$ jakoby ohranièuje prvky zeshora, zatímco $\wedge$ je ohranièuje zespoda.
+PomÅ¯cka mÅ¯Å¾e bÃ½t takovÃ¡, Å¾e to $\vee$ jakoby ohraniÄuje prvky zeshora, zatÃ­mco $\wedge$ je ohraniÄuje zespoda.
 
-Z téhle pomùcky se dá vyjít i pøi urèování vısledkù $a \vee b = \sup(\{a,b\})$ a $a \wedge b = \sup(\{a,b\})$: $\vee$ je to "vìtší" (supremum), $\wedge$ je to "menší" (infimum). Pro ty dvì operace dál platí ve svazu $(A,\sqsubseteq)$ následující:
+Z tÃ©hle pomÅ¯cky se dÃ¡ vyjÃ­t i pÅ™i urÄovÃ¡nÃ­ vÃ½sledkÅ¯ $a \vee b = \sup(\{a,b\})$ a $a \wedge b = \sup(\{a,b\})$: $\vee$ je to "vÄ›tÅ¡Ã­" (supremum), $\wedge$ je to "menÅ¡Ã­" (infimum). Pro ty dvÄ› operace dÃ¡l platÃ­ ve svazu $(A,\sqsubseteq)$ nÃ¡sledujÃ­cÃ­:
 
 \renewcommand{\labelenumi}{(\arabic{enumi})}
 
 \begin{enumerate}
-\item \emph{idempotence}: pro $\forall a \in A$ platí
+\item \emph{idempotence}: pro $\forall a \in A$ platÃ­
  \[ a \vee a = a \ \mbox{ a }\  a \wedge a = a \]
-\item \emph{komutativita}: pro kadé dva prvky $a,b \in A$ platí
+\item \emph{komutativita}: pro kaÅ¾dÃ© dva prvky $a,b \in A$ platÃ­
  \[ a \vee b = b \vee a \ \mbox{ a }\  a \wedge b = b \wedge a \]
-\item \emph{asociativita} (nebo taky pøezávorkování): pro kadé tøi prvky $a,b,c \in A$ platí
+\item \emph{asociativita} (nebo taky pÅ™ezÃ¡vorkovÃ¡nÃ­): pro kaÅ¾dÃ© tÅ™i prvky $a,b,c \in A$ platÃ­
  \[ a \vee (b \vee c) = (a \vee b) \vee c \ \mbox{ a }\  a \wedge (b \wedge c) = (a \wedge b) \wedge c \]
-\item \emph{absorbce}: pro kadé dva prvky $a,b \in A$ platí
+\item \emph{absorbce}: pro kaÅ¾dÃ© dva prvky $a,b \in A$ platÃ­
  \[ a \vee (b \wedge a) = a \ \mbox{ a }\  a \wedge (b \vee a) = a \]
 \end{enumerate}
 
 \renewcommand{\labelenumi}{\alph{enumi})}
 
-Pokud nìjaká mnoina, nad ní jsou definovány operace $\vee$ a $\wedge$ splòující pøedchozí podmínky, pak relace $\sqsubseteq$ je uspoøádání na mnoinì $A$ pokud platí
+Pokud nÄ›jakÃ¡ mnoÅ¾ina, nad nÃ­Å¾ jsou definovÃ¡ny operace $\vee$ a $\wedge$ splÅˆujÃ­cÃ­ pÅ™edchozÃ­ podmÃ­nky, pak relace $\sqsubseteq$ je uspoÅ™Ã¡dÃ¡nÃ­ na mnoÅ¾inÄ› $A$ pokud platÃ­
 
-\[ a \sqsubseteq b \text{ právì tehdy, kdy } a \wedge b = b \ (\text{tj. } a\vee b = a). \] 
+\[ a \sqsubseteq b \text{ prÃ¡vÄ› tehdy, kdyÅ¾ } a \wedge b = b \ (\text{tj. } a\vee b = a). \] 
 
-Zpátky k problému komplementárnosti - aby byl svaz komplementární, tak musím pro kadı jeho prvek $a$ nalézt doplnìk, tzn. prvek $b$ takovı, e $b \vee a = \underline{1} = 22$ a $b\wedge a = \underline{0} = 00$, neboli, v øeèi uspoøádanıch mnoin:
-\[ \text{ komplement k } a \mbox{ je } b \mbox{ iff sup}(a,b)=\mbox{nejvetší prvek, inf}(a,b)=\mbox{nejmenší prvek}  \]
+ZpÃ¡tky k problÃ©mu komplementÃ¡rnosti - aby byl svaz komplementÃ¡rnÃ­, tak musÃ­m pro kaÅ¾dÃ½ jeho prvek $a$ nalÃ©zt doplnÄ›k, tzn. prvek $b$ takovÃ½, Å¾e $b \vee a = \underline{1} = 22$ a $b\wedge a = \underline{0} = 00$, neboli, v Å™eÄi uspoÅ™Ã¡danÃ½ch mnoÅ¾in:
+\[ \text{ komplement k } a \mbox{ je } b \mbox{ iff sup}(a,b)=\mbox{nejvetÅ¡Ã­ prvek, inf}(a,b)=\mbox{nejmenÅ¡Ã­ prvek}  \]
 
-Teï tedy musím najít zpùsob, jak vytvoøit supremum a infimum ke kadému prvku. To bude stejné jak minule, tedy $\sup(a,b) = (\forall i)(max(a_i,b_i))$ a $\inf(a,b) = (\forall i)(min(a_i,b_i))$, kde $a_i$, $b_i$ jsou jednotlivé znaky slov.
+TeÄ tedy musÃ­m najÃ­t zpÅ¯sob, jak vytvoÅ™it supremum a infimum ke kaÅ¾dÃ©mu prvku. To bude stejnÃ© jak minule, tedy $\sup(a,b) = (\forall i)(max(a_i,b_i))$ a $\inf(a,b) = (\forall i)(min(a_i,b_i))$, kde $a_i$, $b_i$ jsou jednotlivÃ© znaky slov.
  
-Co se tıèe komplementárnosti, tak øeba pro prvek 11 doplnìk nenajdu, svaz tedy není komplementární, a podle definice \ref{booleova-algebra} se tedy nejedná ani o Booleovu algebru. 
+Co se tÃ½Äe komplementÃ¡rnosti, tak Å™eba pro prvek 11 doplnÄ›k nenajdu, svaz tedy nenÃ­ komplementÃ¡rnÃ­, a podle definice \ref{booleova-algebra} se tedy nejednÃ¡ ani o Booleovu algebru. 
 
 
 %---------------------------------------Priklad 5-5-------------------------------- 
-\subsection{Pøíklad 5}
-$(D_{60},|)$ je mnoina všech kladnıch dìlitelù èísla 60 uspoøádaná podle relace dìlitelnosti. 
+\subsection{PÅ™Ã­klad 5}
+$(D_{60},|)$ je mnoÅ¾ina vÅ¡ech kladnÃ½ch dÄ›litelÅ¯ ÄÃ­sla 60 uspoÅ™Ã¡danÃ¡ podle relace dÄ›litelnosti. 
 
 \begin{enumerate}
-	\item Ovìøte, e se jedná o svaz a nakreslete jeho Hasseho diagram.
-	\item Vyšetøete vlastnosti daného svazu (tj. zda má nejvìtší a nejmenší prvek, zda je distributivní, komplementární èi dokonce Booleova algebra).  
-	\item Která z následujících podmnoin uspoøádánıch podle dìlitelnosti je podsvaz v $(D_{60},|)$?
+	\item OvÄ›Å™te, Å¾e se jednÃ¡ o svaz a nakreslete jeho Hasseho diagram.
+	\item VyÅ¡etÅ™ete vlastnosti danÃ©ho svazu (tj. zda mÃ¡ nejvÄ›tÅ¡Ã­ a nejmenÅ¡Ã­ prvek, zda je distributivnÃ­, komplementÃ¡rnÃ­ Äi dokonce Booleova algebra).  
+	\item KterÃ¡ z nÃ¡sledujÃ­cÃ­ch podmnoÅ¾in uspoÅ™Ã¡dÃ¡nÃ½ch podle dÄ›litelnosti je podsvaz v $(D_{60},|)$?
 	
 	$A = \{2,4,6,12\}$, $B = \{2,4,6,10,60\}$.
 \end{enumerate}
@@ -2215,20 +2217,20 @@ $(D_{60},|)$ je mnoina všech kladnıch dìlitelù èísla 60 uspoøádaná podle relace
 \line(1,0){400}
 
 \begin{enumerate}
-\item Nejdøíve jak ovìøit, e se jedná o svaz - tady pouiju druhou definici svazu, nicménì podle té první by se to dalo dokázat taky (ten vztah $x \sqsubseteq y$, neboli uspoøádání, je dìlitelnost. $x \sqsubseteq y$ iff $x$ dìlí $y$ beze zbytku. Jeliko sup=lcm a inf=gcd a jeliko gcd i lcm dvou èísel, která dìlá 60, je opìt dìlitelem 60, tak existují suprema a infima pro kadou dvojici a je to tedy svaz). 
+\item NejdÅ™Ã­ve jak ovÄ›Å™it, Å¾e se jednÃ¡ o svaz - tady pouÅ¾iju druhou definici svazu, nicmÃ©nÄ› podle tÃ© prvnÃ­ by se to dalo dokÃ¡zat taky (ten vztah $x \sqsubseteq y$, neboli uspoÅ™Ã¡dÃ¡nÃ­, je dÄ›litelnost. $x \sqsubseteq y$ iff $x$ dÄ›lÃ­ $y$ beze zbytku. JelikoÅ¾ sup=lcm a inf=gcd a jelikoÅ¾ gcd i lcm dvou ÄÃ­sel, kterÃ¡ dÄ›lÃ¡ 60, je opÄ›t dÄ›litelem 60, tak existujÃ­ suprema a infima pro kaÅ¾dou dvojici a je to tedy svaz). 
 
-Nejdøív ale musím vyøešit problém suprema a infima pro dva prvky. To je nejjednodušší urèit a pohledem do Hasseho diagramu (HD), kterı se vyskytuje o pár odstavcù níe - nicménì by to šlo i bez toho (i kdy sloitìji). Vidím, e pro dva prvky je supremum ten prvek, kterı je "nahoøe" v diagramu, a infimum ten, co je "dole". Ten, co je nahoøe, je nejmenší spoleènı násobek (tedy $a \vee b = \mbox{lcm}(a,b)$), ten, co je dole, je nejvìtší spoleènı dìlitel ($a \wedge b = \gcd(a,b)$). 
+NejdÅ™Ã­v ale musÃ­m vyÅ™eÅ¡it problÃ©m suprema a infima pro dva prvky. To je nejjednoduÅ¡Å¡Ã­ urÄit aÅ¾ pohledem do Hasseho diagramu (HD), kterÃ½ se vyskytuje o pÃ¡r odstavcÅ¯ nÃ­Å¾e - nicmÃ©nÄ› by to Å¡lo i bez toho (i kdyÅ¾ sloÅ¾itÄ›ji). VidÃ­m, Å¾e pro dva prvky je supremum ten prvek, kterÃ½ je "nahoÅ™e" v diagramu, a infimum ten, co je "dole". Ten, co je nahoÅ™e, je nejmenÅ¡Ã­ spoleÄnÃ½ nÃ¡sobek (tedy $a \vee b = \mbox{lcm}(a,b)$), ten, co je dole, je nejvÄ›tÅ¡Ã­ spoleÄnÃ½ dÄ›litel ($a \wedge b = \gcd(a,b)$). 
 
 \begin{enumerate}
-\item \emph{idempotence}: pro $\forall a \in A$ platí
+\item \emph{idempotence}: pro $\forall a \in A$ platÃ­
  \[ a \vee a = a \ \mbox{ a }\  a \wedge a = a \]
- $\gcd(a,a) = a, \mbox{lcm}(a,a) = a \Rightarrow$ platí 
-\item \emph{komutativita}: pro kadé dva prvky $a,b \in A$ platí
+ $\gcd(a,a) = a, \mbox{lcm}(a,a) = a \Rightarrow$ platÃ­ 
+\item \emph{komutativita}: pro kaÅ¾dÃ© dva prvky $a,b \in A$ platÃ­
  \[ a \vee b = b \vee a \ \mbox{ a }\  a \wedge b = b \wedge a \]
- u \emph{gcd} i \emph{lcm} je jedno, jestli je prvek na 1. nebo 2. místì $\Rightarrow$ platí 
-\item \emph{asociativita} (nebo taky pøezávorkování): pro kadé tøi prvky $a,b,c \in A$ platí
+ u \emph{gcd} i \emph{lcm} je jedno, jestli je prvek na 1. nebo 2. mÃ­stÄ› $\Rightarrow$ platÃ­ 
+\item \emph{asociativita} (nebo taky pÅ™ezÃ¡vorkovÃ¡nÃ­): pro kaÅ¾dÃ© tÅ™i prvky $a,b,c \in A$ platÃ­
  \[ a \vee (b \vee c) = (a \vee b) \vee c \ \mbox{ a }\  a \wedge (b \wedge c) = (a \wedge b) \wedge c \]
-Neboli $\mbox{lcm}(a,\mbox{lcm}(b,c)) = \mbox{lcm}(\mbox{lcm}(a,b),c)$. Dùkaz tohohle je trochu sloitìjší, protoe si èlovìk musí uvìdomit, jak se to \emph{lcm} vlastnì poèítá. Poèítá se tak, e si rozloím èíslo na souèin prvoèísel (tøeba $60 = 2^2\cdot3\cdot5$ a pro druhé èíslo udìlám toté (tøeba $4 = 2^2$). Pak si napíšu tyhlety rozklady pod sebe a lcm(a,b) bude souèin prvoèísel s max. umocnìním, take dostanu
+Neboli $\mbox{lcm}(a,\mbox{lcm}(b,c)) = \mbox{lcm}(\mbox{lcm}(a,b),c)$. DÅ¯kaz tohohle je trochu sloÅ¾itÄ›jÅ¡Ã­, protoÅ¾e si ÄlovÄ›k musÃ­ uvÄ›domit, jak se to \emph{lcm} vlastnÄ› poÄÃ­tÃ¡. PoÄÃ­tÃ¡ se tak, Å¾e si rozloÅ¾Ã­m ÄÃ­slo na souÄin prvoÄÃ­sel (tÅ™eba $60 = 2^2\cdot3\cdot5$ a pro druhÃ© ÄÃ­slo udÄ›lÃ¡m totÃ©Å¾ (tÅ™eba $4 = 2^2$). Pak si napÃ­Å¡u tyhlety rozklady pod sebe a lcm(a,b) bude souÄin prvoÄÃ­sel s max. umocnÄ›nÃ­m, takÅ¾e dostanu
 \begin{center}  % put inside center environment
   \begin{tabular}{r|l}
 		$60=$& $2^2\cdot3^1\cdot5^1$ \\ 
@@ -2237,42 +2239,42 @@ Neboli $\mbox{lcm}(a,\mbox{lcm}(b,c)) = \mbox{lcm}(\mbox{lcm}(a,b),c)$. Dùkaz to
 	\end{tabular}
 \end{center} 
 
-Co dìlám je, e hledám maximální koeficienty u prvoèísel - a je úplnì jedno, jestli to udìlám nejdøív pro 1. a 2. èíslo, a pak k tomu najdu 3., nebo v jiném poøadí. Je to i úplnì stejnı postup, jako bych dìlal lcm(a,b,c).  Pro \emph{gcd} to udìlám \textsl{Hard-Way}\textcopyright:
+Co dÄ›lÃ¡m je, Å¾e hledÃ¡m maximÃ¡lnÃ­ koeficienty u prvoÄÃ­sel - a je ÃºplnÄ› jedno, jestli to udÄ›lÃ¡m nejdÅ™Ã­v pro 1. a 2. ÄÃ­slo, a pak k tomu najdu 3., nebo v jinÃ©m poÅ™adÃ­. Je to i ÃºplnÄ› stejnÃ½ postup, jako bych dÄ›lal lcm(a,b,c).  Pro \emph{gcd} to udÄ›lÃ¡m \textsl{Hard-Way}\textcopyright:
 
 \begin{veta}
-Binární operace \emph{gcd} je asociativní, tj. pro libovolná pøirozená èísla $a,b,c$ platí
+BinÃ¡rnÃ­ operace \emph{gcd} je asociativnÃ­, tj. pro libovolnÃ¡ pÅ™irozenÃ¡ ÄÃ­sla $a,b,c$ platÃ­
 \[ \gcd(\gcd(a, b), c) = \gcd(a, \gcd(b, c)). \]
 \end{veta}
 \begin{proof}
-Poloím $d = gcd(gcd(a, b), c)$. Co to znamená? To znamená, e (1) $d$ dìlí $\gcd(a,b)$ a $c$ a (2) jestlie $d'$ je nìjaké jiné pøirozené èíslo, $d' \neq d$, které dìlí beze zbytku $\gcd(a, b)$ a $c$, pak nutnì $d > d'$. K tomu, abych dokázal asociativitu $\gcd$, musím dokázat, e (1) $d$ dìlí $a$ a $\gcd(b,c)$ a (2) jestlie $d'$ je nìjaké jiné pøirozené èíslo, které dìlí $a$ a $\gcd(b, c)$, potom $d>d'$.  
+PoloÅ¾Ã­m $d = gcd(gcd(a, b), c)$. Co to znamenÃ¡? To znamenÃ¡, Å¾e (1) $d$ dÄ›lÃ­ $\gcd(a,b)$ a $c$ a (2) jestliÅ¾e $d'$ je nÄ›jakÃ© jinÃ© pÅ™irozenÃ© ÄÃ­slo, $d' \neq d$, kterÃ© dÄ›lÃ­ beze zbytku $\gcd(a, b)$ a $c$, pak nutnÄ› $d > d'$. K tomu, abych dokÃ¡zal asociativitu $\gcd$, musÃ­m dokÃ¡zat, Å¾e (1) $d$ dÄ›lÃ­ $a$ a $\gcd(b,c)$ a (2) jestliÅ¾e $d'$ je nÄ›jakÃ© jinÃ© pÅ™irozenÃ© ÄÃ­slo, kterÃ© dÄ›lÃ­ $a$ a $\gcd(b, c)$, potom $d>d'$.  
  
 \begin{enumerate}
 \renewcommand{\labelenumiii}{(\arabic{enumiii})}
-\item Jeliko $d$ dìlí $\gcd(a, b)$, $d$ musí dìlit $a$ a $b$. Vím, e $d$ dìlí $c$, tedy $d$ musí dìlit i $\gcd(b, c)$. 
-\item Pøedpokládám, e $d'$ dìlí $a$ a $\gcd(b, c)$. Potom $d'$ dìlí $b$ a $c$, take $d'$ musí dìlit i $\gcd(a, b)$. Tedy, podle pøedpokladu, $d>d'$.
+\item JelikoÅ¾ $d$ dÄ›lÃ­ $\gcd(a, b)$, $d$ musÃ­ dÄ›lit $a$ a $b$. VÃ­m, Å¾e $d$ dÄ›lÃ­ $c$, tedy $d$ musÃ­ dÄ›lit i $\gcd(b, c)$. 
+\item PÅ™edpoklÃ¡dÃ¡m, Å¾e $d'$ dÄ›lÃ­ $a$ a $\gcd(b, c)$. Potom $d'$ dÄ›lÃ­ $b$ a $c$, takÅ¾e $d'$ musÃ­ dÄ›lit i $\gcd(a, b)$. Tedy, podle pÅ™edpokladu, $d>d'$.
 \end{enumerate}
 \end{proof}
 
-\item \emph{absorbce}: pro kadé dva prvky $a,b \in A$ platí
+\item \emph{absorbce}: pro kaÅ¾dÃ© dva prvky $a,b \in A$ platÃ­
  \[ a \vee (b \wedge a) = a \ \mbox{ a }\  a \wedge (b \vee a) = a \]
-Neboli $\mbox{lcm}(a,\gcd(b,a)) = a$. Oznaèím si $d = gcd(b,a)$. Toto èíslo $d \leq \min(a,b)$, a èíslo $a$ bude násobkem èísla $d$. Pokud si dosadím $d$, tak dostanu $\mbox{lcm}(a,d) = a$. To je vdy splnìno, jeliko $a$ je násobkem $d$.
-Ten druhı tvar by se dokazoval dost podobnì. 
+Neboli $\mbox{lcm}(a,\gcd(b,a)) = a$. OznaÄÃ­m si $d = gcd(b,a)$. Toto ÄÃ­slo $d \leq \min(a,b)$, a ÄÃ­slo $a$ bude nÃ¡sobkem ÄÃ­sla $d$. Pokud si dosadÃ­m $d$, tak dostanu $\mbox{lcm}(a,d) = a$. To je vÅ¾dy splnÄ›no, jelikoÅ¾ $a$ je nÃ¡sobkem $d$.
+Ten druhÃ½ tvar by se dokazoval dost podobnÄ›. 
 \end{enumerate}
 
-Všechny ètyøi podmínky splnìny, jedná se o svaz.
+VÅ¡echny ÄtyÅ™i podmÃ­nky splnÄ›ny, jednÃ¡ se o svaz.
 
-Jak nakreslit HD? Jedno z monıch øešení (a pøekvapivì pouitelnıch) spoèívá ve ètyøech krocích:
+Jak nakreslit HD? Jedno z moÅ¾nÃ½ch Å™eÅ¡enÃ­ (a pÅ™ekvapivÄ› pouÅ¾itelnÃ½ch) spoÄÃ­vÃ¡ ve ÄtyÅ™ech krocÃ­ch:
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 
 \begin{enumerate}
-	\item Vypsání všech prvkù svazu
-	\item Pro kadı prvek nakreslení jeho jednoúrovòového Hasseova diagramu pøímıch dìlitelù, vpravo nejvìtší, vlevo nejmenší. Toto dìlat rekurzivnì pro kadı HD kadého prvku, dokud se nedostanu na prvoèíslo. Tzn. tøeba pro prvek 20 to budou prvky 10 a 4, ale u ne tøeba 10,5,4, protoe 5 dìlí 10. Pak znovu nakreslit HD pro 10 a 4. 
-	\item Pospojování tìchto prvkù do Hasseova diagramu, zase do úrovní øadit prvky zprava doleva.
-	\item (Pøekreslení diagramu do nìjaké rozumìjší podoby, která se objeví v pøedchozím bodì.)
+	\item VypsÃ¡nÃ­ vÅ¡ech prvkÅ¯ svazu
+	\item Pro kaÅ¾dÃ½ prvek nakreslenÃ­ jeho jednoÃºrovÅˆovÃ©ho Hasseova diagramu pÅ™Ã­mÃ½ch dÄ›litelÅ¯, vpravo nejvÄ›tÅ¡Ã­, vlevo nejmenÅ¡Ã­. Toto dÄ›lat rekurzivnÄ› pro kaÅ¾dÃ½ HD kaÅ¾dÃ©ho prvku, dokud se nedostanu na prvoÄÃ­slo. Tzn. tÅ™eba pro prvek 20 to budou prvky 10 a 4, ale uÅ¾ ne tÅ™eba 10,5,4, protoÅ¾e 5 dÄ›lÃ­ 10. Pak znovu nakreslit HD pro 10 a 4. 
+	\item PospojovÃ¡nÃ­ tÄ›chto prvkÅ¯ do Hasseova diagramu, zase do ÃºrovnÃ­ Å™adit prvky zprava doleva.
+	\item (PÅ™ekreslenÃ­ diagramu do nÄ›jakÃ© rozumÄ›jÅ¡Ã­ podoby, kterÃ¡ se objevÃ­ v pÅ™edchozÃ­m bodÄ›.)
 \end{enumerate}
 
-Pro tento pøíklad tedy
+Pro tento pÅ™Ã­klad tedy
 
 \begin{enumerate}
 	\item $(D_{60},|) = \{1,2,3,4,5,6,10,12,15,20,30,60\}$
@@ -2319,33 +2321,33 @@ Pro tento pøíklad tedy
 
 \renewcommand{\labelenumi}{\alph{enumi})}
 
-Poslední krok tady nebyl nutnı, ale kdy to èlovìk kreslí na papíøe, tak se obvykle hned netrefí do takové krásné podoby. 
+PoslednÃ­ krok tady nebyl nutnÃ½, ale kdyÅ¾ to ÄlovÄ›k kreslÃ­ na papÃ­Å™e, tak se obvykle hned netrefÃ­ do takovÃ© krÃ¡snÃ© podoby. 
 
-\item Nejmenší prvek svazu je z HD $\underline{0} = 1$, nejvìtší $\underline{1} = 60$. Distributivita se dá dokázat buï tak, e v HD nenajdu $\mathcal{L}_3$ ani $\mathcal{P}_5$ jako podsvaz (co tady opravdu nenajdu). Co je to vlastnì podsvaz\footnote{Dr. Gollová má na cvièení 12/2 napsáno, e podsvaz je podmmoina, kde operace $\vee, \wedge$ dávají stejné vısledky. To si myslím nemùe fungovat, protoe svaz jako celek je i svım podsvazem a $\sup(a,\bar{a})$ nemùe bıt stejné jako $\inf(a,\bar{a})$.}:
+\item NejmenÅ¡Ã­ prvek svazu je z HD $\underline{0} = 1$, nejvÄ›tÅ¡Ã­ $\underline{1} = 60$. Distributivita se dÃ¡ dokÃ¡zat buÄ tak, Å¾e v HD nenajdu $\mathcal{L}_3$ ani $\mathcal{P}_5$ jako podsvaz (coÅ¾ tady opravdu nenajdu). Co je to vlastnÄ› podsvaz\footnote{Dr. GollovÃ¡ mÃ¡ na cviÄenÃ­ 12/2 napsÃ¡no, Å¾e podsvaz je podmmoÅ¾ina, kde operace $\vee, \wedge$ dÃ¡vajÃ­ stejnÃ© vÃ½sledky. To si myslÃ­m nemÅ¯Å¾e fungovat, protoÅ¾e svaz jako celek je i svÃ½m podsvazem a $\sup(a,\bar{a})$ nemÅ¯Å¾e bÃ½t stejnÃ© jako $\inf(a,\bar{a})$.}:
 
 \begin{definice}
 \label{podsvaz}
-Mìjme dán svaz $L = (A,\vee,\wedge,\sqsubseteq)$. Mnoinu $B \subseteq A$ nazveme \emph{podsvaz} svazu $L$, jestlie platí
+MÄ›jme dÃ¡n svaz $L = (A,\vee,\wedge,\sqsubseteq)$. MnoÅ¾inu $B \subseteq A$ nazveme \emph{podsvaz} svazu $L$, jestliÅ¾e platÃ­
 \[ \text{je-li } b,c \in B, \text{ pak } b \vee c, b \wedge c \in B.  \]
 \end{definice}
 
-Alternativnì, mùu se problém distributivity dívat i takhle:
+AlternativnÄ›, mÅ¯Å¾u se problÃ©m distributivity dÃ­vat i takhle:
 \begin{definice}
-Svaz $(A,\vee,\wedge,\sqsubseteq)$ se nazıvá \emph{distributivní} svaz, jestlie pro kadé tøi prvky $a,b,c \in A$ platí
+Svaz $(A,\vee,\wedge,\sqsubseteq)$ se nazÃ½vÃ¡ \emph{distributivnÃ­} svaz, jestliÅ¾e pro kaÅ¾dÃ© tÅ™i prvky $a,b,c \in A$ platÃ­
 \[ a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c).  \]
 \[ a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c).  \]
 \end{definice}
 
-Pøièem staèí ovìøovat jen jednu z podmínek.
+PÅ™iÄemÅ¾ staÄÃ­ ovÄ›Å™ovat jen jednu z podmÃ­nek.
 
-Take hurá do toho:
+TakÅ¾e hurÃ¡ do toho:
 
 \begin{veta}
-Svaz $(\mathbb{N}, \text{lcm}, \gcd,|)$ je distributivní, neboli pro kadé $a,b,c \in N$ platí 
+Svaz $(\mathbb{N}, \text{lcm}, \gcd,|)$ je distributivnÃ­, neboli pro kaÅ¾dÃ© $a,b,c \in N$ platÃ­ 
 \[ \gcd(a, \mbox{lcm}(b,c)) = \mbox{lcm}(\gcd(a,b), \gcd(a,c)) \]
 \end{veta}
 \begin{proof}
-Kadému z èísel $a,b,c$ pøiøadím celoèíselnı rozklad, tzn. tøeba  $a = 2^3\cdot3^1 \cdot 7^1,  b = 2^2\cdot 3^2 \cdot7^0$. Pak operace $\cup$ (sjednocení) prvoèísel odpovídá lcm, operace $\cap$ (prùnik) odpovídá gcd. Napø.
+KaÅ¾dÃ©mu z ÄÃ­sel $a,b,c$ pÅ™iÅ™adÃ­m celoÄÃ­selnÃ½ rozklad, tzn. tÅ™eba  $a = 2^3\cdot3^1 \cdot 7^1,  b = 2^2\cdot 3^2 \cdot7^0$. Pak operace $\cup$ (sjednocenÃ­) prvoÄÃ­sel odpovÃ­dÃ¡ lcm, operace $\cap$ (prÅ¯nik) odpovÃ­dÃ¡ gcd. NapÅ™.
 
 \begin{center}  % put inside center environment
   \begin{tabular}{rll}
@@ -2354,63 +2356,63 @@ Kadému z èísel $a,b,c$ pøiøadím celoèíselnı rozklad, tzn. tøeba  $a = 2^3\cdot3
 	\end{tabular}
 \end{center} 
 
-Jeliko operace $\cup$ a $\cap$ jsou distributivní, pak i gcd a lcm jsou distributivní. 
+JelikoÅ¾ operace $\cup$ a $\cap$ jsou distributivnÃ­, pak i gcd a lcm jsou distributivnÃ­. 
 \end{proof}
 
-Svaz není komplementární, protoe tøeba k prvku 2 nejsem schopen najít doplnìk. Není to tedy ani Booleova algebra.
+Svaz nenÃ­ komplementÃ¡rnÃ­, protoÅ¾e tÅ™eba k prvku 2 nejsem schopen najÃ­t doplnÄ›k. NenÃ­ to tedy ani Booleova algebra.
 
-\item Pøi ovìøování, zda je nìco podsvazem, postupuji podle definice \ref{podsvaz}, musím tedy zjistit, zda je pro kadou dvojici prvkù vısledek operace $\vee$ a $\wedge$ zase prvkem svazu. U svazu $A$ to je, ale u svazu $B$ nikoliv - tøeba $4 \vee 6 = \mbox{lcm}(4,6) = 2^2\cdot3=12 \notin B$.
+\item PÅ™i ovÄ›Å™ovÃ¡nÃ­, zda je nÄ›co podsvazem, postupuji podle definice \ref{podsvaz}, musÃ­m tedy zjistit, zda je pro kaÅ¾dou dvojici prvkÅ¯ vÃ½sledek operace $\vee$ a $\wedge$ zase prvkem svazu. U svazu $A$ to je, ale u svazu $B$ nikoliv - tÅ™eba $4 \vee 6 = \mbox{lcm}(4,6) = 2^2\cdot3=12 \notin B$.
 
 \end{enumerate}
 
 %---------------------------------------Priklad 5-6-------------------------------- 
-\subsection{Pøíklad 6}
-Dokate, e $(D_{n},|)$ je Booleova algebra právì, kdy $n$ je square free. $(D_{n},|)$ je mnoina všech kladnıch dìlitelù èísla $n$ uspoøádaná podle relace dìlitelnosti. Pøirozené èíslo je square free, pokud není dìlitelné druhou mocninou ádného prvoèísla.
+\subsection{PÅ™Ã­klad 6}
+DokaÅ¾te, Å¾e $(D_{n},|)$ je Booleova algebra prÃ¡vÄ›, kdyÅ¾ $n$ je square free. $(D_{n},|)$ je mnoÅ¾ina vÅ¡ech kladnÃ½ch dÄ›litelÅ¯ ÄÃ­sla $n$ uspoÅ™Ã¡danÃ¡ podle relace dÄ›litelnosti. PÅ™irozenÃ© ÄÃ­slo je square free, pokud nenÃ­ dÄ›litelnÃ© druhou mocninou Å¾Ã¡dnÃ©ho prvoÄÃ­sla.
 
 \line(1,0){400}
 
-Nejdøív si musím uvìdomit, jak funguje lcm a gcd: lcm vezme sjednocení prvoèísel, gcd vezme jejich prùnik. Kdy chci, abych dostal prvek maximální, tak musím tìmi prvky obsadit všechna místa, tzn. tøeba pokud mám $(D_{30},|)$, a hledám doplnìk pro $a = 15 = 3\cdot5$, tak musím najít takové èíslo, které mi obsadí ještì to poslední místo do $30 = 2\cdot3\cdot 5$, co je supremum svazu - co je evidentnì $\bar{a} = 2$. Podobnì infimum, tam zase nesmím ádnım prvoèíslem (vyjma 1) obsadit místa pod sebou - take pro $a = 15 = 3\cdot5$ je to zase $\bar{a} = 2$. Kdybych ovšem mìl tøeba $(D_{60},|)$, tak mám problém s tím, e v prvoèíselném rozkladu mùu mít i mocniny. Tøeba pro $60 = 2^2\cdot3\cdot5$, kdybych hledal doplnìk k $2=2^1$ a snail se pouít podobnı zpùsob jako u $(D_{30},|)$, tak mám problém, protoe 1. místo u bude vdy obsazené $2$, a tudí nikdy nedocílím toho, aby prùnik tìch prvoèíselnıch rozkladù byl prázdnı. Proto musím zabránit tomu, aby šlo libovolné èíslo vyjádøit jako $a = p_1^{k_1}\cdot \ldots \cdot p_n^{k_n}$, kde libovolné $k_n$ je vyšší ne 1 - a toho docílím pouze tehdy, je-li supremum square free. 
+NejdÅ™Ã­v si musÃ­m uvÄ›domit, jak funguje lcm a gcd: lcm vezme sjednocenÃ­ prvoÄÃ­sel, gcd vezme jejich prÅ¯nik. KdyÅ¾ chci, abych dostal prvek maximÃ¡lnÃ­, tak musÃ­m tÄ›mi prvky obsadit vÅ¡echna mÃ­sta, tzn. tÅ™eba pokud mÃ¡m $(D_{30},|)$, a hledÃ¡m doplnÄ›k pro $a = 15 = 3\cdot5$, tak musÃ­m najÃ­t takovÃ© ÄÃ­slo, kterÃ© mi obsadÃ­ jeÅ¡tÄ› to poslednÃ­ mÃ­sto do $30 = 2\cdot3\cdot 5$, coÅ¾ je supremum svazu - coÅ¾ je evidentnÄ› $\bar{a} = 2$. PodobnÄ› infimum, tam zase nesmÃ­m Å¾Ã¡dnÃ½m prvoÄÃ­slem (vyjma 1) obsadit mÃ­sta pod sebou - takÅ¾e pro $a = 15 = 3\cdot5$ je to zase $\bar{a} = 2$. Kdybych ovÅ¡em mÄ›l tÅ™eba $(D_{60},|)$, tak mÃ¡m problÃ©m s tÃ­m, Å¾e v prvoÄÃ­selnÃ©m rozkladu mÅ¯Å¾u mÃ­t i mocniny. TÅ™eba pro $60 = 2^2\cdot3\cdot5$, kdybych hledal doplnÄ›k k $2=2^1$ a snaÅ¾il se pouÅ¾Ã­t podobnÃ½ zpÅ¯sob jako u $(D_{30},|)$, tak mÃ¡m problÃ©m, protoÅ¾e 1. mÃ­sto uÅ¾ bude vÅ¾dy obsazenÃ© $2$, a tudÃ­Å¾ nikdy nedocÃ­lÃ­m toho, aby prÅ¯nik tÄ›ch prvoÄÃ­selnÃ½ch rozkladÅ¯ byl prÃ¡zdnÃ½. Proto musÃ­m zabrÃ¡nit tomu, aby Å¡lo libovolnÃ© ÄÃ­slo vyjÃ¡dÅ™it jako $a = p_1^{k_1}\cdot \ldots \cdot p_n^{k_n}$, kde libovolnÃ© $k_n$ je vyÅ¡Å¡Ã­ neÅ¾ 1 - a toho docÃ­lÃ­m pouze tehdy, je-li supremum square free. 
 
 %---------------------------------------Priklad 5-7-------------------------------- 
-\subsection{Pøíklad 7}
-Ukate, e v kadé Booleovì algebøe $(B,\wedge,\vee,0,1,\bar{\ })$ platí:
+\subsection{PÅ™Ã­klad 7}
+UkaÅ¾te, Å¾e v kaÅ¾dÃ© BooleovÄ› algebÅ™e $(B,\wedge,\vee,0,1,\bar{\ })$ platÃ­:
 \[ a \sqsubseteq b \ \mbox{ iff } \ a \wedge \bar{b} = 0. \]
 
 \line(1,0){400}
 
 \begin{proof}
-Jeliko mám zadanou ekvivalenci, tak musím dokázat obì implikace (tedy $\Rightarrow$ a $\Leftarrow$):
+JelikoÅ¾ mÃ¡m zadanou ekvivalenci, tak musÃ­m dokÃ¡zat obÄ› implikace (tedy $\Rightarrow$ a $\Leftarrow$):
 
 \begin{description}
-	\item[$\Rightarrow$] Za základ si poloím, e $a \sqsubseteq b \mbox{ iff } a \vee b = b$ (vìta 4.1.11 z pøednášky 10 od Demlové \cite{prednasky}). Pokud obì strany rozšíøím o $(\wedge \bar{b})$, pak upravenì dostanu
+	\item[$\Rightarrow$] Za zÃ¡klad si poloÅ¾Ã­m, Å¾e $a \sqsubseteq b \mbox{ iff } a \vee b = b$ (vÄ›ta 4.1.11 z pÅ™ednÃ¡Å¡ky 10 od DemlovÃ© \cite{prednasky}). Pokud obÄ› strany rozÅ¡Ã­Å™Ã­m o $(\wedge \bar{b})$, pak upravenÄ› dostanu
 	\[ (a \vee b) \wedge \bar{b} = b \wedge \bar{b} = 0.\]
-	To mùu dál rozvíjet:
+	To mÅ¯Å¾u dÃ¡l rozvÃ­jet:
 	\[ 0 = b \wedge \bar{b} = (a \vee b) \wedge \bar{b} = (a \wedge \bar{b}) \vee \underbrace{(b \wedge \bar{b})}_{0} = (a \wedge \bar{b}) \vee 0 = a \wedge \bar{b} \]
-	Neboli jsem dokázal, e  $a \vee b = b$ je toté, co $a \wedge \bar{b} = 0$.
-	\item[$\Leftarrow$] Tady si za základ poloím, e $a \wedge \bar{b} = 0$ a snaím se z toho dokázat, e nutnì $a \sqsubseteq b$. K tomu mi staèí dokázat, e $a \wedge b = a$ (z $a \sqsubseteq b \mbox{ iff } a \wedge b = a$). Oznaèím si levou stranu rovnice jako $L = a \wedge b$ a pravou jako $P = a$ a jedu:
+	Neboli jsem dokÃ¡zal, Å¾e  $a \vee b = b$ je totÃ©Å¾, co $a \wedge \bar{b} = 0$.
+	\item[$\Leftarrow$] Tady si za zÃ¡klad poloÅ¾Ã­m, Å¾e $a \wedge \bar{b} = 0$ a snaÅ¾Ã­m se z toho dokÃ¡zat, Å¾e nutnÄ› $a \sqsubseteq b$. K tomu mi staÄÃ­ dokÃ¡zat, Å¾e $a \wedge b = a$ (z $a \sqsubseteq b \mbox{ iff } a \wedge b = a$). OznaÄÃ­m si levou stranu rovnice jako $L = a \wedge b$ a pravou jako $P = a$ a jedu:
 	\[ P = a = a \wedge 1 = a \wedge (b \vee \bar{b}) = (a \wedge \bar{b}) = \underbrace{(a \wedge \bar{b})}_{a \wedge \bar{b} = 0} \vee (a \wedge b) = 0 \vee (a \wedge b) = a \wedge b = L \]
 \end{description}
 \end{proof}
 
 %---------------------------------------Priklad 5-8-------------------------------- 
-\subsection{Pøíklad 8}
-Ukate, e v distributivním svazu mùe mít danı prvek nejvıše jeden doplnìk.
+\subsection{PÅ™Ã­klad 8}
+UkaÅ¾te, Å¾e v distributivnÃ­m svazu mÅ¯Å¾e mÃ­t danÃ½ prvek nejvÃ½Å¡e jeden doplnÄ›k.
 
 \line(1,0){400}
 
 \begin{proof}
-Pøedpokládám, e $b$ a $c$ jsou doplòky $a$. Pak $b = \underbrace{b\wedge\underline{1}}_{a \wedge \underline{1} = a} = b\wedge(\underbrace{a \vee c}_{a \vee \bar{a} = \underline{1}}) = \underbrace{(b\wedge a)\vee(b\wedge c)}_{\mbox{distributivita}} = b \vee (\underbrace{a \wedge b}_{a \wedge \bar{a} = \underline{1}}) \vee c = (b \wedge \underline{1}) \wedge c = b \wedge c$. Tudí $b \sqsupseteq c$, a obdobnì, pokud bych zaèal s $c$, bych dostal $b \sqsubseteq c$, a tedy $b = c$ (podle antisymetrie).  
+PÅ™edpoklÃ¡dÃ¡m, Å¾e $b$ a $c$ jsou doplÅˆky $a$. Pak $b = \underbrace{b\wedge\underline{1}}_{a \wedge \underline{1} = a} = b\wedge(\underbrace{a \vee c}_{a \vee \bar{a} = \underline{1}}) = \underbrace{(b\wedge a)\vee(b\wedge c)}_{\mbox{distributivita}} = b \vee (\underbrace{a \wedge b}_{a \wedge \bar{a} = \underline{1}}) \vee c = (b \wedge \underline{1}) \wedge c = b \wedge c$. TudÃ­Å¾ $b \sqsupseteq c$, a obdobnÄ›, pokud bych zaÄal s $c$, bych dostal $b \sqsubseteq c$, a tedy $b = c$ (podle antisymetrie).  
 \end{proof}
 
 \begin{thebibliography}{9}
-\bibitem{prednasky}{\em Marie Demlová:}
+\bibitem{prednasky}{\em Marie DemlovÃ¡:}
                {\bf Algebra pro VT.} \\ 
 	       \url{http://math.feld.cvut.cz/demlova/teaching/avt/predn-avt.html}
-\bibitem{gollova}{\em Alena Gollová:}
-               {\bf Algebra pro vıpoèetní techniku.} \\ 
+\bibitem{gollova}{\em Alena GollovÃ¡:}
+               {\bf Algebra pro vÃ½poÄetnÃ­ techniku.} \\ 
 	       \url{http://math.feld.cvut.cz/gollova/algebra_pro_vt.html}
-\bibitem{velebil}{\em Jiøí Velebil:}
-               {\bf Diskrétní matematika.} \\ 
+\bibitem{velebil}{\em JiÅ™Ã­ Velebil:}
+               {\bf DiskrÃ©tnÃ­ matematika.} \\ 
 	       \url{http://math.feld.cvut.cz/velebil/teaching/y01dma.html}
              
 \end{thebibliography}

@@ -1,3 +1,6 @@
 *.*~
 *.tmp
 *.aux
+*.out
+*.toc
+*.log
