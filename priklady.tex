@@ -70,7 +70,7 @@ Počítá se pomocí rozšířeného eukleidova algoritmu.
 
 \begin{align*}
 114x + 267y = 15 & 								& 		&  \\
-267 & = 2\cdot 114 + 39 					& 39	&= 367-2\cdot 114 \\
+267 & = 2\cdot 114 + 39 					& 39	&= 267-2\cdot 114 \\
 114 & = 2\cdot 39 + 36 						& 36 	&= 114-2\cdot 39 = 114 + 4\cdot 114 - 267 \cdot 2 \\
 39  & = 1\cdot 36 + \underline{3}	& 3 	&= 39 - 36 = 3\cdot 267 - 7 \cdot 114 \\
 \end{align*}
@@ -112,11 +112,11 @@ Aby k nějakému prvku existoval inverz, musí být největší společný děli
 \begin{equation}
 	 \gcd(a,m) = 1.
 \end{equation}
-
+Tedy \(a, m\) jsou nesoudělná. 
 Jelikož $\gcd(18,26) = 2$, $18$ nemá v $\mathbb{Z}_{26}$ inverzi. $19$ inverzi má, spočítat se dá pomocí eukleidova algoritmu:
 
 \begin{align*}
-19x + 26y = 15 \mbox{ v } \mathbb{Z}&  	& 		&  \\
+19x + 26y = 0 \mbox{ v } \mathbb{Z}&  	& 		&  \\
 26 & = 1\cdot 19 + 7 					& 7		&= 26 - 19 \\
 19 & = 2\cdot 7 + 5						& 5 	&= 19 - 2\cdot 7 = 3\cdot 19 - 2 \cdot 26 \\
 7  & = 1\cdot 5 + 2						& 2 	&= 7 - 5 = 3\cdot 26 - 4 \cdot 19 \\
@@ -184,7 +184,7 @@ Tady přichází na řadu Čínská věta o zbytcích. Pokud si to nahoře napí
 V tomhle případě tedy $M = 8\cdot 11\cdot 15 = 1320$ a 
 
 \begin{align*}
-q_1 & = s_1\cdot 11 \cdot 15 = s_1 \cdot 168 = s_1 \cdot 5		& \left[ 5\right]^{-1}_8 = 5\\
+q_1 & = s_1\cdot 11 \cdot 15 = s_1 \cdot 165 = s_1 \cdot 5		& \left[ 5\right]^{-1}_8 = 5\\
 		& = 5 \cdot 11 \cdot 15 = 825 & \\
 q_2 & = 8 \cdot s_2 \cdot 15 = s_2 \cdot 120 = s_2 \cdot 10		& \left[ 10\right]^{-1}_{11} = 10\\
 		& = 8 \cdot 10 \cdot 15 = 1200 = -120 & \\
@@ -443,15 +443,15 @@ Rovnice má $gcd(4,12) = 4$ řešení a jsou to prvky řádů ${1,2,4}$. Prvek �
 \end{align*}
 
 \[ r(2^k) = \frac{12}{\gcd(12,k)} = 4 \Rightarrow k = \{3,9\} \]
-Z toho vyplývá, že hledaná $x$ jsou $8$ a $5$.
+Z toho vyplývá, že hledaná \(x \in \{2^3, 2^9\} = \{8, 5\}\).
 
 Teď výpočet koeficientů:
  
 \begin{align*}
 q_3 & = s\cdot 13 = s\cdot 1 & \left[ 1\right]^{-1}_3 = 1\\
 		& = 1 \cdot 13 = 13 \\
-q_13 & = 3 \cdot s & \left[ 3\right]^{-1}_{7} = 9\\
-		& = 3 \cdot 9 = 27 = -12 \\
+q_{13} & = 3 \cdot s & \left[ 3\right]^{-1}_{7} = 9\\
+		& = 3 \cdot 9 = 27 = -12 = 1 \\
 \end{align*}
 
 Všechna řešení jsou tedy $x = \{1,-1\}\cdot 13 + \{1,5,8,12\}\cdot(-12) = \{1,5,8,14,25,31,34,38\}$.
