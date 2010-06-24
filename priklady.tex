@@ -1,5 +1,5 @@
 \documentclass{article}
-\usepackage[left=2cm,right=2cm,top=1cm,bottom=2cm]{geometry}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2.8cm]{geometry}
 \bibliographystyle{plain}
 \usepackage[czech]{babel}
 \usepackage[T1]{fontenc} % pouzije EC fonty 
@@ -12,6 +12,7 @@
 \usepackage{cancel}
 \usepackage{gauss}
 \usepackage[usenames]{color}
+\usepackage{cclicenses}
 \input xy
 \xyoption{all}
 
@@ -33,15 +34,27 @@
     anchorcolor = red,
     citecolor = blue,
     filecolor = red,
-    pagecolor = red,
     urlcolor = red
 }
 
 \newtheorem{definice}{Definice}[section]
 \newtheorem{veta}{Věta}[section]
 
+\title{Řešené příklady k předmětu X01AVT}
+\author{Štěpán Rezek}
+
+\usepackage{fancyhdr}
+\fancyhf{}
+\setlength{\headheight}{30pt}
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}}
+\rhead{\fancyplain{}{\textit{\leftmark}}}
+\fancyfoot[RO]{\textit{Version: 1.10}}
+\fancyfoot[C]{\thepage}
+
 \begin{document}
 
+\maketitle
 
 \section*{Úvod}
 Právě se díváte na moje řešení příkladů z X01AVT z roku 2007/2008. Zajisté obsahují spousty chyb a nedokáže je pochopit nikdo včetně autora, ale aspoň můžou posloužit jako menší návod k tomu, jak počítat příklady u zkoušky. \textbf{Důrazně} doporučuji ty příklady si vypočítat sám a teprve potom, co vyjde nějaký výsledek jinak, než jak má podle dr. Gollové vyjít, se podívat sem. Když si budete ty příklady jen tupě pročítat, tak se naučíte $\lim \rightarrow 0$. Pokud máte pocit, že tu něco chybí, či snad přebývá, máte naprosto volnou ruku k úpravám, za předpokladu, že své úpravy zveřejníte, a to včetně zdrojového kódu v .tex a obrázků. Odkazy na použitou literaturu jsou na konci. Obrázky nakresleny pomocí maker \Xy-pic.
@@ -52,6 +65,16 @@ Hodně štěstí u zkoušek a co nejméně trápení s algebrou,
 \begin{flushright}
 Štěpán Rezek
 \end{flushright}
+
+\vspace*{3cm}
+\begin{flushleft}
+Toto dílo je licencováno pod licencí Creative Commons Uveďte autora-Zachovejte licenci 3.0 Česká republika licencí. \\
+
+\byncsa\\
+\ \\
+Pro zobrazení kopie této licence, navštivte 
+{\tt http://creativecommons.org/licenses/by-sa/3.0/cz/}
+\end{flushleft}
 
 \tableofcontents
 
