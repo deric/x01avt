@@ -650,11 +650,11 @@ Podpis pak bude $-413\cdot20 + 414\cdot50 = 12440 = \underline{227}$ (v $\mathbb
 
 %---------------------------------------Priklad 2-1-------------------------------- 
 \subsection{Příklad 1}
-V $\mathbb{Z}_2[x]$ najděte největší společný dělitel $d(x)$ polynomů $p(x) = x^7 + x^6 + x^5 + x$ a $q(x) = x^3 + 1$. Polynom $d(x)$ napište jako kombinaci polynomů $p(x)$ a $q(x)$. 
+V $\mathbb{Z}_2[x]$ najděte největší společný dělitel $d(x)$ polynomů $p(x) = x^7 + x^6 + x^5 + x^4 + x$ a $q(x) = x^3 + 1$. Polynom $d(x)$ napište jako kombinaci polynomů $p(x)$ a $q(x)$. 
 
 \line(1,0){400}
 
-Postup je takový, že dělím polynomy, dokud to jde (tzn., dokud nedostanu nulový zbytek) a toto si píšu do tabulky podobné euklidově algoritmu. Nejdřív tedy ty dva polynomy vydělím a uvidím, co vznikne:
+Postup je takový, že dělím polynomy, dokud to jde (tzn. dokud nedostanu nulový zbytek) a toto si píšu do tabulky podobné Euklidově algoritmu. Počítáme v \(\mathbb{Z}_2[x]\) (\(1+1=0\), \(-1=1\)), tedy není žádný rozdíl mezi operací sčítání a odčítání (platí samozřejmě pouze pro \(\mathbb{Z}_2[x]\)). Nejdřív tedy ty dva polynomy vydělím a uvidím, co vznikne:
 
 \begin{tabular}{rrrrrrrr|ll}
 		$x^7$ 	& $+x^6$ 	& $+ x^5$ & $+x^4$ 	&   				&  				& $+ x$  	&  		& $: (x^3 + 1)$ 	& = $x^4 + x^3 + x^2 + 1$ \\ 
@@ -676,7 +676,7 @@ Postup je takový, že dělím polynomy, dokud to jde (tzn., dokud nedostanu nul
 Vidím, že mi vznikl nějaký podíl a nějaký zbytek po dělení. Pokračuji dál:
 
 \begin{align*}
-\overbrace{x^7 + x^6 + x^5 + x^4 + x}^{p(x)} & = \overbrace{(x^3 + 1)}^{q(x)}(x^4 + x^3 + x^2) + (x^2 + x + 1)  \\
+\overbrace{x^7 + x^6 + x^5 + x^4 + x}^{p(x)} & = \overbrace{(x^3 + 1)}^{q(x)}(x^4 + x^3 + x^2 + 1) + (x^2 + x + 1)  \\
 q(x) & = (x+1)\underline{(x^2 + x + 1)} + 0 
 \end{align*}
 
@@ -729,7 +729,7 @@ a polynom  $x^7 - x$ se dá rozložit na $x(x-1)(x-2)(x-3)(x-4)(x-5)(x-6) = x(x+
 V $\mathbb{Z}_2[x]$ je to o něco horší, protože takový krásný vzoreček nemám. Takže musím postupně dělit, nejdřív $x$kem a pak postupně ireducibilními polynomy:
 
 \begin{align*}
-x^7 + x & = x\cdot(x^6 + 1)\\
+x^7 - x  = x^7 + x & = x\cdot(x^6 + 1)\\
 				& = x\cdot(x+1)(x^5 + x^4 + x^3 + x^2 + x + 1) \\
 				& = x\cdot(x+1)(x+1)(x^4 + x^2 + 1)\\
 				& = x\cdot(x+1)(x+1)(x^2 + x + 1)(x^2 + x +1)  \\
