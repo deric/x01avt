@@ -116,7 +116,7 @@ Tedy \(a, m\) jsou nesoudělná.
 Jelikož $\gcd(18,26) = 2$, $18$ nemá v $\mathbb{Z}_{26}$ inverzi. $19$ inverzi má, spočítat se dá pomocí eukleidova algoritmu:
 
 \begin{align*}
-19x + 26y = 0 \mbox{ v } \mathbb{Z}&  	& 		&  \\
+19x + 26y = 1 \mbox{ v } \mathbb{Z}&  	& 		&  \\
 26 & = 1\cdot 19 + 7 					& 7		&= 26 - 19 \\
 19 & = 2\cdot 7 + 5						& 5 	&= 19 - 2\cdot 7 = 3\cdot 19 - 2 \cdot 26 \\
 7  & = 1\cdot 5 + 2						& 2 	&= 7 - 5 = 3\cdot 26 - 4 \cdot 19 \\
@@ -261,7 +261,7 @@ Dostal jsem celou množinu čísel, jejichž $\gcd(a,13) = 1$. $2$ je tedy gener
 
 V tomto případě, mám prvek $2^1$, $r(2^1) = 12$, a hledám další prvky, jejichž řád je taky $12$. Jinými slovy, řeším rovnici pro $k$:
 
-$$r(2^1) = \frac{12}{\gcd(12, k)} = 12$$
+$$r(2^k) = \frac{12}{\gcd(12, k)} = 12$$
 
 Z toho vyplývá, že $k$ budou všechna čísla nesoudělná s $12$. Tedy $k \in \{1, 5, 7, 11\}$ a ty generátory jsou $\{2^1, 2^5, 2^7, 2^{11}\} = $ (podle tabulky, co jsem si vytvořil nahoře) $\underline{\{2, 6, 11, 7\}}$.  
 
@@ -633,7 +633,7 @@ $25 = 1\cdot16 + 1\cdot8 + 0\cdot4 + 0\cdot2 + 1\cdot1:$
 	\end{tabular}
 \end{center}
  
-Koeficienty (pro jejich výpočet je ještě zapotřebí $2\times$ e-euklid, ale šetřím místem):
+Koeficienty (pro jejich výpočet je ještě zapotřebí $2\times$ Euklid, ale šetřím místem):
 
 \begin{align*}
 q_{23} & = s\cdot 59 = s\cdot 13 & \left[ 13\right]^{-1}_{23} = -7\\
@@ -927,7 +927,7 @@ V tomto případě tedy mám těleso $GF(2^4)$ a musím najít ireducibilní pol
 Hned první pokus byl úspěšný, polynom $x^4 + x + 1$ je ireducubilní a můžu ho použít jako generující. Přepisovací pravidla budou:
 
 \[ \alpha^4 = \alpha + 1 \]	
-\[ \alpha^5 = (\alpha^4 + 1)\cdot \alpha = \alpha^2 + \alpha\]
+\[ \alpha^5 = (\alpha + 1)\cdot \alpha = \alpha^2 + \alpha\]
 
 Co se týče primitivního prvku, platí pravidla z příkladu \ref{priklad2-8}, tedy primitivních prvků je $\varphi(16 - 1) = 8$. Tyto prvky budou evidentně řádu $15$. Způsob, jak takový prvek najít je obdobný tomu, co jsem dělal v první části, např. příkladu \ref{priklad1-6}. Zkusím třeba kořen $\alpha$:
 
