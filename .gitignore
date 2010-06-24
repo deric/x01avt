@@ -4,4 +4,5 @@
 *.out
 *.toc
 *.log
-avt-priklady.kilepr
+*.kilepr
+*.backup

@@ -13,6 +13,8 @@
 \usepackage{gauss}
 \usepackage[usenames]{color}
 \usepackage{cclicenses}
+\usepackage{fancyhdr}
+\usepackage{natbib}
 \input xy
 \xyoption{all}
 
@@ -43,14 +45,15 @@
 \title{Řešené příklady k předmětu X01AVT}
 \author{Štěpán Rezek}
 
-\usepackage{fancyhdr}
-\fancyhf{}
+\fancyhead{}
+\fancyfoot{}
 \setlength{\headheight}{30pt}
 \pagestyle{fancyplain}
-\lhead{\fancyplain{}}
-\rhead{\fancyplain{}{\textit{\leftmark}}}
+\fancyhead[R]{\fancyplain{}{\textit{\leftmark}}}
 \fancyfoot[RO]{\textit{Version: 1.10}}
 \fancyfoot[C]{\thepage}
+
+
 
 \begin{document}
 
@@ -66,7 +69,7 @@ Hodně štěstí u zkoušek a co nejméně trápení s algebrou,
 Štěpán Rezek
 \end{flushright}
 
-\vspace*{3cm}
+\vspace*{8cm}
 \begin{flushleft}
 Toto dílo je licencováno pod licencí Creative Commons Uveďte autora-Zachovejte licenci 3.0 Česká republika licencí. \\
 
@@ -75,6 +78,7 @@ Toto dílo je licencováno pod licencí Creative Commons Uveďte autora-Zachovej
 Pro zobrazení kopie této licence, navštivte 
 {\tt http://creativecommons.org/licenses/by-sa/3.0/cz/}
 \end{flushleft}
+\clearpage
 
 \tableofcontents
 
@@ -88,7 +92,7 @@ V $\mathbb{Z}_{267}$ najděte všechna $x$, pro která platí $114x = 15$.
 
 \line(1,0){400}
 
-Počítá se pomocí rozšířeného eukleidova algoritmu.
+Počítá se pomocí rozšířeného Eukleidova algoritmu\footnote{viz Eukleidův algoritmus \cite[str. 50]{velebil07}}.
 
 
 \begin{align*}
@@ -346,7 +350,7 @@ Další příklad může být pro grupoid reálných čísel s operací sčítá
 
 U homomorfismů platí, že jestliže existuje neutrální prvek, musí být zachován. Takže pro první příklad, $f(0) = 0$, a $0$ je netrální prvek vůči sčítání. V druhém případě, $f(0) = 1$, jelikož $0$ je neutrální vůči sčítání a $1$ vůči násobení.
 
-Další příklad, z Velebilových skript \cite{velebil}, je pro pro grupoid $(\mathbb{Z}, \cdot)$ a $(\mathbb{Z}_4, \odot_4)$ (násobení modulo 4). Zobrazení 
+Další příklad, z Velebilových skript \cite{velebil07}, je pro pro grupoid $(\mathbb{Z}, \cdot)$ a $(\mathbb{Z}_4, \odot_4)$ (násobení modulo 4). Zobrazení 
 
 $$[-]_4 : \mathbb{Z} \rightarrow \mathbb{Z}4,$$
 kde $[-]_4$ přiřazuje každému číslu ($[-]$) ze $\mathbb{Z}$ zbytek po dělení $4$, je homomorfismus. Pokud si totiž zkusím dosadit pár čísel, pak pro $[x \cdot y]_4 = [x]_4 \odot_4 [y]_4$ dostanu
@@ -499,7 +503,7 @@ Rovnici $x^{30} = 1$ v můžu řešit rovnou v $\mathbb{Z}_{37}$, protože $37$ 
 
 %---------------------------------------Priklad 14-------------------------------- 
 \subsection{\label{priklad1-14}Příklad 14}
-Pro RSA šifrování je dáno $N = 247$ a veřejný klíč $t = 11$. Spočtěte soukromý klíč a dešifrujte zprávu $b = 147$. Pro dešifrování použijte Čínskou větu o zbytcích.
+Pro RSA\footnote{RSA je podrobně vysvětleno v \cite[str. 92]{velebil07} a další řešené příklady najdete v \cite[str. 23]{dma07}} šifrování je dáno $N = 247$ a veřejný klíč $t = 11$. Spočtěte soukromý klíč a dešifrujte zprávu $b = 147$. Pro dešifrování použijte Čínskou větu o zbytcích.
 
 \line(1,0){400}
 
@@ -1390,7 +1394,7 @@ ISBN (International Standard Book Number) je lineární délky 10 nad $\mathbb{Z
 
 \line(1,0){400}
 
-Podrobně vysvětleno ve Velebilových skriptech \cite{velebil}, str. 80-82. Stačil by copy/paste, tak radši nebudu zaplácávat místo. Mimochodem, dokonce je tu Easter Egg - to ISBN mají "Malé dějiny filozofie".
+Podrobně vysvětleno ve Velebilových skriptech \cite{velebil07}, str. 80-82. Stačil by copy/paste, tak radši nebudu zaplácávat místo. Mimochodem, dokonce je tu Easter Egg - to ISBN mají "Malé dějiny filozofie".
 
 %---------------------------------------Priklad 3-5-------------------------------- 
 \subsection{Příklad 5}
@@ -2023,6 +2027,10 @@ Důležitou roli hraje vzorec $(a+b)^p = a^p+b^p$ v tělese charakteristiky $p$ 
 \parbox[h]{3in}{
 \emph{And now for something completely different.}
 }
+\begin{flushright}
+--Monty Python
+\end{flushright}
+
 \end{flushright}
 
 %---------------------------------------Priklad 5-1-------------------------------- 
@@ -2416,7 +2424,7 @@ Ukažte, že v každé Booleově algebře $(B,\wedge,\vee,0,1,\bar{\ })$ platí:
 Jelikož mám zadanou ekvivalenci, tak musím dokázat obě implikace (tedy $\Rightarrow$ a $\Leftarrow$):
 
 \begin{description}
-	\item[$\Rightarrow$] Za základ si položím, že $a \sqsubseteq b \mbox{ iff } a \vee b = b$ (věta 4.1.11 z přednášky 10 od Demlové \cite{prednasky}). Pokud obě strany rozšířím o $(\wedge \bar{b})$, pak upraveně dostanu
+	\item[$\Rightarrow$] Za základ si položím, že $a \sqsubseteq b \mbox{ iff } a \vee b = b$ (věta 4.1.11 z přednášky 10 od Demlové \cite{demlova09}). Pokud obě strany rozšířím o $(\wedge \bar{b})$, pak upraveně dostanu
 	\[ (a \vee b) \wedge \bar{b} = b \wedge \bar{b} = 0.\]
 	To můžu dál rozvíjet:
 	\[ 0 = b \wedge \bar{b} = (a \vee b) \wedge \bar{b} = (a \wedge \bar{b}) \vee \underbrace{(b \wedge \bar{b})}_{0} = (a \wedge \bar{b}) \vee 0 = a \wedge \bar{b} \]
@@ -2437,15 +2445,22 @@ Předpokládám, že $b$ a $c$ jsou doplňky $a$. Pak $b = \underbrace{b\wedge\u
 \end{proof}
 
 \begin{thebibliography}{9}
-\bibitem{prednasky}{\em Marie Demlová:}
+\bibitem{demlova09}{\em Marie Demlová:}
                {\bf Algebra pro VT.} \\ 
 	       \url{http://math.feld.cvut.cz/demlova/teaching/avt/predn-avt.html}
-\bibitem{gollova}{\em Alena Gollová:}
+\bibitem{gollova10}{\em Alena Gollová:}
                {\bf Algebra pro výpočetní techniku.} \\ 
 	       \url{http://math.feld.cvut.cz/gollova/algebra_pro_vt.html}
-\bibitem{velebil}{\em Jiří Velebil:}
-               {\bf Diskrétní matematika.} \\ 
-	       \url{http://math.feld.cvut.cz/velebil/teaching/y01dma.html}
+\bibitem{velebil07}{\em Jiří Velebil:}
+               {\emph Diskrétní matematika.} \\ 
+		Praha,
+		2007 \\
+	       \url{ftp://math.feld.cvut.cz/pub/velebil/y01dma/dma-notes.pdf}
+\bibitem{dma07}{\em Jiří Velebil:}
+               {\emph Sbírka řešených příkladů z Y01DMA} \\ 
+		Praha,
+		2007 \\
+	       \url{ftp://math.feld.cvut.cz/pub/velebil/y01dma/dma-sbirka.pdf}
              
 \end{thebibliography}
 
